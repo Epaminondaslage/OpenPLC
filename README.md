@@ -8,12 +8,12 @@ O OpenPLC, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na 
 * ST (Structured Text ou Texto Estruturado),
 * IL (Instruction List ou Lista de Instruções) e 
 * SFC (Sequential Function Chart ou Sequenciamento Gráfico de Funções).
-<BR>
+  
 O projeto do OpenPLC possui um ambiente de desenvolvimento de programas, é compatível com praticamente qualquer software SCADA existente, utiliza o protocolo Modbus/TCP para comunicação e inclui um editor de Interface Homem Máquina (IHM) de código aberto, denominado SCADA BR. Outro ponto interessante a se destacar condiz a compatibilidade do OpenPLC com o PLCopen Editor, sendo esse um software que permite escrever programas para CLP de acordo com a IEC 61131-3, estando em conformidade com o PLCopen XML. A figura abaixo ilustra a linguagem Ladder sendo aplicada sobre o PLCopen Editor. 
-<BR>
+
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_1.png" height="400" width="600"><BR>
 Figura 1 - Linguagem Ladder sendo aplicada sobre o PLCopen Editor.
-<BR>
+
 A programação do hardware é realizada por meio do PLCOpen Editor, onde são gerados arquivos ST. O aplicativo OpenPLC possui um servidor Web baseado em NodeJs que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
 
 # Plataformas para o OpenPLC
@@ -31,7 +31,7 @@ Figura 3 - Mapeamento de pinos do OpenPLC para Raspberry Pi.
 
 No caso do ESP8266 o procedimento de instalação do OpenPLC é similar ao Arduino, onde é necessário um sistema host para execução da lógica. O mapeamento de pinos para esse dispositivo depende do DEVICE_ID. Existem 4 entradas digitais, 4 saídas digitais, 1 entrada analógica e 1 saída analógica disponível na placa ESP8266. Portanto, se o seu DEVICE_ID for zero, o vars localizado% IX0.0 para% IX0.3 será ligado às suas 4 entradas digitais. Se o seu DEVICE_ID for 2, o vars localizado para o seu dispositivo seria então% IX2.0 para% IX2.3, e assim por diante, conforme relatado no site oficial do OpenPLC. A figura 4 retrata o mapeamento de pinos, onde n deve ser substituído pelo DEVICE_ID.
 
-<img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_4.png" height="400" width="600"><BR>
+<img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_4.png" height="200" width="400"><BR>
 Figura 4 - Mapeamento de pinos do OpenPLC para ESP8266.
 
 Em se tratando da UniPi e da PiXtend, ambos os hardwares baseados em Raspberry Pi, o procedimento de instalação do OpenPLC é similar ao da Raspberry Pi. Para UniPi, ao término do processo de compilação, o usuário deverá carregar o módulo I2C no Kernel, pois isso permitirá que o OpenPLC se comunique com os periféricos da placa UniPi. Já para a PiXtend, o usuário deverá se certificar que está ativada a interface SPI na plataforma embarcada. Os mapeamentos de pinos do OpenPLC para a Uni Pie e PiXtend são ilustrados conforme as figuras 5 e 6.
