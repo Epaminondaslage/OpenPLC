@@ -17,18 +17,18 @@ Figura 1 - Linguagem Ladder sendo aplicada sobre o PLCopen Editor.
 A programação do hardware é realizada por meio do PLCOpen Editor, onde são gerados arquivos ST. O aplicativo OpenPLC possui um servidor Web baseado em NodeJs que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
 
 # Plataformas para o OpenPLC
-<BR>
+
 O OpenPLC é compativel com algumas plataformas livres, como Arduino, Raspberry Pi e ESP8266. Adicionalmente, o projeto dá suporte à UniPI e PiXtend. Além disso, o OpenPLC fornece os esquemas elétricos para que o usuário crie seu próprio hardware, caso não deseje utilizar nenhuma dessas plataformas para suas aplicações.
-<BR>
+
 No que diz respeito ao suporte fornecido para a plataforma Arduino, o OpenPLC disponibiliza mapeamentos de pinos para diferentes tipos de placas, como, por exemplo, Arduino UNO, Pro, Pro Mini, Nano, Micro, Lilypad, Zero, Mega, ADK e Due. A figura 2 demonstra o mapeamento de pinos para o Arduino Uno, Pro, Pro Mini, Nano, Micro, Lilypad e Zero. Vale destacar que para a plataforma Arduino, o OpenPLC não funciona como um aplicativo autônomo, isto é, depende de um sistema host para execução da lógica no núcleo. O sistema host pode ser Windows, Linux ou uma Raspberry Pi.
-<BR>
+
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_2.png" height="400" width="600"><BR>
 
 Com relação à Raspberry Pi, o dispositivo deve estar executando o Raspbian Jessie para que seja possível a instalação do OpenPLC. Para saber mais sobre o processo de instalação do OpenPLC em um modelo de Raspberry Pi, clique aqui. Seguindo a mesma linha de mapeamentos de pinos citados no parágrafo anterior, o OpenPLC compatibiliza seus I/Os para as versões de Raspberry Pi. A figura 3 demonstra o mapeamento de pinos do OpenPLC para a Raspberry Pi.
 <BR>
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_3.png" height="400" width="600"><BR>
 Figura 3 - Mapeamento de pinos do OpenPLC para Raspberry Pi.
-<BR>
+
 No caso do ESP8266 o procedimento de instalação do OpenPLC é similar ao Arduino, onde é necessário um sistema host para execução da lógica. O mapeamento de pinos para esse dispositivo depende do DEVICE_ID. Existem 4 entradas digitais, 4 saídas digitais, 1 entrada analógica e 1 saída analógica disponível na placa ESP8266. Portanto, se o seu DEVICE_ID for zero, o vars localizado% IX0.0 para% IX0.3 será ligado às suas 4 entradas digitais. Se o seu DEVICE_ID for 2, o vars localizado para o seu dispositivo seria então% IX2.0 para% IX2.3, e assim por diante, conforme relatado no site oficial do OpenPLC. A figura 4 retrata o mapeamento de pinos, onde n deve ser substituído pelo DEVICE_ID.
 
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_4.png" height="400" width="600"><BR>
@@ -50,7 +50,7 @@ Por ser uma ferramenta totalmente aberta, o OpenPLC possibilita que qualquer pes
 
 # Referências
 
-* https://www.embarcados.com.br/openplc-o-primeiro-clp-de-codigo-aberto/
+* FREITAS, C. M. Conheça o OpenPLC - O primeiro CLP de Código Aberto Padronizado Disponível em:https://www.embarcados.com.br/openplc-o-primeiro-clp-de-codigo-aberto/ Acesso em Março de 2019.
 
 * ALVES, T.R. What is OpenPLC?. OpenPLC Project, 2017. Disponível em: http://www.openplcproject.com/. Acesso em novembro de 2017.
 
