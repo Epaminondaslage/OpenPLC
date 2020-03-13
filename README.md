@@ -11,7 +11,7 @@ O OpenPLC, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na 
 O projeto do OpenPLC possui um ambiente de desenvolvimento de programas, é compatível com praticamente qualquer software SCADA existente, utiliza o protocolo Modbus/TCP para comunicação e inclui um editor de Interface Homem Máquina (IHM) de código aberto, denominado SCADA BR. Outro ponto interessante a se destacar condiz a compatibilidade do OpenPLC com o PLCopen Editor, sendo esse um software que permite escrever programas para CLP de acordo com a IEC 61131-3, estando em conformidade com o PLCopen XML. A figura abaixo ilustra a linguagem Ladder sendo aplicada sobre o PLCopen Editor. 
 
 
-<img src="https://github.com/Epaminondaslage/OpenPLC/Figura_1.png" height="600" width="600">
+<img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_1.png" height="400" width="600">
 
 
 
