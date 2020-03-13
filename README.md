@@ -1,7 +1,8 @@
 # OpenPLC
+https://www.openplcproject.com/
 
 OpenPLC, o primeiro CLP de código aberto padronizado e totalmente funcional
-O OpenPLC, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na Universidade do Alabama), surgiu através do objetivo de encontrar vulnerabilidade em PLCs (Programmable Logic Controller ou Controlador Lógico Programável - CLP). Entretanto, dificilmente algum fabricante de CLP disponibilizaria seu código fonte para que o estudante pudesse realizar uma análise mais profunda, a fim de validar seus estudos. Devido a isto, ele resolveu criar o seu próprio CLP de hardware e software livres, que pode ser programado nas 5 principais linguagens definidas conforme a norma IEC 61131-3, que estabelece a arquitetura básica de software e as linguagens de programação para CLPs. Dentre as linguagens suportadas pelo OpenPLC, estão:
+O OpenPLC, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na Universidade do Alabama), surgiu através do objetivo de encontrar vulnerabilidade em PLCs (Programmable Logic Controller ou Controlador Lógico Programável - CLP). Entretanto, dificilmente algum fabricante de CLP disponibilizaria seu código fonte para que o estudante pudesse realizar uma análise mais profunda, a fim de validar seus estudos. Devido a isto, ele resolveu criar o seu próprio CLP de hardware e software livres, que pode ser programado nas 5 principais linguagens definidas conforme a norma IEC 61131-3 (https://pt.wikipedia.org/wiki/IEC_61131-3), que estabelece a arquitetura básica de software e as linguagens de programação para CLPs. Dentre as linguagens suportadas pelo OpenPLC, estão:
 <BR>
 * LD (Ladder Diagram ou Diagrama Ladder), 
 * FBD (Function Block Diagram ou Diagramas de Blocos Funcionais), 
@@ -9,12 +10,12 @@ O OpenPLC, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na 
 * IL (Instruction List ou Lista de Instruções) e 
 * SFC (Sequential Function Chart ou Sequenciamento Gráfico de Funções).
   
-O projeto do OpenPLC possui um ambiente de desenvolvimento de programas, é compatível com praticamente qualquer software SCADA existente, utiliza o protocolo Modbus/TCP para comunicação e inclui um editor de Interface Homem Máquina (IHM) de código aberto, denominado SCADA BR. Outro ponto interessante a se destacar condiz a compatibilidade do OpenPLC com o PLCopen Editor, sendo esse um software que permite escrever programas para CLP de acordo com a IEC 61131-3, estando em conformidade com o PLCopen XML. A figura abaixo ilustra a linguagem Ladder sendo aplicada sobre o PLCopen Editor. 
+O projeto do OpenPLC possui um ambiente de desenvolvimento de programas, é compatível com praticamente qualquer software SCADA existente, utiliza o protocolo Modbus/TCP para comunicação e inclui um editor de Interface Homem Máquina (IHM) de código aberto, denominado SCADA BR (https://sourceforge.net/p/scadabr/wiki/Manual%20ScadaBR%20English%200%20Summary/). Outro ponto interessante a se destacar condiz a compatibilidade do OpenPLC com o PLCopen Editor, sendo esse um software que permite escrever programas para CLP de acordo com a IEC 61131-3, estando em conformidade com o PLCopen XML (https://beremiz.org/doc). A figura abaixo ilustra a linguagem Ladder sendo aplicada sobre o PLCopen Editor. 
 
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_1.png" height="400" width="600"><BR>
 Figura 1 - Linguagem Ladder sendo aplicada sobre o PLCopen Editor.
 
-A programação do hardware é realizada por meio do PLCOpen Editor, onde são gerados arquivos ST. O aplicativo OpenPLC possui um servidor Web baseado em NodeJs que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
+A programação do hardware é realizada por meio do PLCOpen Editor, onde são gerados arquivos ST. O aplicativo OpenPLC possui um servidor Web baseado em NodeJs (https://nodejs.org/en/) que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
 
 # Plataformas para o OpenPLC
 
@@ -24,8 +25,8 @@ No que diz respeito ao suporte fornecido para a plataforma Arduino, o OpenPLC di
 
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_2.png" height="400" width="600"><BR>
 
-Com relação à Raspberry Pi, o dispositivo deve estar executando o Raspbian Jessie para que seja possível a instalação do OpenPLC. Para saber mais sobre o processo de instalação do OpenPLC em um modelo de Raspberry Pi, clique aqui. Seguindo a mesma linha de mapeamentos de pinos citados no parágrafo anterior, o OpenPLC compatibiliza seus I/Os para as versões de Raspberry Pi. A figura 3 demonstra o mapeamento de pinos do OpenPLC para a Raspberry Pi.
-<BR>
+Com relação à Raspberry Pi, o dispositivo deve estar executando o Raspbian Jessie para que seja possível a instalação do OpenPLC. Para saber mais sobre o processo de instalação do OpenPLC em um modelo de Raspberry Pi (https://www.openplcproject.com/getting-started-rpi). Seguindo a mesma linha de mapeamentos de pinos citados no parágrafo anterior, o OpenPLC compatibiliza seus I/Os para as versões de Raspberry Pi. A figura 3 demonstra o mapeamento de pinos do OpenPLC para a Raspberry Pi.
+
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_3.png" height="400" width="600"><BR>
 Figura 3 - Mapeamento de pinos do OpenPLC para Raspberry Pi.
 
@@ -34,7 +35,7 @@ No caso do ESP8266 o procedimento de instalação do OpenPLC é similar ao Ardui
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_4.png" height="200" width="400"><BR>
 Figura 4 - Mapeamento de pinos do OpenPLC para ESP8266.
 
-Em se tratando da UniPi e da PiXtend, ambos os hardwares baseados em Raspberry Pi, o procedimento de instalação do OpenPLC é similar ao da Raspberry Pi. Para UniPi, ao término do processo de compilação, o usuário deverá carregar o módulo I2C no Kernel, pois isso permitirá que o OpenPLC se comunique com os periféricos da placa UniPi. Já para a PiXtend, o usuário deverá se certificar que está ativada a interface SPI na plataforma embarcada. Os mapeamentos de pinos do OpenPLC para a Uni Pie e PiXtend são ilustrados conforme as figuras 5 e 6.
+Em se tratando da UniPi (https://www.unipi.technology/) e da PiXtend (https://www.pixtend.de/pixtend/hardware/), ambos os hardwares baseados em Raspberry Pi, o procedimento de instalação do OpenPLC é similar ao da Raspberry Pi. Para UniPi, ao término do processo de compilação, o usuário deverá carregar o módulo I2C no Kernel, pois isso permitirá que o OpenPLC se comunique com os periféricos da placa UniPi. Já para a PiXtend, o usuário deverá se certificar que está ativada a interface SPI na plataforma embarcada. Os mapeamentos de pinos do OpenPLC para a Uni Pie e PiXtend são ilustrados conforme as figuras 5 e 6.
 
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_5.png" height="400" width="600"><BR>
 Figura 5 - Mapeamento de pinos do OpenPLC para Uni Pi.
@@ -42,7 +43,7 @@ Figura 5 - Mapeamento de pinos do OpenPLC para Uni Pi.
 <img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/Figura_6.png" height="400" width="600"><BR>
 Figura 6 - Mapeamento de pinos do OpenPLC para PiXtend.
 
-O OpenPLC oferece um hardware padrão livre que possa ser acessado através do Kicad. São fornecidos também arquivos pdf contendo os respectivos esquemas elétricos de tal hardware. Esses esquemas elétricos fornecem as ligações de circuitos de comunicação RS485, CPU, USB, proteção, Ethernet, entre outros.
+O OpenPLC oferece um hardware padrão livre que possa ser acessado através do Kicad (https://www.openplcproject.com/concept-hardware). São fornecidos também arquivos pdf contendo os respectivos esquemas elétricos de tal hardware. Esses esquemas elétricos fornecem as ligações de circuitos de comunicação RS485, CPU, USB, proteção, Ethernet, entre outros.
 
 # Conclusão
 
