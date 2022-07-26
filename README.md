@@ -45,8 +45,6 @@ O OpenPLC é compativel com algumas plataformas livres, como Arduino, Raspberry 
 
 No que diz respeito ao suporte fornecido para a plataforma Arduino, o OpenPLC disponibiliza mapeamentos de pinos para diferentes tipos de placas, como, por exemplo, Arduino UNO, Pro, Pro Mini, Nano, Micro, Lilypad, Zero, Mega, ADK e Due. A figura 2 demonstra o mapeamento de pinos para o Arduino Uno, Pro, Pro Mini, Nano, Micro, Lilypad e Zero. Vale destacar que para a plataforma Arduino, o OpenPLC não funciona como um aplicativo autônomo, isto é, depende de um sistema host para execução da lógica no núcleo. O sistema host pode ser Windows, Linux ou uma Raspberry Pi.
 
-<img src="./img/Figura_2.png" height="400" width="600"><BR>
-
 Com relação à Raspberry Pi, o dispositivo deve estar executando o Raspbian Jessie para que seja possível a instalação do OpenPLC. Para saber mais sobre o processo de instalação do OpenPLC em um modelo de Raspberry Pi (https://www.openplcproject.com/getting-started-rpi). Seguindo a mesma linha de mapeamentos de pinos citados no parágrafo anterior, o OpenPLC compatibiliza seus I/Os para as versões de Raspberry Pi.
 
 No caso do ESP8266 o procedimento de instalação do OpenPLC é similar ao Arduino, onde é necessário um sistema host para execução da lógica. O mapeamento de pinos para esse dispositivo depende do DEVICE_ID. Existem 4 entradas digitais, 4 saídas digitais, 1 entrada analógica e 1 saída analógica disponível na placa ESP8266. Portanto, se o seu DEVICE_ID for zero, o vars localizado% IX0.0 para% IX0.3 será ligado às suas 4 entradas digitais. Se o seu DEVICE_ID for 2, o vars localizado para o seu dispositivo seria então% IX2.0 para% IX2.3, e assim por diante, conforme relatado no site oficial do OpenPLC. 
