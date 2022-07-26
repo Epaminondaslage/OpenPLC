@@ -1,14 +1,14 @@
 <td style="width: 20%;"><img src="/img/Logo_CEFET-MG.png" width="20%" /></td>
 
-# Introdução ao Shell Script no Linux do OrangePi One
-<p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux- OrangePi One</span></strong></p>
+# Open PLC com OrangePi One
+<p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux- OpenPLC com OrangePi One</span></strong></p>
 <p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
 # Índice deste Repositório
 
 * [O que é o OpenPLC](#O-que-é-o-OpenPLC)
-* [Porque usar este software?](#Porque-usar-este-software?) 
+* [Porque usar este software?](#Porque-usar-este-software) 
 * [Plataformas para o OpenPLC](#Plataformas-para-o-OpenPLC)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
@@ -32,7 +32,6 @@ O projeto do OpenPLC possui um ambiente de desenvolvimento de programas, é comp
 Figura 1 - Linguagem Ladder sendo aplicada sobre o PLCopen Editor.
 
 A programação do hardware é realizada por meio do PLCOpen Editor, onde são gerados arquivos ST. O aplicativo OpenPLC possui um servidor Web baseado em NodeJs (https://nodejs.org/en/) que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
-
 
 # Porque usar este software? 
   
