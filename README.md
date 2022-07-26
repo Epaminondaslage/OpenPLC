@@ -8,7 +8,8 @@
 # Índice deste Repositório
 
 * [O que é o OpenPLC](#O-que-é-o-OpenPLC)
-* [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
+* [Porque usar este software?](#Porque-usar-este-software?) 
+* [Plataformas para o OpenPLC](#Plataformas-para-o-OpenPLC)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
 
@@ -32,6 +33,13 @@ Figura 1 - Linguagem Ladder sendo aplicada sobre o PLCopen Editor.
 
 A programação do hardware é realizada por meio do PLCOpen Editor, onde são gerados arquivos ST. O aplicativo OpenPLC possui um servidor Web baseado em NodeJs (https://nodejs.org/en/) que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
 
+
+# Porque usar este software? 
+  
+Por ser uma ferramenta totalmente aberta, o OpenPLC possibilita que qualquer pessoa tenha acesso a todos os arquivos e informações relativas ao projeto, o que resulta em uma colaboração significativa para disseminação de conhecimentos voltados principalmente para aplicações industriais que utilizam CLPs. Se comparado a um CLP tradicional, o OpenPLC apresenta componentes relativamente baratos, o que abre muitas portas dentro do cenário de automação.
+
+O OpenPLC oferece um hardware padrão livre que possa ser acessado através do Kicad (https://www.openplcproject.com/concept-hardware). São fornecidos também arquivos pdf contendo os respectivos esquemas elétricos de tal hardware. Esses esquemas elétricos fornecem as ligações de circuitos de comunicação RS485, CPU, USB, proteção, Ethernet, entre outros.
+
 # Plataformas para o OpenPLC
 
 O OpenPLC é compativel com algumas plataformas livres, como Arduino, Raspberry Pi e ESP8266. Adicionalmente, o projeto dá suporte à UniPI e PiXtend. Além disso, o OpenPLC fornece os esquemas elétricos para que o usuário crie seu próprio hardware, caso não deseje utilizar nenhuma dessas plataformas para suas aplicações.
@@ -47,22 +55,16 @@ Figura 3 - Mapeamento de pinos do OpenPLC para Raspberry Pi.
 
 No caso do ESP8266 o procedimento de instalação do OpenPLC é similar ao Arduino, onde é necessário um sistema host para execução da lógica. O mapeamento de pinos para esse dispositivo depende do DEVICE_ID. Existem 4 entradas digitais, 4 saídas digitais, 1 entrada analógica e 1 saída analógica disponível na placa ESP8266. Portanto, se o seu DEVICE_ID for zero, o vars localizado% IX0.0 para% IX0.3 será ligado às suas 4 entradas digitais. Se o seu DEVICE_ID for 2, o vars localizado para o seu dispositivo seria então% IX2.0 para% IX2.3, e assim por diante, conforme relatado no site oficial do OpenPLC. A figura 4 retrata o mapeamento de pinos, onde n deve ser substituído pelo DEVICE_ID.
 
-<img src="./img/Figura_4.png" height="200" width="400"><BR>
+<img src="./img/Figura_4.png"><BR>
 Figura 4 - Mapeamento de pinos do OpenPLC para ESP8266.
 
 Em se tratando da UniPi (https://www.unipi.technology/) e da PiXtend (https://www.pixtend.de/pixtend/hardware/), ambos os hardwares baseados em Raspberry Pi, o procedimento de instalação do OpenPLC é similar ao da Raspberry Pi. Para UniPi, ao término do processo de compilação, o usuário deverá carregar o módulo I2C no Kernel, pois isso permitirá que o OpenPLC se comunique com os periféricos da placa UniPi. Já para a PiXtend, o usuário deverá se certificar que está ativada a interface SPI na plataforma embarcada. Os mapeamentos de pinos do OpenPLC para a Uni Pie e PiXtend são ilustrados conforme as figuras 5 e 6.
 
-<img src="./img/Figura_5.png" height="400" width="600"><BR>
+<img src="./img/Figura_5.png"><BR>
 Figura 5 - Mapeamento de pinos do OpenPLC para Uni Pi.
 
-<img src="./img/Figura_6.png" height="400" width="600"><BR>
+<img src="./img/Figura_6.png"><BR>
 Figura 6 - Mapeamento de pinos do OpenPLC para PiXtend.
-
-O OpenPLC oferece um hardware padrão livre que possa ser acessado através do Kicad (https://www.openplcproject.com/concept-hardware). São fornecidos também arquivos pdf contendo os respectivos esquemas elétricos de tal hardware. Esses esquemas elétricos fornecem as ligações de circuitos de comunicação RS485, CPU, USB, proteção, Ethernet, entre outros.
-
-# Conclusão
-
-Por ser uma ferramenta totalmente aberta, o OpenPLC possibilita que qualquer pessoa tenha acesso a todos os arquivos e informações relativas ao projeto, o que resulta em uma colaboração significativa para disseminação de conhecimentos voltados principalmente para aplicações industriais que utilizam CLPs. Se comparado a um CLP tradicional, o OpenPLC apresenta componentes relativamente baratos, o que abre muitas portas dentro do cenário de automação.
 
 # Referências
 
