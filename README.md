@@ -1,4 +1,19 @@
-# OpenPLC com OrangePi
+<td style="width: 20%;"><img src="/img/Logo_CEFET-MG.png" width="20%" /></td>
+
+# Introdução ao Shell Script no Linux do OrangePi One
+<p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux- OrangePi One</span></strong></p>
+<p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
+<a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
+
+# Índice deste Repositório
+
+* [O que é o OpenPLC](#O-que-é-o-OpenPLC)
+* [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
+* [Status do Projeto](#Status-do-Projeto)
+* [Referências](#Referências)
+
+
+# O que é o OpenPLC 
 https://www.openplcproject.com/
 
 OpenPLC, o primeiro CLP de código aberto padronizado e totalmente funcional
