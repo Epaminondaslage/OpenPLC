@@ -47,23 +47,11 @@ No que diz respeito ao suporte fornecido para a plataforma Arduino, o OpenPLC di
 
 <img src="./img/Figura_2.png" height="400" width="600"><BR>
 
-Com relação à Raspberry Pi, o dispositivo deve estar executando o Raspbian Jessie para que seja possível a instalação do OpenPLC. Para saber mais sobre o processo de instalação do OpenPLC em um modelo de Raspberry Pi (https://www.openplcproject.com/getting-started-rpi). Seguindo a mesma linha de mapeamentos de pinos citados no parágrafo anterior, o OpenPLC compatibiliza seus I/Os para as versões de Raspberry Pi. A figura 3 demonstra o mapeamento de pinos do OpenPLC para a Raspberry Pi.
+Com relação à Raspberry Pi, o dispositivo deve estar executando o Raspbian Jessie para que seja possível a instalação do OpenPLC. Para saber mais sobre o processo de instalação do OpenPLC em um modelo de Raspberry Pi (https://www.openplcproject.com/getting-started-rpi). Seguindo a mesma linha de mapeamentos de pinos citados no parágrafo anterior, o OpenPLC compatibiliza seus I/Os para as versões de Raspberry Pi.
 
-<img src="./img/Figura_3.png" height="400" width="800"><BR>
-Figura 3 - Mapeamento de pinos do OpenPLC para Raspberry Pi.
+No caso do ESP8266 o procedimento de instalação do OpenPLC é similar ao Arduino, onde é necessário um sistema host para execução da lógica. O mapeamento de pinos para esse dispositivo depende do DEVICE_ID. Existem 4 entradas digitais, 4 saídas digitais, 1 entrada analógica e 1 saída analógica disponível na placa ESP8266. Portanto, se o seu DEVICE_ID for zero, o vars localizado% IX0.0 para% IX0.3 será ligado às suas 4 entradas digitais. Se o seu DEVICE_ID for 2, o vars localizado para o seu dispositivo seria então% IX2.0 para% IX2.3, e assim por diante, conforme relatado no site oficial do OpenPLC. 
 
-No caso do ESP8266 o procedimento de instalação do OpenPLC é similar ao Arduino, onde é necessário um sistema host para execução da lógica. O mapeamento de pinos para esse dispositivo depende do DEVICE_ID. Existem 4 entradas digitais, 4 saídas digitais, 1 entrada analógica e 1 saída analógica disponível na placa ESP8266. Portanto, se o seu DEVICE_ID for zero, o vars localizado% IX0.0 para% IX0.3 será ligado às suas 4 entradas digitais. Se o seu DEVICE_ID for 2, o vars localizado para o seu dispositivo seria então% IX2.0 para% IX2.3, e assim por diante, conforme relatado no site oficial do OpenPLC. A figura 4 retrata o mapeamento de pinos, onde n deve ser substituído pelo DEVICE_ID.
-
-<img src="./img/Figura_4.png"><BR>
-Figura 4 - Mapeamento de pinos do OpenPLC para ESP8266.
-
-Em se tratando da UniPi (https://www.unipi.technology/) e da PiXtend (https://www.pixtend.de/pixtend/hardware/), ambos os hardwares baseados em Raspberry Pi, o procedimento de instalação do OpenPLC é similar ao da Raspberry Pi. Para UniPi, ao término do processo de compilação, o usuário deverá carregar o módulo I2C no Kernel, pois isso permitirá que o OpenPLC se comunique com os periféricos da placa UniPi. Já para a PiXtend, o usuário deverá se certificar que está ativada a interface SPI na plataforma embarcada. Os mapeamentos de pinos do OpenPLC para a Uni Pie e PiXtend são ilustrados conforme as figuras 5 e 6.
-
-<img src="./img/Figura_5.png"><BR>
-Figura 5 - Mapeamento de pinos do OpenPLC para Uni Pi.
-
-<img src="./img/Figura_6.png"><BR>
-Figura 6 - Mapeamento de pinos do OpenPLC para PiXtend.
+Em se tratando da UniPi (https://www.unipi.technology/) e da PiXtend (https://www.pixtend.de/pixtend/hardware/), ambos os hardwares baseados em Raspberry Pi, o procedimento de instalação do OpenPLC é similar ao da Raspberry Pi. Para UniPi, ao término do processo de compilação, o usuário deverá carregar o módulo I2C no Kernel, pois isso permitirá que o OpenPLC se comunique com os periféricos da placa UniPi. Já para a PiXtend, o usuário deverá se certificar que está ativada a interface SPI na plataforma embarcada. 
 
 # Referências
 
