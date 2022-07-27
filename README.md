@@ -61,50 +61,21 @@ O Projeto OpenPLC consiste em duas partes: Runtime e Editor. O Runtime é um sof
   
 A International Electrotechnical Commission (Comissão Eletrotécnica Internacional), normalmente conhecida como IEC, é o organismo de normalização internacional não lucrativo independente líder mundial para as tecnologias elétrica, eletrónica e relacionadas. A IEC 61131 traz requisitos de hardware e software para sistemas que envolvam CLPs é dividida em cinco partes:
   
-* Parte 1: IEC 61131-1 Informações gerais. Definição da informação geral, da terminologia básica e dos conceitos; Publicado em 1992.;
-* Parte 2: IEC 61131-2 Requisitos de hardware . Exigências de equipamento e testes eletrônicos e testes mecânicos de construção e verificação; Publicado em 1992.;
-* Parte 3: IEC 61131-3 Linguagens de programação. Estrutura do Software do CLP, execução do programa e linguagens de programação; Publicado em 1993.;
-* Parte 4: IEC 61131-4 Guia de orientação ao usuário. Guia de orientação ao usuário na seleção, instalação e manutenção de CLP's. Publicado em 1995.;
-* Parte 5: IEC 61131-5 Comunicação.Facilidade do Software em especificação de mensagens de serviços a comunicar-se com outros dispositivos usando as comunicações baseadas em MAP (Manufacturing Messaging Services). Publicado em 1998.;
+* Parte 1: IEC 61131-1 Informações gerais. Definição da informação geral, da terminologia básica e dos conceitos; Publicado em 1992 está na Versão 2.0 desde 2003.;
+* Parte 2: IEC 61131-2 Requisitos de hardware . Exigências de equipamento e testes eletrônicos e testes mecânicos de construção e verificação; Publicado em 1992 encontra-se na Versão 4.0 desde 2017.;
+* Parte 3: IEC 61131-3 Linguagens de programação. Estrutura do Software do CLP, execução do programa e linguagens de programação; Publicado em 1993 está na Versão 3.0 desde 2013.;
+* Parte 4: IEC 61131-4 Guia de orientação ao usuário. Guia de orientação ao usuário na seleção, instalação e manutenção de CLP's. Publicado em 1995 está na Versão 2.0 from 2004.;
+* Parte 5: IEC 61131-5 Comunicação.Facilidade do Software em especificação de mensagens de serviços a comunicar-se com outros dispositivos usando as comunicações baseadas em MAP (Manufacturing Messaging Services). Publicado em 1998 apresenta-se naVersão 1.0 desde 2000.;
 * Parte 6: IEC 61131-6 Segurança Funcional.Comunicação via facilidade do Software fieldbus para comunicação de PLC s utilizando IEC fieldbus. Edição 1.0 - 2012.;
 * Parte 7: IEC 61131-7 Programação de Controle Fuzzy  Programação utilizando Lógica Nebulosa (Fuzzy).Edição 1.0 - 2000;
 * Parte 8: IEC 61131-8 Guia para implementação das linguagens: Diretrizes para aplicação e implementação de linguagens de programação. Edição 3.0 - 2017.
+* Parte 9: IEC 61131-9: Interface de comunicação digital single-drop para pequenos sensores e atuadores (SDCI).Especifica uma tecnologia de interface de comunicação digital single-drop para pequenos sensores e atuadores SDCI.A edição atual é 1.0 de 2013.
+* Parte 10: IEC 61131-10: PLC aberto XML Exchange Format.Este novo padrão IEC é baseado na especificação original PLCopen XML. Com o lançamento da 3ª edição da IEC 61131-3 em 2013, uma grande reformulação foi necessária para incluir as mudanças e extensões como recursos orientados a objetos. Lançado em abril de 2019.
   
-## IEC 61131-1
-
-A primeira parte da norma IEC 61131 define as informações gerais dos controladores programáveis (CP), delimitando e identificando as principais características relevantes para a seleção e aplicação de CP`s, e também para qualquer equipamento ou acessório ligado à CPU.
-
-Algumas características funcionais associadas são:
-
-* Interface Homem-Máquina: o operário interpreta as funções da máquina, sendo através de monitores, botoeiras, touchscreen, etc;
-* Estrutura do hardware do CP;
-* Processamento dos sinais;
-* Fontes de alimentação.
-
-A programação de um CLP pode ser realizada, bem como sobre uma plataforma de hardware e software específico de um computador de uso geral ou de um computador pessoal com funções de ambiente industrial. Esta norma aplica-se a todos os produtos que executam a função de CLP's e/ou seus periféricos associados.
-
-Ela também foi constituída para que os CLP`s de diferentes fabricantes possam ser utilizados por programas distintos, e não apenas pelos dos próprios fabricantes. Apesar de definir informações gerais dos CLP`s, esta norma não lida com a segurança funcional ou outros aspectos do sistema automatizado, como choques elétricos, riscos de incêndio e erros de operação.
-
-## IEC 61131-2 - Requisitos de Equipamentos e Testes
-
-A parte 2 da norma estabelece requisitos funcionais de Segurança de Manuseio, proteções e recomendações contra Interferências eletromagnéticas e requisitos construtivos elétricos, mecânicos e ambientais.Está norma se aplica a qualquer produto que exerça função de um PLCs e os periféricos associados.
-
-Os equipamentos contidos neste padrão são para o uso da categoria de sobre tensão 2 (IEC 60664-1), em instalações de baixa tensão, onde a tensão elétrica nominal não exceda AC 1000Volts rms (50/60Hz) ou DC 1500V.
-
-Especificações da norma IEC 61131–2:
-
-* Serviços, armazenamento e transporte requisitos para o PLCs e seus periféricos.
-* Requisitos funcionais para PLCs e seus periféricos.
-* Requisitos EMC para PLCs e seus periféricos.
-* Requisitos de segurança de PLCs e seus periféricos.
-* Obriga o fabricante a fornecer informações.
-* Metodologia de ensaio e procedimentos que deve ser seguidos para a verificação dos PLCs e seus periféricos, com seus devidos requisitos.
-* Testes de rotina de segurança para PLCs e seus periféricos.
-
 ## IEC 61131-3 – Linguagens de Programação
   
-A norma IEC em sua parte 3 tem por objetivo:
-
+Foco de nosso objeto de trabalho, a norma IEC 61131 em sua parte 3, tem por objetivo:
+  
 Fornecer metodologias de construção de lógicas de programação de forma estruturada e modular, permitindo a quebra dos programas em partes gerenciáveis;
 Definir 5 linguagens de programação, cada uma com suas características, de forma a cobrir a maioria das necessidades de controle atuais;
 Permite o uso de outras linguagens de programação, desde que obedecidas as mesmas formas de chamadas e trocas de dados (Visual Basic, Flow Chart, C++, etc);
@@ -140,10 +111,11 @@ Por ser uma ferramenta totalmente aberta, o OpenPLC possibilita que qualquer pes
 
 Sites de Referência sobre o projeto
   
-* https://openplcproject.com/
-* https://github.com/thiagoralves/OpenPLC_v3
-* https://github.com/thiagoralves/OpenPLC_Editor
-
+* <p><a href="https://openplcproject.com/">Site do Projeto openplc</a></p>
+* <p><a href="https://github.com/thiagoralves/OpenPLC_v3">Projeto Openplc Runtime no Github</a></p> 
+* <p><a href="https://github.com/thiagoralves/OpenPLC_Editor">Projeto Openplc Editor no Github</a></p>  
+* <p><a href="https://plcopen.org/">Site do PLC Open</a></p>
+* <p><a href="https://beremiz.org/">Site do Editor Beremiz</a></p> 
 
 # Plataformas de Hardware para o OpenPLC
 
@@ -169,6 +141,13 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
 * Linux (generic target as a soft-PLC)
 
 # OpenPLC no orangePi One
+  
+  runtime
+  http://172.16.10.143:8080
+  
+  user=openplc
+  passwd=openplc
+  
   
 # Referências
 
