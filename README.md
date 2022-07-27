@@ -138,7 +138,12 @@ O software de programação  compatíveis IEC 61131-3 permite que os usuários c
   
 Por ser uma ferramenta totalmente aberta, o OpenPLC possibilita que qualquer pessoa tenha acesso a todos os arquivos e informações relativas ao projeto, o que resulta em uma colaboração significativa para disseminação de conhecimentos voltados principalmente para aplicações industriais que utilizam CLPs. Se comparado a um CLP tradicional, o OpenPLC apresenta componentes relativamente baratos, o que abre muitas portas dentro do cenário de automação.
 
-O OpenPLC oferece um hardware padrão livre que possa ser acessado através do Kicad (https://www.openplcproject.com/concept-hardware). São fornecidos também arquivos pdf contendo os respectivos esquemas elétricos de tal hardware. Esses esquemas elétricos fornecem as ligações de circuitos de comunicação RS485, CPU, USB, proteção, Ethernet, entre outros.
+Sites de Referência sobre o projeto
+  
+* https://openplcproject.com/
+* https://github.com/thiagoralves/OpenPLC_v3
+* https://github.com/thiagoralves/OpenPLC_Editor
+
 
 # Plataformas de Hardware para o OpenPLC
 
