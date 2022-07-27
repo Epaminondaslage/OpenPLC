@@ -6,14 +6,22 @@
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
 # Índice deste Repositório
-Meet OpenPLC: The first open source, muti-hardware Programmable Logic Controller Suite
+* [Introdução](#Introdução)
 * [O que é o OpenPLC](#O-que-é-o-OpenPLC)
+* [A IEC 6113](#A-IEC-6113)
 * [Porque usar este software?](#Porque-usar-este-software) 
-* [Plataformas para o OpenPLC](#Plataformas-para-o-OpenPLC)
+* [Plataformas de Hardware para o OpenPLC](#Plataformas-de-Hardware-para-o-OpenPLC)
+* [OpenPLC no OrangePi One](#OpenPLC-no-OrangePi-One)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
 
+
+# Introdução 
+
 Um controlador monitora o estado real do processo de uma planta através de um número de transdutores, definido de acordo com a aplicação. Os transdutores convertem as grandezas físicas em sinais normalmente elétricos, os quais são conectados com as entradas dos controladores. Transdutores digitais (discretos) medem variáveis com estados distintos, tais como ligado/desligado ou alto/baixo, enquanto os transdutores analógicos medem variáveis com uma faixa contínua, tais como pressão, temperatura, vazão ou nível.
+
+<p><img src="/ing/sistemas industriais.png" alt="" width="200" height="200" /></p>
+Figura 1 - Sistemas Industriais.
 
 Com base nos estados das suas entradas (variáveis de processo - PV), o controlador utiliza um algoritmo de controle embutido para calcular os estados das suas saídas (variáveis manipuladas - MV). Os sinais elétricos das saídas são convertidos para o processo através dos atuadores. Muitos atuadores geram movimentos como válvulas, motores, bombas e outros e utilizam a energia potencial pneumática para o acionamento.
 
@@ -21,39 +29,35 @@ O operador interage com o controlador através dos parâmetros de controle (ex: 
 
 Atualmente, os Controladores Programáveis aplicam-se tanto ao controle discreto (I/O) quanto para o controle de malhas analógicas. Diferentes computadores são conectados via rede local (LAN), redes de longas distâncias (WAN) a um computador supervisório central, o qual gerencia os alarmes, receitas e relatórios.
 
-Motivação para Sistemas Abertos
+## Motivação para Sistemas Abertos
 
 Os PLC's são um dos componentes mais críticos da indústria atual. Com a utilização dos sistemas de controle na maioria das indústrias, incluindo aplicações que exigem segurança, é muito importante que os programas possam ser facilmente entendidos por uma grande parte dos profissionais do chão de fábrica. Além do programador, o programa de controle deve ser de fácil entendimento para todos os técnicos, engenheiros e gerentes de processo.
 
 Por décadas o mercado tem sido dominado por poucos fabricantes que oferecem soluções muito parecidas, porém com particularidades nos dialetos de programação. Muitos usuários têm decidido eleger no mínimo três fornecedores, com o objetivo principal de minimizar o risco. Em aplicações reais, isto implica em um maior custo devido ao retrabalho e problemas de comunicação entre produtos de diferentes fabricantes.
 
-
-
 # O que é o OpenPLC 
-https://www.openplcproject.com/
 
-OpenPLC, o primeiro CLP de código aberto padronizado e totalmente funcional. O OpenPLC, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na Universidade do Alabama), surgiu através do objetivo de encontrar vulnerabilidade em PLCs (Programmable Logic Controller ou Controlador Lógico Programável - CLP). Entretanto, dificilmente algum fabricante de CLP disponibilizaria seu código fonte para que o estudante pudesse realizar uma análise mais profunda, a fim de validar seus estudos. Devido a isto, ele resolveu criar o seu próprio CLP de hardware e software livres, que pode ser programado nas 6 principais linguagens definidas conforme a norma IEC 61131-3 (https://pt.wikipedia.org/wiki/IEC_61131-3), que estabelece a arquitetura básica de software e as linguagens de programação para CLPs. Dentre as linguagens suportadas pelo OpenPLC, a parte três da IEC 61131 estabelece critérios para linguagens de programação e define duas linguagens gráficas e duas linguagens textuais para CLPs:
+OpenPLC, o primeiro CLP de código aberto padronizado e totalmente funcional. O OpenPLC, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na Universidade do Alabama), surgiu através do objetivo de encontrar vulnerabilidade em PLCs (Programmable Logic Controller ou Controlador Lógico Programável - CLP). Entretanto, dificilmente algum fabricante de CLP disponibilizaria seu código fonte para que o estudante pudesse realizar uma análise mais profunda, a fim de validar seus estudos. Devido a isto, ele resolveu criar o seu próprio CLP de hardware e software livres, que pode ser programado nas 5 principais linguagens definidas conforme a norma IEC 61131-3 (https://pt.wikipedia.org/wiki/IEC_61131-3), que estabelece a arquitetura básica de software e as linguagens de programação para CLPs. Dentre as linguagens suportadas pelo OpenPLC, a parte três da IEC 61131 estabelece critérios para linguagens de programação e define duas linguagens gráficas e duas linguagens textuais para CLPs:
 
-<img src="./img/fig.png"><BR>
-Figura 1 - Linguagens de programação de PLC's.
+<img src="./img/ling_plc.jpg"><BR>
+Figura 2 - Linguagens de programação de PLC's.
 
 * Diagrama Ladder (LD), Gráfica.
 * Diagrama de Blocos (FBD), Gráfica.
 * Texto Estruturado (ST), textual.
 * Lista de Instruções (IL), textual.
 * Diagrama de Funções Sequenciais (SFC).
-* Diagrama de Funções contínuas (CFC).
   
 O projeto do OpenPLC possui um ambiente de desenvolvimento de programas, é compatível com praticamente qualquer software SCADA existente, utiliza o protocolo Modbus/TCP para comunicação e inclui um editor de Interface Homem Máquina (IHM) de código aberto, denominado SCADA BR (https://sourceforge.net/p/scadabr/wiki/Manual%20ScadaBR%20English%200%20Summary/). Outro ponto interessante a se destacar condiz a compatibilidade do OpenPLC com o OpenPLC Editor, sendo esse um software que permite escrever programas para CLP de acordo com a IEC 61131-3, estando em conformidade com o PLCopen XML (https://beremiz.org/doc). A figura abaixo ilustra a linguagem Ladder sendo aplicada sobre o OpenPLC Editor. 
 
 <img src="./img/Figura_1.png"><BR>
-Figura 1 - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.
+Figura 3 - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.
 
 O Projeto OpenPLC consiste em duas partes: Runtime e Editor. O Runtime é um software portátil projetado para rodar desde o menor de todos os microcontroladores (compatível com Arduino) até poderosos servidores nas nuvens. Ele é responsável por executar os programas PLC que você cria usando o Editor.
 
   A programação do hardware é realizada por meio do Editor, onde são gerados arquivos ST. O aplicativo OpenPLC possui um servidor Web baseado em NodeJs (https://nodejs.org/en/) que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
 
-# IEC 6113
+# A IEC 6113
   
 A International Electrotechnical Commission (Comissão Eletrotécnica Internacional), normalmente conhecida como IEC, é o organismo de normalização internacional não lucrativo independente líder mundial para as tecnologias elétrica, eletrónica e relacionadas. A IEC 61131 traz requisitos de hardware e software para sistemas que envolvam CLPs é dividida em cinco partes:
   
@@ -130,7 +134,6 @@ O software de programação  compatíveis IEC 61131-3 permite que os usuários c
 * Biblioteca de modelos de programação para aplicativos de processo comuns, reduzindo o tempo de lançamento no mercado
 * A biblioteca de blocos de funções para dispositivos e instrumentos MKS permite "plug & play"
 
-  
 # Porque usar este software? 
   
 Por ser uma ferramenta totalmente aberta, o OpenPLC possibilita que qualquer pessoa tenha acesso a todos os arquivos e informações relativas ao projeto, o que resulta em uma colaboração significativa para disseminação de conhecimentos voltados principalmente para aplicações industriais que utilizam CLPs. Se comparado a um CLP tradicional, o OpenPLC apresenta componentes relativamente baratos, o que abre muitas portas dentro do cenário de automação.
@@ -178,6 +181,7 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
   
 * NORMA IEC 61131-3 PARA PROGRAMAÇÃO DE CONTROLADORES PROGRAMÁVEIS: ESTUDO E APLICAÇÃO HUGO CASATI FERREIRA GUIMARÃES , VITÓRIA ES SETEMBRO/2005 UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO CENTRO TECNOLÓGICO DEPARTAMENTO DE ENGENHARIA ELÉTRICA PROJETO DE GRADUAÇÃO 
   
- 
-
+ * E. V. Easwaran et al., "Programmable Logic Controller: Open Source Hardware and Software for Massive Training," IECON 2018 - 44th Annual Conference of the IEEE Industrial Electronics Society, 2018, pp. 2422-2427, doi: 10.1109/IECON.2018.8592772.
+  
+* https://inductiveautomation.com/scada-software/?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCbenQ37JpOXbF0VmaAw2WL0hdSYVrTHSdwi_yRkBgwWPkQzpkb-aH0aAhIREALw_wcB
   
