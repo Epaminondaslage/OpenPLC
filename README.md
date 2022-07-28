@@ -169,3 +169,4 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
   
 * https://inductiveautomation.com/scada-software/?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCbenQ37JpOXbF0VmaAw2WL0hdSYVrTHSdwi_yRkBgwWPkQzpkb-aH0aAhIREALw_wcB
   
+ 
