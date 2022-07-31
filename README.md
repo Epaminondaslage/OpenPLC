@@ -5,7 +5,7 @@
 <p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
-# Índice deste Repositório
+# Índice 
 * [Introdução](#Introdução)
 * [O que é o OpenPLC](#O-que-é-o-OpenPLC)
 * [A IEC 6113](#A-IEC-6113)
