@@ -147,6 +147,11 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
 
 
 OpenPLC Runtime
+
+ATENÇÃO
+
+ * Descrever este processo 
+ * https://openplcproject.com/docs/2-1-openplc-runtime-overview/
   
   runtime
   http://172.16.10.143:8080
