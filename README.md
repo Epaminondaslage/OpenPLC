@@ -12,6 +12,7 @@
 * [Porque usar este software?](#Porque-usar-este-software) 
 * [Plataformas de Hardware para o OpenPLC](#Plataformas-de-Hardware-para-o-OpenPLC)
 * [OpenPLC no OrangePi One](#OpenPLC-no-OrangePi-One)
+* [OpenPLC Runtime](#OpenPLC-Runtime)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
 
@@ -140,7 +141,12 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
 * Windows (generic target as a soft-PLC)
 * Linux (generic target as a soft-PLC)
 
-# OpenPLC no orangePi One
+
+
+# OpenPLC runtime
+
+
+OpenPLC Runtime
   
   runtime
   http://172.16.10.143:8080
