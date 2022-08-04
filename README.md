@@ -138,10 +138,8 @@ Em resumo, o Editor OpenPLC é um editor PLC compatível com IEC 61131-3 totalme
 
 # OpenPLC Runtime
 
-ATENÇÃO
+O OpenPLC Runtime permite executar programas PLC criados no Editor OpenPLC. O runtime principal possui um servidor web integrado que permite configurar vários parâmetros do runtime. Microimplementações do OpenPLC Runtime (ou seja, versões do runtime que vão em microcontroladores e placas Arduino) não possuem o servidor web embutido. Em vez disso, todas as configurações de tempo de execução para o micro runtime são feitas diretamente da caixa de diálogo de upload do OpenPLC Editor
 
- * Descrever este processo 
- * https://openplcproject.com/docs/2-1-openplc-runtime-overview/
   
   runtime
   http://172.16.10.143:8080
@@ -395,4 +393,5 @@ Finalmente, depois de ter criado e testado o programa, o último passo é gerar 
 * <p><a href="https://github.com/thiagoralves/OpenPLC_Editor">Projeto Openplc Editor no Github</a></p>  
 * <p><a href="https://plcopen.org/">Site do PLC Open</a></p>
 * <p><a href="https://beremiz.org/">Site do Editor Beremiz</a></p> 
+* <p><a href="[https://beremiz.org/](https://openplcproject.com/docs/2-1-openplc-runtime-overview/)">Site do OpenPLC Runtime</a></p>
 
