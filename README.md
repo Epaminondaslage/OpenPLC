@@ -285,7 +285,36 @@ O passo final é conectar todos os componentes arrastando suas extremidades para
 
 Este circuito inicialmente tem a Q0 desligada. Quando você pressiona B0 mesmo que por um pequeno instante, o circuito aciona a Q0 (dado que B1 também não é pressionado). Uma vez que a Q0 liga, ela ignora o botão B1 no circuito para se ligar continuamente mesmo após liberar B0. Este é um bom truque na lógica ladder, você pode realmente usar as saídas como contatos! Agora, a única maneira de desligar a Q0 é pressionando B1. Como o B1 é um contato negado, ele abrirá o circuito assim que for pressionado, desligando a Q0.
 
-Agora que seu projeto foi criado, é um bom momento para testá-lo antes de carregá-lo no OpenPLC Runtime. Você pode simular o comportamento do seu programa clicando em Start PLC Simulation na barra de ferramentas
+Agora que seu projeto foi criado, é um bom momento para testá-lo antes de carregá-lo no OpenPLC Runtime. Você pode simular o comportamento do seu programa clicando em Start PLC Simulation na barra de ferramentas.
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diag10.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 13 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+</tr>
+</tbody>
+</table>
+
+Quando você clica nesse botão, seu projeto é compilado usando um processo semelhante ao OpenPLC Runtime. Se houver algum erro em seu programa, a compilação falhará e você será alertado sobre os erros no painel Console na parte inferior da tela. Se a compilação for bem-sucedida, o OpenPLC Editor começará a executar seu código. Para visualizar seu código rodando interativamente, clique em Debug instance no painel esquerdo:
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 14 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+</tr>
+</tbody>
+</table>
+
+Isso abrirá uma nova janela onde você poderá ver o fluxo elétrico do seu programa. As linhas em verde são ativadas, onde as linhas em preto não são. Você pode forçar um contato ou bobina a ser ativado ou desativado clicando com o botão direito nele e selecionando Forçar Verdadeiro ou Forçar Falso. Tente forçar B01 a ser verdadeiro e observe o caminho do fluxo para a bobina Q0. Em seguida, force B01 de volta para falso e verifique se Q0 ainda está ativado devido ao circuito de trava.
+
+Além de visualizar graficamente o fluxo elétrico no diagrama, você também pode acompanhar os dados em cada variável do seu programa no painel Debugger no lado direito da tela. Você pode adicionar variáveis no painel Debugger clicando no ícone de óculos na frente de cada variável do painel à esquerda. Além disso, clicando duas vezes em uma variável no painel Debugger, você pode ver um gráfico em tempo real mostrando os valores atuais da variável. Isso pode ser muito útil quando seu programa está contando etapas ou manipulando dados.
+
 
   
 # OpenPLC Runtime
