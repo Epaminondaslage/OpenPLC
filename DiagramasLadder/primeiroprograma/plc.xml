@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ppx:project xmlns:ppx="http://www.plcopen.org/xml/tc6_0201" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ns1="http://www.plcopen.org/xml/tc6_0201">
+  <ppx:fileHeader companyName="Desconhecido" productName="Sem nome" productVersion="1" creationDateTime="2022-08-04T11:38:40"/>
+  <ppx:contentHeader name="Sem nome" modificationDateTime="2022-08-04T14:22:42">
+    <ppx:coordinateInfo>
+      <ppx:fbd>
+        <ppx:scaling x="10" y="10"/>
+      </ppx:fbd>
+      <ppx:ld>
+        <ppx:scaling x="10" y="10"/>
+      </ppx:ld>
+      <ppx:sfc>
+        <ppx:scaling x="10" y="10"/>
+      </ppx:sfc>
+    </ppx:coordinateInfo>
+  </ppx:contentHeader>
+  <ppx:types>
+    <ppx:dataTypes/>
+    <ppx:pous>
+      <ppx:pou name="primeiroprograma" pouType="program">
+        <ppx:interface>
+          <ppx:localVars>
+            <ppx:variable name="B00" address="%IX0.0">
+              <ppx:type>
+                <ppx:BOOL/>
+              </ppx:type>
+            </ppx:variable>
+            <ppx:variable name="Q0" address="%QX0.0">
+              <ppx:type>
+                <ppx:BOOL/>
+              </ppx:type>
+            </ppx:variable>
+          </ppx:localVars>
+        </ppx:interface>
+        <ppx:body>
+          <ppx:LD>
+            <ppx:leftPowerRail localId="1" width="10" height="200">
+              <ppx:position x="30" y="40"/>
+              <ppx:connectionPointOut formalParameter="">
+                <ppx:relPosition x="10" y="20"/>
+              </ppx:connectionPointOut>
+              <ppx:connectionPointOut formalParameter="">
+                <ppx:relPosition x="10" y="60"/>
+              </ppx:connectionPointOut>
+              <ppx:connectionPointOut formalParameter="">
+                <ppx:relPosition x="10" y="100"/>
+              </ppx:connectionPointOut>
+              <ppx:connectionPointOut formalParameter="">
+                <ppx:relPosition x="10" y="140"/>
+              </ppx:connectionPointOut>
+              <ppx:connectionPointOut formalParameter="">
+                <ppx:relPosition x="10" y="180"/>
+              </ppx:connectionPointOut>
+            </ppx:leftPowerRail>
+            <ppx:contact localId="2" negated="false" width="21" height="20">
+              <ppx:position x="90" y="50"/>
+              <ppx:connectionPointIn>
+                <ppx:relPosition x="0" y="10"/>
+                <ppx:connection refLocalId="1">
+                  <ppx:position x="90" y="60"/>
+                  <ppx:position x="40" y="60"/>
+                </ppx:connection>
+              </ppx:connectionPointIn>
+              <ppx:connectionPointOut>
+                <ppx:relPosition x="21" y="10"/>
+              </ppx:connectionPointOut>
+              <ppx:variable>B00</ppx:variable>
+            </ppx:contact>
+            <ppx:coil localId="4" negated="false" width="21" height="20">
+              <ppx:position x="350" y="50"/>
+              <ppx:connectionPointIn>
+                <ppx:relPosition x="0" y="10"/>
+                <ppx:connection refLocalId="2">
+                  <ppx:position x="350" y="60"/>
+                  <ppx:position x="111" y="60"/>
+                </ppx:connection>
+              </ppx:connectionPointIn>
+              <ppx:connectionPointOut>
+                <ppx:relPosition x="21" y="10"/>
+              </ppx:connectionPointOut>
+              <ppx:variable>Q0</ppx:variable>
+            </ppx:coil>
+            <ppx:rightPowerRail localId="6" width="10" height="200">
+              <ppx:position x="530" y="40"/>
+              <ppx:connectionPointIn>
+                <ppx:relPosition x="0" y="20"/>
+                <ppx:connection refLocalId="4">
+                  <ppx:position x="530" y="60"/>
+                  <ppx:position x="371" y="60"/>
+                </ppx:connection>
+              </ppx:connectionPointIn>
+              <ppx:connectionPointIn>
+                <ppx:relPosition x="0" y="60"/>
+              </ppx:connectionPointIn>
+              <ppx:connectionPointIn>
+                <ppx:relPosition x="0" y="100"/>
+              </ppx:connectionPointIn>
+              <ppx:connectionPointIn>
+                <ppx:relPosition x="0" y="140"/>
+              </ppx:connectionPointIn>
+              <ppx:connectionPointIn>
+                <ppx:relPosition x="0" y="180"/>
+              </ppx:connectionPointIn>
+            </ppx:rightPowerRail>
+          </ppx:LD>
+        </ppx:body>
+      </ppx:pou>
+    </ppx:pous>
+  </ppx:types>
+  <ppx:instances>
+    <ppx:configurations>
+      <ppx:configuration name="Config0">
+        <ppx:resource name="Res0">
+          <ppx:task name="task0" priority="0" interval="T#20ms">
+            <ppx:pouInstance name="instance0" typeName="primeiroprograma"/>
+          </ppx:task>
+        </ppx:resource>
+      </ppx:configuration>
+    </ppx:configurations>
+  </ppx:instances>
+</ppx:project>
