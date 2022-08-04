@@ -244,7 +244,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag07.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag07.jpg" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 10 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
