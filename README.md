@@ -201,7 +201,7 @@ Quando você cria um novo programa, o OpenPLC Editor cria automaticamente uma co
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag04.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag04.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 7 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -218,7 +218,7 @@ Plataformas que possuem um sistema operacional como Windows e Linux são menos r
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag05.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag05.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 8 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -231,7 +231,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag06.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag06.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 9 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -244,7 +244,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag07.jpg" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag07.jpg" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 10 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -257,7 +257,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag08.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag08.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 11 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -273,7 +273,7 @@ Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag09.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag09.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 12 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
