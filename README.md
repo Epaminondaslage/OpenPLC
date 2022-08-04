@@ -18,8 +18,17 @@
 
 Um controlador monitora o estado real do processo de uma planta através de um número de transdutores, definido de acordo com a aplicação. Os transdutores convertem as grandezas físicas em sinais normalmente elétricos, os quais são conectados com as entradas dos controladores. Transdutores digitais (discretos) medem variáveis com estados distintos, tais como ligado/desligado ou alto/baixo, enquanto os transdutores analógicos medem variáveis com uma faixa contínua, tais como pressão, temperatura, vazão ou nível.
 
+<table border="0">
+<tbody>
+<tr>
 <td style="width: 50%;"><img src="/img/sistemas industriais.png" width="50%" /></td>
-<p>Figura 1 - Sistemas Industriais.</p>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 1 - Sistemas Industriais.</td>
+</tr>
+</tbody>
+</table>
+
 
 Com base nos estados das suas entradas (variáveis de processo - PV), o controlador utiliza um algoritmo de controle embutido para calcular os estados das suas saídas (variáveis manipuladas - MV). Os sinais elétricos das saídas são convertidos para o processo através dos atuadores. Muitos atuadores geram movimentos como válvulas, motores, bombas e outros e utilizam a energia potencial pneumática para o acionamento.
 
@@ -93,8 +102,16 @@ Por ser uma ferramenta totalmente aberta, o OpenPLC possibilita que qualquer pes
 
 O OpenPLC Editor, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na Universidade do Alabama), surgiu através do objetivo de encontrar vulnerabilidade em PLCs (Programmable Logic Controller ou Controlador Lógico Programável - CLP). Entretanto, dificilmente algum fabricante de CLP disponibilizaria seu código fonte para que o estudante pudesse realizar uma análise mais profunda, a fim de validar seus estudos. Devido a isto, ele resolveu criar o seu próprio CLP de hardware e software livres, que pode ser programado nas 5 principais linguagens definidas conforme a norma IEC 61131-3 (https://pt.wikipedia.org/wiki/IEC_61131-3), que estabelece a arquitetura básica de software e as linguagens de programação para CLPs. As linguagens suportadas pelo OpenPLC Editor estão apresentadas na figura 2.
 
-<img src="./img/ling_plc.jpg"><BR>
-Figura 2 - Linguagens de programação disponibilizadas no OpenPLC Editor.
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/ling_plc.jpg" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 2 - Linguagens de programação disponibilizadas no OpenPLC Editor.</td>
+</tr>
+</tbody>
+</table>
 
 * Diagrama Ladder (LD), Gráfica.
 * Diagrama de Blocos (FBD), Gráfica.
@@ -102,10 +119,18 @@ Figura 2 - Linguagens de programação disponibilizadas no OpenPLC Editor.
 * Lista de Instruções (IL), textual.
 * Diagrama de Funções Sequenciais (SFC).
   
-A figura abaixo ilustra a linguagem Ladder sendo aplicada sobre o OpenPLC Editor. 
+A figura 3 ilustra a linguagem Ladder sendo aplicada sobre o OpenPLC Editor. 
 
-<img src="./img/Figura_1.png"><BR>
-Figura 3 - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/Figura_1.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 3 - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.</td>
+</tr>
+</tbody>
+</table>
 
 Em resumo, o Editor OpenPLC é um editor PLC compatível com IEC 61131-3 totalmente gratuito e de código aberto. Você pode usá-lo para fazer upload de código PLC diretamente para qualquer placa ou sistema executando OpenPLC Runtime.
 
@@ -121,9 +146,18 @@ Este primeiro projeto é um simples botão liga/desliga. Você vai precisar de:
     * Uma conexão de rede ethernet com conector RJ45 no microcontrolador
     * Jumpers 
 Para começar, conecte seu circuito assim:
-  
-  diag01.jpg
-  
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diag01.jpg" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 4 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+</tr>
+</tbody>
+</table>
+
 Observações Importantes:
 
     * Vcc é o nível de tensão positivo para o seu dispositivo. Por exemplo, para OrangePi one é +3,3V.
@@ -146,7 +180,11 @@ Quando você cria um novo programa, o OpenPLC Editor cria automaticamente uma co
   
   diag04
   
-A janela principal exibirá um campo de entrada de variável global na parte superior (que permite criar variáveis globais para seu programa), uma janela de Tarefas e uma janela de Instâncias. Você pode criar novas tarefas clicando no sinal de mais verde dentro da janela Tarefas. Não estamos criando novas tarefas para este projeto. No entanto, você pode querer alterar o Intervalo para sua tarefa dependendo do hardware no qual você está executando o OpenPLC. Os programas do CLP são cíclicos, o que significa que eles iniciam na primeira instrução, terminam na última instrução, esperam um pouco e depois fazem tudo de novo da primeira à última instrução. O intervalo de tarefas significa com que frequência seu ciclo de programa será chamado. O padrão é 20ms, o que significa que seu programa será executado uma vez a cada 20ms. Se você precisar que seu programa seja executado com mais frequência, poderá ajustar o tempo conforme desejar. No entanto, lembre-se de que, se você escolher um tempo cíclico muito baixo (como 1 ms), seu programa pode consumir 100% da CPU do seu dispositivo e ainda assim o dispositivo pode não conseguir executar seu programa corretamente. Um número seguro para todas as plataformas é geralmente 20ms. Plataformas que possuem um sistema operacional como Windows e Linux são menos responsivos e podem não se comportar bem com tempos de ciclo mais baixos. Isso porque o Sistema Operacional pode interferir no escalonamento do ciclo do PLC dependendo das prioridades do kernel do SO. Plataformas simples como as placas Arduino, por outro lado, são realmente boas para manter um tempo de ciclo preciso e são mais suscetíveis a tempos de ciclo mais baixos.
+A janela principal exibirá um campo de entrada de variável global na parte superior (que permite criar variáveis globais para seu programa), uma janela de Tarefas e uma janela de Instâncias. Você pode criar novas tarefas clicando no sinal de mais verde dentro da janela Tarefas. Não estamos criando novas tarefas para este projeto. No entanto, você pode querer alterar o Intervalo para sua tarefa dependendo do hardware no qual você está executando o OpenPLC.
+
+Os programas do CLP são cíclicos, o que significa que eles iniciam na primeira instrução, terminam na última instrução, esperam um pouco e depois fazem tudo de novo da primeira à última instrução. O intervalo de tarefas significa com que frequência seu ciclo de programa será chamado. O padrão é 20ms, o que significa que seu programa será executado uma vez a cada 20ms. Se você precisar que seu programa seja executado com mais frequência, poderá ajustar o tempo conforme desejar. No entanto, lembre-se de que, se você escolher um tempo cíclico muito baixo (como 1 ms), seu programa pode consumir 100% da CPU do seu dispositivo e ainda assim o dispositivo pode não conseguir executar seu programa corretamente. Um número seguro para todas as plataformas é geralmente 20ms.
+
+Plataformas que possuem um sistema operacional como Windows e Linux são menos responsivos e podem não se comportar bem com tempos de ciclo mais baixos. Isso porque o Sistema Operacional pode interferir no escalonamento do ciclo do PLC dependendo das prioridades do kernel do SO. Plataformas simples como as placas Arduino, por outro lado, são realmente boas para manter um tempo de ciclo preciso e são mais suscetíveis a tempos de ciclo mais baixos.
   
   diag05
   
