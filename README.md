@@ -165,7 +165,20 @@ O nome de usuário e senha padrão é openplc (login) e openplc (senha). Isso si
   * user=openplc
   * passwd=openplc
 
+## Habilitando o acesso de E/S de hardware
 
+Por padrão, o tempo de execução do OpenPLC é instalado com um driver em branco. Isso significa que ele não poderá controlar seus pinos GPIO de hardware imediatamente com o OpenPLC. Primeiro, você terá que habilitar o driver de hardware correto para sua plataforma. No menu à esquerda, clique em “Hardware” e escolha o driver apropriado no menu pop-up. Certifique-se de escolher o driver correto para sua placa, caso contrário, o OpenPLC Runtime falhará ao compilar o núcleo de tempo de execução.
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diag12.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXX - Escolha do hardware que está instalado o OpenPLC Runtime.</td>
+</tr>
+</tbody>
+</table>
 
 # Plataformas de Hardware para o OpenPLC
 
@@ -214,10 +227,23 @@ Para começar, conecte seu circuito assim:
 </tbody>
 </table>
 
+Para a montagem deste circuito no Kit SBC Linux faça a montagem da figura XXXX.
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/primeirodiag.jpg" width="60%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXXX - Montagem do  primeiro circuito no Kit SBC Linux.</td>
+</tr>
+</tbody>
+</table>
+
 Observações Importantes:
 
 * Vcc é o nível de tensão positivo para o seu dispositivo. Por exemplo, para OrangePi one é +3,3V.
-* B0 e B1 são botões de pressão R1 e R2 são resistores pull-down já disponíveis no módulo de Botões.
+* B00 e B01 são botões de pressão R1 e R2 são resistores pull-down já disponíveis no módulo de Botões.
 * Nas placas Raspberry Pi, as duas primeiras entradas (%IX0.0 e %IX0.1) são invertidas no hardware. Isso pode causar problemas, pois será como se os botões fossem pressionados constantemente. Você pode inverter a entrada em seu programa PLC usando contatos negados (se você souber como fazê-lo) ou você pode simplesmente usar outras entradas, como %IX0.2 e %IX0.3.
 
 Comece criando um novo projeto no Editor OpenPLC. Para isso basta clicar em Arquivo -> Novo. A caixa de diálogo  aparecerá para permitir que você escolha onde deseja armazenar seu projeto. Os projetos do Editor OpenPLC são na verdade pastas em vez de um único arquivo. Você não pode armazenar um projeto em uma pasta que já contenha arquivos. Crie uma nova pasta para o seu projeto, abra-a e escolha-a como local do seu projeto.
