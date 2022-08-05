@@ -144,7 +144,7 @@ Em resumo, o Editor OpenPLC é um editor PLC compatível com IEC 61131-3 totalme
 
 O OpenPLC Runtime permite executar programas PLC criados no Editor OpenPLC. Esta runtime, instalada em um SBC possui um servidor web integrado que permite configurar vários parâmetros da runtime. Microimplementações do OpenPLC Runtime (ou seja, versões da runtime que vão em microcontroladores e placas Arduino) não possuem o servidor web embutido. Em vez disso, todas as configurações de tempo de execução para o micro runtime são feitas diretamente da caixa de diálogo de upload do OpenPLC Editor.
 
-O servidor web runtime n SBC está disponível em seu endereço IP de destino na porta 8080. Por exemplo, se você instalou o OpenPLC Runtime em OrangePi One e seu endereço IP é 192.168.0.103, então você pode acessar o OpenPLC Runtime abrindo seu navegador web e apontando para http://192.168.0.103:8080.
+O servidor web runtime n SBC está disponível em seu endereço IP de destino na porta 8080. Por exemplo, se você instalou o OpenPLC Runtime em OrangePi One e seu endereço IP é 172.16.10.143, então você pode acessar o OpenPLC Runtime abrindo seu navegador web e apontando para http://172.16.10.143:8080.
 
 Se você estiver recebendo erros de página, certifique-se de que seu computador possa acessar o OrengePi One em sua rede. Se você não sabe o endereço IP da sua placa, utilize uma ferramenta pas escanear sua rede e descobrir o IP dele.
 
@@ -475,8 +475,11 @@ Finalmente, depois de ter criado e testado o programa, o último passo é gerar 
   
 # Carregando Programas para o OpenPLC Runtime.   
  
- https://openplcproject.com/docs/2-2-uploading-programs-to-openplc-runtime/
- 
+A runtime do OpenPLC possui um servidor web integrado que permite configurar o OpenPLC e também fazer upload de novos programas para que ele seja executado. Microimplementações do OpenPLC Runtime (ou seja, versões do runtime que vão em microcontroladores e placas Arduino) não possuem o servidor web embutido. Em vez disso, todas as configurações de runtime para o micro runtime são feitas diretamente da caixa de diálogo de upload do OpenPLC Editor (veja Instalando o OpenPLC Runtime em Placas Microcontroladoras).
+
+O servidor Web OpenPLC pode ser acessado abrindo um navegador da Web em seu computador e digitando o endereço IP do seu dispositivo OpenPLC na porta 8080. Para obter mais informações sobre o Servidor Web OpenPLC Runtime, consulte 2.1 Visão geral do OpenPLC Runtime
+
+Após efetuar login no servidor web, você verá o painel do OpenPLC com algumas informações sobre o programa em execução atual e os logs de tempo de execução.
  
 
 # Referências
@@ -508,3 +511,4 @@ Finalmente, depois de ter criado e testado o programa, o último passo é gerar 
 * <p><a href="[https://beremiz.org/](https://openplcproject.com/docs/2-1-openplc-runtime-overview/)">Site do OpenPLC Runtime</a></p>
 
 https://openplcproject.com/docs/2-3-input-output-and-memory-addressing/
+ https://openplcproject.com/docs/2-2-uploading-programs-to-openplc-runtime/
