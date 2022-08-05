@@ -11,8 +11,11 @@
 * [OpenPLC Runtime](#OpenPLC-Runtime)
 * [Plataformas de Hardware para o OpenPLC](#Plataformas-de-Hardware-para-o-OpenPLC)
 * [Endereçamento de Entrada, Saída e Memória](#Endereçamento-de-Entrada-Saída-e-Memória)
-* [Criando o primeiro projeto no editor OpenPLC](#Criando-o-primeiro-projeto-no-editor-OpenPLC)
-* [Carregando Programas para o OpenPLC Runtime](#Carregando-Programas-para-o-OpenPLC-Runtime)
+* [Endereçamento Físico](#Endereçmento-fisico)
+* [Endereçamento Modbus](#Endereçamento-Modbus)
+* [Dispositivos Escravos](#Dispositivos-Escravos)
+* [Criando o primeiro projeto no OpenPLC Editor](#Criando-o-primeiro-projeto-no-OpenPLC-Editor)
+* [Carregando programas para o OpenPLC Runtime](#Carregando-Programas-para-o-OpenPLC-Runtime)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
 
@@ -234,10 +237,37 @@ Os seguintes são exemplos inválidos de endereços PLC no OpenPLC pelo motivo d
    * %QX0.0.1 A hierarquia de três partes não é um endereço permitido.
    * %IB1.1 Hierarquia de duas partes só é permitida para tamanho de dados X
 
+# Endereçamento Físico
 
-## Criando o primeiro projeto no editor OpenPLC
+O OpenPLC Runtime é compatível com várias plataformas de hardware diferentes com diferentes configurações de módulos de E/S. Internamente, todas as variáveis de E/S estão associadas a um Endereço do PLC, conforme explicado em Endereçamento de Entradas, Saídas e Memória. A camada de hardware é o componente responsável por traduzir as variáveis de endereço interno do PLC em localizações físicas do hardware. Cada plataforma suportada pelo OpenPLC deve ter uma camada de hardware diferente. Abaixo você encontra a descrição da pinagem de cada plataforma, extraída do arquivo da camada de hardware da plataforma:
+
+Pegar as imagens em https://openplcproject.com/docs/2-4-physical-addressing/
+## Arduino
+
+## Wemos D1
+
+## NodeMCU
+
+## ESP32
+
+## OrangePI One
+
+## Placas baseadas em microcontroladores
+
+# Endereçamento Modbus
+
+https://openplcproject.com/docs/2-5-modbus-addressing/
+
+# Dispositivos Escravos
+
+https://openplcproject.com/docs/2-6-slave-devices/
+
+
+
+
+# Criando o primeiro projeto no OpenPLC Editor
   
-Este primeiro projeto é um simples botão liga/desliga. Você vai precisar de:
+Este primeiro projeto é um simples de  botão liga e botão desliga que aciona uma saída de relé. Você vai precisar de:
 
     * Um microcontrolador com o OpenPLC Runtime instalado, no nosso caso o OrangePi One.
     * Um microcomputador com o OpenPLC Editor instalado e acesso a rede local.
@@ -246,6 +276,7 @@ Este primeiro projeto é um simples botão liga/desliga. Você vai precisar de:
     * Um Protoboard
     * Uma conexão de rede ethernet com conector RJ45 no microcontrolador
     * Jumpers 
+    
 Para começar, conecte seu circuito assim:
 
 <table border="0">
