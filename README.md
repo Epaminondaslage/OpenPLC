@@ -138,14 +138,34 @@ Em resumo, o Editor OpenPLC é um editor PLC compatível com IEC 61131-3 totalme
 
 # OpenPLC Runtime
 
-O OpenPLC Runtime permite executar programas PLC criados no Editor OpenPLC. O runtime principal possui um servidor web integrado que permite configurar vários parâmetros do runtime. Microimplementações do OpenPLC Runtime (ou seja, versões do runtime que vão em microcontroladores e placas Arduino) não possuem o servidor web embutido. Em vez disso, todas as configurações de tempo de execução para o micro runtime são feitas diretamente da caixa de diálogo de upload do OpenPLC Editor
+O OpenPLC Runtime permite executar programas PLC criados no Editor OpenPLC. Esta runtime, instalada em um SBC possui um servidor web integrado que permite configurar vários parâmetros da runtime. Microimplementações do OpenPLC Runtime (ou seja, versões da runtime que vão em microcontroladores e placas Arduino) não possuem o servidor web embutido. Em vez disso, todas as configurações de tempo de execução para o micro runtime são feitas diretamente da caixa de diálogo de upload do OpenPLC Editor.
 
+O servidor web runtime n SBC está disponível em seu endereço IP de destino na porta 8080. Por exemplo, se você instalou o OpenPLC Runtime em OrangePi One e seu endereço IP é 192.168.0.103, então você pode acessar o OpenPLC Runtime abrindo seu navegador web e apontando para http://192.168.0.103:8080.
+
+Se você estiver recebendo erros de página, certifique-se de que seu computador possa acessar o OrengePi One em sua rede. Se você não sabe o endereço IP da sua placa, utilize uma ferramenta pas escanear sua rede e descobrir o IP dele.
+
+Depois de acessar o servidor web OpenPLC, você deverá ver na janela do seu navegador uma página de login como a apresentada na figura XXXX.
+
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diag11.jpg" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXX - Tela inicial da Runtime do OpenPLC Editor.</td>
+</tr>
+</tbody>
+</table>
+
+O nome de usuário e senha padrão é openplc (login) e openplc (senha). Isso significa que a primeira coisa que você deve fazer após o login pela primeira vez é alterar o nome de usuário e a senha padrão! É muito fácil fazer isso. Basta ir ao menu Users à esquerda e clicar no OpenPLC User para alterar as informações do usuário como desejar.
   
-  runtime
-  http://172.16.10.143:8080
-  
-  user=openplc
-  passwd=openplc
+  * Endereço IP do OrangePi que contém a runtime
+  * http://172.16.10.143:8080
+  * user=openplc
+  * passwd=openplc
+
+
 
 # Plataformas de Hardware para o OpenPLC
 
