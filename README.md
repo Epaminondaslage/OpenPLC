@@ -10,6 +10,8 @@
 * [OpenPLC Editor](#OpenPLC-Editor)
 * [OpenPLC Runtime](#OpenPLC-Runtime)
 * [Plataformas de Hardware para o OpenPLC](#Plataformas-de-Hardware-para-o-OpenPLC)
+* [Criando o primeiro projeto no editor OpenPLC](#Criando-o-primeiro-projeto-no-editor-OpenPLC)
+* [Carregando Programas para o OpenPLC Runtime](#Carregando-Programas-para-o-OpenPLC-Runtime)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
 
@@ -134,6 +136,60 @@ A figura 3 ilustra a linguagem Ladder sendo aplicada sobre o OpenPLC Editor.
 
 Em resumo, o Editor OpenPLC é um editor PLC compatível com IEC 61131-3 totalmente gratuito e de código aberto. Você pode usá-lo para fazer upload de código PLC diretamente para qualquer placa ou sistema executando OpenPLC Runtime.
 
+# OpenPLC Runtime
+
+O OpenPLC Runtime permite executar programas PLC criados no Editor OpenPLC. Esta runtime, instalada em um SBC possui um servidor web integrado que permite configurar vários parâmetros da runtime. Microimplementações do OpenPLC Runtime (ou seja, versões da runtime que vão em microcontroladores e placas Arduino) não possuem o servidor web embutido. Em vez disso, todas as configurações de tempo de execução para o micro runtime são feitas diretamente da caixa de diálogo de upload do OpenPLC Editor.
+
+O servidor web runtime n SBC está disponível em seu endereço IP de destino na porta 8080. Por exemplo, se você instalou o OpenPLC Runtime em OrangePi One e seu endereço IP é 192.168.0.103, então você pode acessar o OpenPLC Runtime abrindo seu navegador web e apontando para http://192.168.0.103:8080.
+
+Se você estiver recebendo erros de página, certifique-se de que seu computador possa acessar o OrengePi One em sua rede. Se você não sabe o endereço IP da sua placa, utilize uma ferramenta pas escanear sua rede e descobrir o IP dele.
+
+Depois de acessar o servidor web OpenPLC, você deverá ver na janela do seu navegador uma página de login como a apresentada na figura XXXX.
+
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXX - Tela inicial da Runtime do OpenPLC Editor.</td>
+</tr>
+</tbody>
+</table>
+
+O nome de usuário e senha padrão é openplc (login) e openplc (senha). Isso significa que a primeira coisa que você deve fazer após o login pela primeira vez é alterar o nome de usuário e a senha padrão! É muito fácil fazer isso. Basta ir ao menu Users à esquerda e clicar no OpenPLC User para alterar as informações do usuário como desejar.
+  
+  * Endereço IP do OrangePi que contém a runtime
+  * http://172.16.10.143:8080
+  * user=openplc
+  * passwd=openplc
+
+
+
+# Plataformas de Hardware para o OpenPLC
+
+O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, Raspberry Pi e ESP8266. É oficialmente suportada nas seguintes plataformas:
+  
+* Arduino Uno / Nano / Leonardo / Micro
+* Arduino Mega / Due
+* Arduino Nano Every / IoT / BLE
+* Arduino RB2040 Connect
+* Arduino Mkr / Zero / WiFi
+* Arduino Pro (Machine Control and EDGE)
+* Controllino Maxi / Automation / Mega / Mini
+* Productivity Open P1AM
+* ESP8266 (nodemcu)
+* ESP32
+* Raspberry Pi 2 / 3 / 4
+* PiXtend
+* UniPi Industrial Platform
+* Neuron PLC
+* FreeWave Zumlink
+* FreeWave ZumIQ
+* Windows (generic target as a soft-PLC)
+* Linux (generic target as a soft-PLC)
+
 ## Criando o primeiro projeto no editor OpenPLC
   
 Este primeiro projeto é um simples botão liga/desliga. Você vai precisar de:
@@ -201,7 +257,7 @@ Quando você cria um novo programa, o OpenPLC Editor cria automaticamente uma co
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag04.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag04.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 7 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -218,7 +274,7 @@ Plataformas que possuem um sistema operacional como Windows e Linux são menos r
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag05.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag05.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 8 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -231,7 +287,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag06.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag06.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 9 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -244,7 +300,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag07.jpg" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag07.jpg" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 10 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -257,7 +313,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag08.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag08.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 11 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -265,15 +321,15 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 </tbody>
 </table>
   
-Ajuste a contagem de pinos do trilho de alimentação esquerdo. Usei 5 – este é um número razoável para este programa mas se você quiser poderá  adicionar mais degraus ao seu programa posteriormente. Adicione outro barramento de alimentação com contagem 50, mas desta vez selecione “trilho de alimentação direito” nas propriedades. Coloque-o no lado direito da tela. Isso é suficiente para você configurar os degraus do seu Diagrama Ladder.
+Ajuste a contagem de pinos do trilho de alimentação esquerdo. Adicione outro barramento de alimentação, mas desta vez selecione “trilho de alimentação direito” nas propriedades. Coloque-o no lado direito da tela. Isso é suficiente para você configurar os degraus do seu Diagrama Ladder.
 
-Agora você pode começar a adicionar seus elementos de escada. Adicione um contato clicando no botão de contato na barra de ferramentas ou clicando com o botão direito do mouse na janela do editor em branco e selecionando Adicionar->Contato. Na janela que aparece, no parâmetro “Variável”, selecione B0 para associar seu novo contato à variável B0.
+Agora você pode começar a adicionar seus elementos de escada. Adicione um contato clicando no botão de contato na barra de ferramentas ou clicando com o botão direito do mouse na janela do editor em branco e selecionando Adicionar->Contato. Na janela que aparece, no parâmetro “Variável”, selecione B0 para associar seu novo contato à variável B00.
 Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro associado ao Q0. Para o contato Q0, selecione Negado como modificador. Finalmente, adicione uma bobina clicando no botão bobina na barra de ferramentas ou clicando com o botão direito do mouse na janela do editor em branco e selecionando Adicionar-> bobina. Associe sua nova bobina à variável Q0 e adicione um barramento de alimentação direito para fechar o circuito. Posicione os componentes no lugar para que eles se pareçam com esta imagem:  
 
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag09.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag09.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 12 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -281,9 +337,9 @@ Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro
 </tbody>
 </table>
   
-O passo final é conectar todos os componentes arrastando suas extremidades para formar uma linha. Conecte o lado esquerdo dos contatos B0 e Q0 ao barramento de alimentação esquerdo. Conecte o lado direito do B0 com o B1, o lado direito do B1 com a bobina Q0 e o lado direito da bobina Q0 com o barramento de alimentação direito. Desenhe o circuito de contato Q0 paralelo conectando o lado direito do contato Q0 com o lado esquerdo do B1. Seu projeto final deve se parecer com a primeira imagem DIAG07 neste tutorial.
+O passo final é conectar todos os componentes arrastando suas extremidades para formar uma linha. Conecte o lado esquerdo dos contatos B0 e Q0 ao barramento de alimentação esquerdo. Conecte o lado direito do B00 com o B01, o lado direito do B01 com a bobina Q0 e o lado direito da bobina Q0 com o barramento de alimentação direito. Desenhe o circuito de contato Q0 paralelo conectando o lado direito do contato Q0 com o lado esquerdo do B01. Seu projeto final deve se parecer com a figura 10 neste tutorial.
 
-Este circuito inicialmente tem a Q0 desligada. Quando você pressiona B0 mesmo que por um pequeno instante, o circuito aciona a Q0 (dado que B1 também não é pressionado). Uma vez que a Q0 liga, ela ignora o botão B1 no circuito para se ligar continuamente mesmo após liberar B0. Este é um bom truque na lógica ladder, você pode realmente usar as saídas como contatos! Agora, a única maneira de desligar a Q0 é pressionando B1. Como o B1 é um contato negado, ele abrirá o circuito assim que for pressionado, desligando a Q0.
+Este circuito inicialmente tem a Q0 desligada. Quando você pressiona B00 mesmo que por um pequeno instante, o circuito aciona a Q0 (dado que B01 também não é pressionado). Uma vez que a Q0 liga, ela ignora o botão B01 no circuito para se ligar continuamente mesmo após liberar B00. Este é um bom truque na lógica ladder, você pode realmente usar as saídas como contatos! Agora, a única maneira de desligar a Q0 é pressionando B01. Como o B01 é um contato negado, ele abrirá o circuito assim que for pressionado, desligando a Q0.
 
 Agora que seu projeto foi criado, é um bom momento para testá-lo antes de carregá-lo no OpenPLC Runtime. Você pode simular o comportamento do seu programa clicando em Start PLC Simulation na barra de ferramentas.
 
@@ -315,45 +371,22 @@ Isso abrirá uma nova janela onde você poderá ver o fluxo elétrico do seu pro
 
 Além de visualizar graficamente o fluxo elétrico no diagrama, você também pode acompanhar os dados em cada variável do seu programa no painel Debugger no lado direito da tela. Você pode adicionar variáveis no painel Debugger clicando no ícone de óculos na frente de cada variável do painel à esquerda. Além disso, clicando duas vezes em uma variável no painel Debugger, você pode ver um gráfico em tempo real mostrando os valores atuais da variável. Isso pode ser muito útil quando seu programa está contando etapas ou manipulando dados.
 
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 15 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+</tr>
+</tbody>
+</table>
+  
+Finalmente, depois de ter criado e testado o programa, o último passo é gerar seu programa em um formato que o OpenPLC Runtime entenda. Para isso, basta clicar em Generate program for OpenPLC Runtime na barra de ferramentas e salvar o arquivo .st em seu computador. Este arquivo é seu programa de lógica ladder escrito em uma linguagem que o OpenPLC Runtime pode entender. Você pode carregar este arquivo posteriormente para o OpenPLC Runtime conforme explicado em no tutorial Carregando Programas para o OpenPLC Runtime. 
+  
+# Carregando Programas para o OpenPLC Runtime.   
+  
 
-  
-# OpenPLC Runtime
-
-ATENÇÃO
-
- * Descrever este processo 
- * https://openplcproject.com/docs/2-1-openplc-runtime-overview/
-  
-  runtime
-  http://172.16.10.143:8080
-  
-  user=openplc
-  passwd=openplc
-
-# Plataformas de Hardware para o OpenPLC
-
-O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, Raspberry Pi e ESP8266. É oficialmente suportada nas seguintes plataformas:
-  
-* Arduino Uno / Nano / Leonardo / Micro
-* Arduino Mega / Due
-* Arduino Nano Every / IoT / BLE
-* Arduino RB2040 Connect
-* Arduino Mkr / Zero / WiFi
-* Arduino Pro (Machine Control and EDGE)
-* Controllino Maxi / Automation / Mega / Mini
-* Productivity Open P1AM
-* ESP8266 (nodemcu)
-* ESP32
-* Raspberry Pi 2 / 3 / 4
-* PiXtend
-* UniPi Industrial Platform
-* Neuron PLC
-* FreeWave Zumlink
-* FreeWave ZumIQ
-* Windows (generic target as a soft-PLC)
-* Linux (generic target as a soft-PLC)
-  
-  
 # Referências
 
 * FREITAS, C. M. Conheça o OpenPLC - O primeiro CLP de Código Aberto Padronizado Disponível em:https://www.embarcados.com.br/openplc-o-primeiro-clp-de-codigo-aberto/ Acesso em Março de 2019.
@@ -380,4 +413,5 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
 * <p><a href="https://github.com/thiagoralves/OpenPLC_Editor">Projeto Openplc Editor no Github</a></p>  
 * <p><a href="https://plcopen.org/">Site do PLC Open</a></p>
 * <p><a href="https://beremiz.org/">Site do Editor Beremiz</a></p> 
+* <p><a href="[https://beremiz.org/](https://openplcproject.com/docs/2-1-openplc-runtime-overview/)">Site do OpenPLC Runtime</a></p>
 
