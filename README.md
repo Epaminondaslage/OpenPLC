@@ -385,10 +385,10 @@ Quando você clica nesse botão, seu projeto é compilado usando um processo sem
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag13.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - linhas verdes e pretas.</td>
 </tr>
 </tbody>
 </table>
@@ -400,10 +400,10 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag12.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag14.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - Simulação do programa em execução.</td>
 </tr>
 </tbody>
 </table>
