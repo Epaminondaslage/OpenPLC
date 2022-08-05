@@ -150,7 +150,7 @@ Depois de acessar o servidor web OpenPLC, você deverá ver na janela do seu nav
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag11.jpg" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - Tela inicial da Runtime do OpenPLC Editor.</td>
