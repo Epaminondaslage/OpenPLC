@@ -110,7 +110,7 @@ O OpenPLC Editor, projeto criado por Thiago Rodrigues Alves (estudante de doutor
 <td style="width: 50%;"><img src="./img/ling_plc.jpg" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 2 - Linguagens de programação disponibilizadas no OpenPLC Editor.</td>
+<td style="text-align: center;">Figura XXX - Linguagens de programação disponibilizadas no OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -129,7 +129,7 @@ A figura 3 ilustra a linguagem Ladder sendo aplicada sobre o OpenPLC Editor.
 <td style="width: 50%;"><img src="./img/Figura_1.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 3 - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.</td>
+<td style="text-align: center;">Figura XXX - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -222,7 +222,7 @@ Para começar, conecte seu circuito assim:
 <td style="width: 50%;"><img src="./img/diag01.jpg" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 4 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -260,7 +260,7 @@ Depois de selecionar sua localização, o OpenPLC Editor criará o projeto para 
 <td style="width: 50%;"><img src="./img/diag02.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 5 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +273,7 @@ Para o propósito deste tutorial, estamos criando apenas uma POU de Programa. Po
 <td style="width: 50%;"><img src="./img/diag03.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 6 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -286,7 +286,7 @@ Quando você cria um novo programa, o OpenPLC Editor cria automaticamente uma co
 <td style="width: 50%;"><img src="./img/diag04.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 7 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -303,7 +303,7 @@ Plataformas que possuem um sistema operacional como Windows e Linux são menos r
 <td style="width: 50%;"><img src="./img/diag05.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 8 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -316,7 +316,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="./img/diag06.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 9 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +329,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="./img/diag07.jpg" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 10 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -342,7 +342,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="./img/diag08.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 11 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -358,7 +358,7 @@ Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro
 <td style="width: 50%;"><img src="./img/diag09.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 12 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -375,7 +375,7 @@ Agora que seu projeto foi criado, é um bom momento para testá-lo antes de carr
 <td style="width: 50%;"><img src="./img/diag10.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 13 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -388,7 +388,7 @@ Quando você clica nesse botão, seu projeto é compilado usando um processo sem
 <td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 14 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -400,10 +400,10 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag12.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 15 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
