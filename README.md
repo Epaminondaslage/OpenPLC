@@ -11,7 +11,7 @@
 * [OpenPLC Runtime](#OpenPLC-Runtime)
 * [Plataformas de Hardware para o OpenPLC](#Plataformas-de-Hardware-para-o-OpenPLC)
 * [Endereçamento de Entrada, Saída e Memória](#Endereçamento-de-Entrada-Saída-e-Memória)
-* [Endereçamento Físico](#Endereçamento-Fisico)
+* [Endereçamento Físico](#Endereçamento-Físico)
 * [Endereçamento Modbus](#Endereçamento-Modbus)
 * [Dispositivos Escravos](#Dispositivos-Escravos)
 * [Criando o primeiro projeto no OpenPLC Editor](#Criando-o-primeiro-projeto-no-OpenPLC-Editor)
