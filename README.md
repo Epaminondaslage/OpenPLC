@@ -10,8 +10,12 @@
 * [OpenPLC Editor](#OpenPLC-Editor)
 * [OpenPLC Runtime](#OpenPLC-Runtime)
 * [Plataformas de Hardware para o OpenPLC](#Plataformas-de-Hardware-para-o-OpenPLC)
-* [Criando o primeiro projeto no editor OpenPLC](#Criando-o-primeiro-projeto-no-editor-OpenPLC)
-* [Carregando Programas para o OpenPLC Runtime](#Carregando-Programas-para-o-OpenPLC-Runtime)
+* [Endereçamento de Entrada, Saída e Memória](#Endereçamento-de-Entrada-Saída-e-Memória)
+* [Endereçamento Físico](#Endereçamento-Físico)
+* [Endereçamento Modbus](#Endereçamento-Modbus)
+* [Dispositivos Escravos](#Dispositivos-Escravos)
+* [Criando o primeiro projeto no OpenPLC Editor](#Criando-o-primeiro-projeto-no-OpenPLC-Editor)
+* [Carregando programas para o OpenPLC Runtime](#Carregando-Programas-para-o-OpenPLC-Runtime)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
 
@@ -110,7 +114,7 @@ O OpenPLC Editor, projeto criado por Thiago Rodrigues Alves (estudante de doutor
 <td style="width: 50%;"><img src="./img/ling_plc.jpg" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 2 - Linguagens de programação disponibilizadas no OpenPLC Editor.</td>
+<td style="text-align: center;">Figura XXX - Linguagens de programação disponibilizadas no OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -129,7 +133,7 @@ A figura 3 ilustra a linguagem Ladder sendo aplicada sobre o OpenPLC Editor.
 <td style="width: 50%;"><img src="./img/Figura_1.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 3 - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.</td>
+<td style="text-align: center;">Figura XXX - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -172,7 +176,7 @@ Por padrão, o tempo de execução do OpenPLC é instalado com um driver em bran
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag12.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag12.jpg" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - Escolha do hardware que está instalado o OpenPLC Runtime.</td>
@@ -203,9 +207,67 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
 * Windows (generic target as a soft-PLC)
 * Linux (generic target as a soft-PLC)
 
-## Criando o primeiro projeto no editor OpenPLC
+# Endereçamento de Entrada, Saída e Memória
+
+As aplicações PLC interagem com o mundo externo através de módulos de entrada e saída e/ou protocolos de comunicação SCADA. Ao projetar suas aplicações de CLP, você decide quais variáveis devem ser conectadas aos módulos de E/S e comunicação, rotulando a variável com um endereço de CLP.
+
+O OpenPLC Runtime usa a nomenclatura IEC 61131-3 para endereçar as localizações de entrada, saída e memória. O endereçamento das localizações de E/S é feito através do uso de sequências de caracteres especiais. Essas sequências são uma concatenação do sinal de porcentagem “%”, um prefixo de localização, um prefixo de tamanho e um ou mais números naturais separados por espaços em branco. Os seguintes prefixos de local são suportados:
+
+   * I para entrada
+   * O para saída
+   * M para memória
+
+Os seguintes prefixos de tamanho são suportados:
+
+   * X para bit (1 bit)
+   * B para byte (8 bits)
+   * W para palavra (16 bits)
+   * D para palavra dupla (32 bits)
+   * L para palavra longa (64 bits)
+
+Por exemplo, se você deseja ler o estado da primeira entrada digital em uma variável BOOL, deve declarar sua variável localizada em: %IX0.0. Se você quiser escrever o conteúdo de uma variável UINT na segunda saída analógica, você deve declarar sua variável UINT localizada em %QW2.
+
+Nota: O mapeamento de PLC para E/S física depende da plataforma. Para mais informações sobre mapeamento de E/S do CLP para cada plataforma suportada.
+
+Como você deve ter notado, os endereços PLC bit (X) possuem um endereço hierárquico de duas partes. A parte menos significativa (mais à direita) pode ser interpretada como uma posição em um byte e deve estar no intervalo de 0 a 7. A parte mais significativa (mais à esquerda) não deve ser maior que 1023. As partes são separadas por um único período. Tamanhos de dados diferentes de X têm um endereço hierárquico de uma parte. Eles não devem conter um ponto (.) e não devem ser maiores que o endereço máximo de localização de memória para sua plataforma.
+
+Os seguintes são exemplos inválidos de endereços PLC no OpenPLC pelo motivo declarado:
+
+   * %IX0.8 O índice menos significativo é maior que 7.
+   * %QX0.0.1 A hierarquia de três partes não é um endereço permitido.
+   * %IB1.1 Hierarquia de duas partes só é permitida para tamanho de dados X
+
+# Endereçamento Físico
+
+O OpenPLC Runtime é compatível com várias plataformas de hardware diferentes com diferentes configurações de módulos de E/S. Internamente, todas as variáveis de E/S estão associadas a um Endereço do PLC, conforme explicado em Endereçamento de Entradas, Saídas e Memória. A camada de hardware é o componente responsável por traduzir as variáveis de endereço interno do PLC em localizações físicas do hardware. Cada plataforma suportada pelo OpenPLC deve ter uma camada de hardware diferente. Abaixo você encontra a descrição da pinagem de cada plataforma, extraída do arquivo da camada de hardware da plataforma:
+
+Pegar as imagens em https://openplcproject.com/docs/2-4-physical-addressing/
+## Arduino
+
+## Wemos D1
+
+## NodeMCU
+
+## ESP32
+
+## OrangePI One
+
+## Placas baseadas em microcontroladores
+
+# Endereçamento Modbus
+
+https://openplcproject.com/docs/2-5-modbus-addressing/
+
+# Dispositivos Escravos
+
+https://openplcproject.com/docs/2-6-slave-devices/
+
+
+
+
+# Criando o primeiro projeto no OpenPLC Editor
   
-Este primeiro projeto é um simples botão liga/desliga. Você vai precisar de:
+Este primeiro projeto é um simples de  botão liga e botão desliga que aciona uma saída de relé. Você vai precisar de:
 
     * Um microcontrolador com o OpenPLC Runtime instalado, no nosso caso o OrangePi One.
     * Um microcomputador com o OpenPLC Editor instalado e acesso a rede local.
@@ -214,6 +276,7 @@ Este primeiro projeto é um simples botão liga/desliga. Você vai precisar de:
     * Um Protoboard
     * Uma conexão de rede ethernet com conector RJ45 no microcontrolador
     * Jumpers 
+    
 Para começar, conecte seu circuito assim:
 
 <table border="0">
@@ -222,7 +285,7 @@ Para começar, conecte seu circuito assim:
 <td style="width: 50%;"><img src="./img/diag01.jpg" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 4 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -260,7 +323,7 @@ Depois de selecionar sua localização, o OpenPLC Editor criará o projeto para 
 <td style="width: 50%;"><img src="./img/diag02.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 5 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +336,7 @@ Para o propósito deste tutorial, estamos criando apenas uma POU de Programa. Po
 <td style="width: 50%;"><img src="./img/diag03.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 6 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -286,7 +349,7 @@ Quando você cria um novo programa, o OpenPLC Editor cria automaticamente uma co
 <td style="width: 50%;"><img src="./img/diag04.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 7 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -303,7 +366,7 @@ Plataformas que possuem um sistema operacional como Windows e Linux são menos r
 <td style="width: 50%;"><img src="./img/diag05.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 8 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -316,7 +379,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="./img/diag06.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 9 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +392,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="./img/diag07.jpg" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 10 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -342,7 +405,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="./img/diag08.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 11 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -358,7 +421,7 @@ Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro
 <td style="width: 50%;"><img src="./img/diag09.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 12 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -375,7 +438,7 @@ Agora que seu projeto foi criado, é um bom momento para testá-lo antes de carr
 <td style="width: 50%;"><img src="./img/diag10.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 13 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -385,10 +448,10 @@ Quando você clica nesse botão, seu projeto é compilado usando um processo sem
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag13.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 14 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - linhas verdes e pretas.</td>
 </tr>
 </tbody>
 </table>
@@ -400,10 +463,10 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag14.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 15 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura XXX - Simulação do programa em execução.</td>
 </tr>
 </tbody>
 </table>
@@ -411,7 +474,10 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 Finalmente, depois de ter criado e testado o programa, o último passo é gerar seu programa em um formato que o OpenPLC Runtime entenda. Para isso, basta clicar em Generate program for OpenPLC Runtime na barra de ferramentas e salvar o arquivo .st em seu computador. Este arquivo é seu programa de lógica ladder escrito em uma linguagem que o OpenPLC Runtime pode entender. Você pode carregar este arquivo posteriormente para o OpenPLC Runtime conforme explicado em no tutorial Carregando Programas para o OpenPLC Runtime. 
   
 # Carregando Programas para o OpenPLC Runtime.   
-  
+ 
+ https://openplcproject.com/docs/2-2-uploading-programs-to-openplc-runtime/
+ 
+ 
 
 # Referências
 
@@ -441,3 +507,4 @@ Finalmente, depois de ter criado e testado o programa, o último passo é gerar 
 * <p><a href="https://beremiz.org/">Site do Editor Beremiz</a></p> 
 * <p><a href="[https://beremiz.org/](https://openplcproject.com/docs/2-1-openplc-runtime-overview/)">Site do OpenPLC Runtime</a></p>
 
+https://openplcproject.com/docs/2-3-input-output-and-memory-addressing/
