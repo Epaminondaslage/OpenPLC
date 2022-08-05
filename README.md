@@ -374,7 +374,7 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag12.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 15 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
