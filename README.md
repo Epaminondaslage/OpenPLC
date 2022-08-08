@@ -176,7 +176,7 @@ Por padrão, o tempo de execução do OpenPLC é instalado com um driver em bran
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag12.jpg" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/diag12.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - Escolha do hardware que está instalado o OpenPLC Runtime.</td>
