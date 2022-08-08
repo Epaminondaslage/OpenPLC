@@ -239,20 +239,67 @@ Os seguintes são exemplos inválidos de endereços PLC no OpenPLC pelo motivo d
 
 # Endereçamento Físico
 
-O OpenPLC Runtime é compatível com várias plataformas de hardware diferentes com diferentes configurações de módulos de E/S. Internamente, todas as variáveis de E/S estão associadas a um Endereço do PLC, conforme explicado em Endereçamento de Entradas, Saídas e Memória. A camada de hardware é o componente responsável por traduzir as variáveis de endereço interno do PLC em localizações físicas do hardware. Cada plataforma suportada pelo OpenPLC deve ter uma camada de hardware diferente. Abaixo você encontra a descrição da pinagem de cada plataforma, extraída do arquivo da camada de hardware da plataforma:
-
-Pegar as imagens em https://openplcproject.com/docs/2-4-physical-addressing/
-## Arduino
-
-## Wemos D1
-
-## NodeMCU
-
-## ESP32
-
-## OrangePI One
+O OpenPLC Runtime é compatível com várias plataformas de hardware diferentes com diferentes configurações de módulos de E/S. Internamente, todas as variáveis de E/S estão associadas a um Endereço do PLC, conforme explicado em Endereçamento de Entradas, Saídas e Memória. A camada de hardware é o componente responsável por traduzir as variáveis de endereço interno do PLC em localizações físicas do hardware. Cada plataforma suportada pelo OpenPLC deve ter uma camada de hardware diferente. Abaixo você encontra a descrição da pinagem de cada plataforma, extraída do arquivo da camada de hardware da plataforma.
 
 ## Placas baseadas em microcontroladores
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diagarduinomegaedue.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXX - Endereçamento físico para Arduino Mega e Due.</td>
+</tr>
+</tbody>
+</table>
+
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diagarduinouno.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXX - Endereçamento físico para Arduino Uno, Leonard, Nano, Micro e Zero.</td>
+</tr>
+</tbody>
+</table>
+
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diagesp32.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXX - Endereçamento físico para ESP32.</td>
+</tr>
+</tbody>
+</table>
+
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diagesp8266.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXX - Endereçamento físico para ESP8266.</td>
+</tr>
+</tbody>
+</table>
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/diagraspberrypi.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura XXX - Endereçamento físico para Raspberry Pi.</td>
+</tr>
+</tbody>
+</table>
 
 # Endereçamento Modbus
 
