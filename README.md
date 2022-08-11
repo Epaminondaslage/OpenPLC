@@ -241,6 +241,38 @@ Os seguintes são exemplos inválidos de endereços PLC no OpenPLC pelo motivo d
 
 O OpenPLC Runtime é compatível com várias plataformas de hardware diferentes com diferentes configurações de módulos de E/S. Internamente, todas as variáveis de E/S estão associadas a um Endereço do PLC, conforme explicado em Endereçamento de Entradas, Saídas e Memória. A camada de hardware é o componente responsável por traduzir as variáveis de endereço interno do PLC em localizações físicas do hardware. Cada plataforma suportada pelo OpenPLC deve ter uma camada de hardware diferente. Abaixo você encontra a descrição da pinagem de cada plataforma, extraída do arquivo da camada de hardware da plataforma.
 
+https://github.com/orangepi-xunlong/wiringOP
+
+OrangePi One/Lite/Pc/Plus/PcPlus/Plus2e
+
+   +------+-----+----------+------+---+OrangePiH3+---+------+----------+-----+------+
+  | GPIO | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi | GPIO |
+   +------+-----+----------+------+---+----++----+---+------+----------+-----+------+
+  |      |     |     3.3V |      |   |  1 || 2  |   |      | 5V       |     |      |
+  |   12 |   0 |    SDA.0 |  OUT | 0 |  3 || 4  |   |      | 5V       |     |      |
+  |   11 |   1 |    SCL.0 |  OUT | 0 |  5 || 6  |   |      | GND      |     |      |
+  |    6 |   2 |      PA6 |  OUT | 0 |  7 || 8  | 0 | OUT  | TXD.3    | 3   | 13   |
+  |      |     |      GND |      |   |  9 || 10 | 0 | OUT  | RXD.3    | 4   | 14   |
+  |    1 |   5 |    RXD.2 |  OUT | 0 | 11 || 12 | 0 | OUT  | PD14     | 6   | 110  |
+  |    0 |   7 |    TXD.2 |  OUT | 0 | 13 || 14 |   |      | GND      |     |      |
+  |    3 |   8 |    CTS.2 |  OUT | 0 | 15 || 16 | 0 | OUT  | PC04     | 9   | 68   |
+  |      |     |     3.3V |      |   | 17 || 18 | 0 | OUT  | PC07     | 10  | 71   |
+  |   64 |  11 |   MOSI.0 |  OUT | 0 | 19 || 20 |   |      | GND      |     |      |
+  |   65 |  12 |   MISO.0 |  OUT | 0 | 21 || 22 | 0 | OUT  | RTS.2    | 13  | 2    |
+  |   66 |  14 |   SCLK.0 |  OUT | 0 | 23 || 24 | 0 | OUT  | CE.0     | 15  | 67   |
+  |      |     |      GND |      |   | 25 || 26 | 0 | OUT  | PA21     | 16  | 21   |
+  |   19 |  17 |    SDA.1 |  OUT | 0 | 27 || 28 | 0 | OUT  | SCL.1    | 18  | 18   |
+  |    7 |  19 |     PA07 |  OUT | 0 | 29 || 30 |   |      | GND      |     |      |
+  |    8 |  20 |     PA08 |  OUT | 0 | 31 || 32 | 0 | OUT  | RTS.1    | 21  | 200  |
+  |    9 |  22 |     PA09 |  OUT | 0 | 33 || 34 |   |      | GND      |     |      |
+  |   10 |  23 |     PA10 |  OUT | 0 | 35 || 36 | 0 | OUT  | CTS.1    | 24  | 201  |
+  |   20 |  25 |     PA20 |  OUT | 0 | 37 || 38 | 0 | OUT  | TXD.1    | 26  | 198  |
+  |      |     |      GND |      |   | 39 || 40 | 0 | OUT  | RXD.1    | 27  | 199  |
+  +------+-----+----------+------+---+----++----+---+------+----------+-----+------+
+  | GPIO | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi | GPIO |
+  +------+-----+----------+------+---+OrangePiH3+---+------+----------+-----+------+
+
+
 ## Placas baseadas em microcontroladores
 
 <table border="0">
