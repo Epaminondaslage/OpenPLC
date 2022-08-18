@@ -66,7 +66,7 @@ Depois de selecionar sua localização, o OpenPLC Editor criará o projeto para 
 <td style="width: 50%;"><img src="../img/diag02.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 03 - Tela Inicial do OpenPLC Editor.</td>
+<td style="text-align: center;">Figura 03 -Criação de uma POU na tela Inicial do OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +79,7 @@ Para o propósito deste tutorial, estamos criando apenas uma POU de Programa. Po
 <td style="width: 50%;"><img src="../img/diag03.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 04 - Criação de uma POU.</td>
+<td style="text-align: center;">Figura 04 - Tela inicial do projeto.</td>
 </tr>
 </tbody>
 </table>
