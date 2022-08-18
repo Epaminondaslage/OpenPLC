@@ -14,7 +14,7 @@
 * [Endereçamento Físico](#Endereçamento-Físico)
 * [Endereçamento Modbus](#Endereçamento-Modbus)
 * [Dispositivos Escravos](#Dispositivos-Escravos)
-* [Criando o primeiro projeto no OpenPLC Editor](#https://github.com/Epaminondaslage/OpenPLC/tree/master/primeirodiagrama)
+* [Criando o primeiro projeto no OpenPLC Editor](https://github.com/Epaminondaslage/OpenPLC/tree/master/primeirodiagrama)
 * [Carregando programas para o OpenPLC Runtime](#Carregando-Programas-para-o-OpenPLC-Runtime)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
