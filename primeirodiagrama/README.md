@@ -26,7 +26,7 @@ Para a montagem deste circuito no Kit SBC Linux faça a montagem da figura XXXX.
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/primeirodiag.jpg" width="60%" /></td>
+<td style="width: 50%;"><img src="../img/primeirodiag.jpg" width="60%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXXX - Montagem do  primeiro circuito no Kit SBC Linux.</td>
@@ -51,7 +51,7 @@ Depois de selecionar sua localização, o OpenPLC Editor criará o projeto para 
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag02.png" width="50%" /></td>
+<td style="width: 50%;"><img src="../img/diag02.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -64,7 +64,7 @@ Para o propósito deste tutorial, estamos criando apenas uma POU de Programa. Po
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag03.png" width="50%" /></td>
+<td style="width: 50%;"><img src="../img/diag03.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -77,7 +77,7 @@ Quando você cria um novo programa, o OpenPLC Editor cria automaticamente uma co
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag04.png" width="80%" /></td>
+<td style="width: 50%;"><img src="../img/diag04.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -94,7 +94,7 @@ Plataformas que possuem um sistema operacional como Windows e Linux são menos r
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag05.png" width="80%" /></td>
+<td style="width: 50%;"><img src="../img/diag05.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -107,7 +107,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag06.png" width="80%" /></td>
+<td style="width: 50%;"><img src="../img/diag06.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -120,7 +120,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag07.jpg" width="80%" /></td>
+<td style="width: 50%;"><img src="../img/diag07.jpg" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -133,7 +133,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag08.png" width="80%" /></td>
+<td style="width: 50%;"><img src="../img/diag08.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -149,7 +149,7 @@ Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag09.png" width="80%" /></td>
+<td style="width: 50%;"><img src="../img/diag09.png" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -166,7 +166,7 @@ Agora que seu projeto foi criado, é um bom momento para testá-lo antes de carr
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag10.png" width="50%" /></td>
+<td style="width: 50%;"><img src="../img/diag10.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
@@ -179,7 +179,7 @@ Quando você clica nesse botão, seu projeto é compilado usando um processo sem
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag13.png" width="50%" /></td>
+<td style="width: 50%;"><img src="../img/diag13.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - linhas verdes e pretas.</td>
@@ -194,7 +194,7 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag14.png" width="50%" /></td>
+<td style="width: 50%;"><img src="../img/diag14.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - Simulação do programa em execução.</td>
