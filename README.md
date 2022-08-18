@@ -15,7 +15,7 @@
 * [Endereçamento Modbus](#Endereçamento-Modbus)
 * [Dispositivos Escravos](#Dispositivos-Escravos)
 * [Criando o primeiro projeto no OpenPLC Editor](https://github.com/Epaminondaslage/OpenPLC/tree/master/primeirodiagrama)
-* [Carregando programas para o OpenPLC Runtime](#Carregando-Programas-para-o-OpenPLC-Runtime)
+* [Carregando programas para o OpenPLC Runtime](https://github.com/Epaminondaslage/OpenPLC/blob/master/primeirodiagrama/README.md)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
 
@@ -400,18 +400,6 @@ Por exemplo, se o endereço Modbus para uma bobina de saída discreta for 22, a 
 
 https://openplcproject.com/docs/2-6-slave-devices/
 
-
-
-
-# Criando o primeiro projeto no OpenPLC Editor
-  
-ver endereço
-  
-# Carregando Programas para o OpenPLC Runtime.
-
-ver endereço
- 
-
 # Referências
 
 * FREITAS, C. M. Conheça o OpenPLC - O primeiro CLP de Código Aberto Padronizado Disponível em:https://www.embarcados.com.br/openplc-o-primeiro-clp-de-codigo-aberto/ Acesso em Março de 2019.
@@ -431,8 +419,7 @@ ver endereço
  * E. V. Easwaran et al., "Programmable Logic Controller: Open Source Hardware and Software for Massive Training," IECON 2018 - 44th Annual Conference of the IEEE Industrial Electronics Society, 2018, pp. 2422-2427, doi: 10.1109/IECON.2018.8592772.
   
 * https://inductiveautomation.com/scada-software/?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCbenQ37JpOXbF0VmaAw2WL0hdSYVrTHSdwi_yRkBgwWPkQzpkb-aH0aAhIREALw_wcB
-  
-  
+   
 * <p><a href="https://openplcproject.com/">Site do Projeto openplc</a></p>
 * <p><a href="https://github.com/thiagoralves/OpenPLC_v3">Projeto Openplc Runtime no Github</a></p> 
 * <p><a href="https://github.com/thiagoralves/OpenPLC_Editor">Projeto Openplc Editor no Github</a></p>  
@@ -440,5 +427,3 @@ ver endereço
 * <p><a href="https://beremiz.org/">Site do Editor Beremiz</a></p> 
 * <p><a href="[https://beremiz.org/](https://openplcproject.com/docs/2-1-openplc-runtime-overview/)">Site do OpenPLC Runtime</a></p>
 
-https://openplcproject.com/docs/2-3-input-output-and-memory-addressing/
- https://openplcproject.com/docs/2-2-uploading-programs-to-openplc-runtime/
