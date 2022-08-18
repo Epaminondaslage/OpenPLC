@@ -17,8 +17,8 @@ O servidor Web OpenPLC pode ser acessado abrindo um navegador da Web em seu comp
 Após efetuar login no servidor web, você verá o painel do OpenPLC com algumas informações sobre o programa em execução atual e os logs de tempo de execução.
   
     http://ip_do_orangePi:8080
-    User:openplc
-    Paswwd:openplc
+    User    :openplc
+    Password:openplc
   
 Para carregar seu novo programa, vá para a seção Programas no menu à esquerda. Lá você deve ver uma lista de todos os seus programas enviados recentemente. Você pode reverter para um programa carregado anteriormente apenas clicando nele na lista e confirmando na próxima página. Para fazer o upload de um novo programa, clique em “Choose File”, selecione seu arquivo .st e clique em “Upload Program”.
 
