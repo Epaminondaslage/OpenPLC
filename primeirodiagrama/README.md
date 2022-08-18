@@ -13,7 +13,7 @@ Para começar, conecte seu circuito assim:
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diag01.jpg" width="50%" /></td>
+<td style="width: 50%;"><img src="../img/diag01.jpg" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
