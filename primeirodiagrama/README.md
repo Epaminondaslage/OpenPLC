@@ -28,7 +28,7 @@ Para começar, conecte seu circuito assim:
 <td style="width: 50%;"><img src="../img/diag01.jpg" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 01 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 01 - Diagrama de conexões de entrada e saída do openPLC.</td>
 </tr>
 </tbody>
 </table>
@@ -41,7 +41,7 @@ Para a montagem deste circuito no Kit SBC Linux faça a montagem da figura 02.
 <td style="width: 50%;"><img src="../img/primeirodiag.jpg" width="60%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 02 - Montagem do  primeiro circuito no Kit SBC Linux.</td>
+<td style="text-align: center;">Figura 02 - Montagem do circuito no Kit SBC Linux.</td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ Depois de selecionar sua localização, o OpenPLC Editor criará o projeto para 
 <td style="width: 50%;"><img src="../img/diag02.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 03 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 03 - Tela Inicial do OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +79,7 @@ Para o propósito deste tutorial, estamos criando apenas uma POU de Programa. Po
 <td style="width: 50%;"><img src="../img/diag03.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 04 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 04 - Criação de uma POU.</td>
 </tr>
 </tbody>
 </table>
@@ -92,7 +92,7 @@ Quando você cria um novo programa, o OpenPLC Editor cria automaticamente uma co
 <td style="width: 50%;"><img src="../img/diag04.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 05 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 05 - Detalhe da janela do projeto.</td>
 </tr>
 </tbody>
 </table>
@@ -109,7 +109,7 @@ Plataformas que possuem um sistema operacional como Windows e Linux são menos r
 <td style="width: 50%;"><img src="../img/diag05.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 06 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 06 - Configuração das Janelas de execução do programa.</td>
 </tr>
 </tbody>
 </table>
@@ -122,7 +122,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="../img/diag06.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 07 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 07 - Janela de adição de variáveis.</td>
 </tr>
 </tbody>
 </table>
@@ -135,7 +135,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="../img/diag07.jpg" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 08 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 08 - Diagrama Ladder.</td>
 </tr>
 </tbody>
 </table>
@@ -148,7 +148,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="../img/diag08.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 09 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 09 - Barra de ferramentas do editor.</td>
 </tr>
 </tbody>
 </table>
@@ -164,7 +164,7 @@ Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro
 <td style="width: 50%;"><img src="../img/diag09.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 10 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 10 - Adição dos componentes do diagrama.</td>
 </tr>
 </tbody>
 </table>
@@ -181,7 +181,7 @@ Agora que seu projeto foi criado, é um bom momento para testá-lo antes de carr
 <td style="width: 50%;"><img src="../img/diag10.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 11 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 11 - Iniciando a simulação do diagrama.</td>
 </tr>
 </tbody>
 </table>
@@ -194,7 +194,7 @@ Quando você clica nesse botão, seu projeto é compilado usando um processo sem
 <td style="width: 50%;"><img src="../img/diag13.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 12 - linhas verdes e pretas.</td>
+<td style="text-align: center;">Figura 12 - Detales da simulação: Linhas verdes e pretas.</td>
 </tr>
 </tbody>
 </table>
@@ -217,5 +217,3 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 Finalmente, depois de ter criado e testado o programa, o último passo é gerar seu programa em um formato que o OpenPLC Runtime entenda. Para isso, basta clicar em Generate program for OpenPLC Runtime na barra de ferramentas e salvar o arquivo .st em seu computador. Este arquivo é seu programa de lógica ladder escrito em uma linguagem que o OpenPLC Runtime pode entender. Você pode carregar este arquivo posteriormente para o OpenPLC Runtime conforme explicado em no tutorial Carregando Programas para o OpenPLC Runtime. 
 
 # Referências
-* https://openplcproject.com/docs/2-3-input-output-and-memory-addressing/
-* https://openplcproject.com/docs/2-2-uploading-programs-to-openplc-runtime/
