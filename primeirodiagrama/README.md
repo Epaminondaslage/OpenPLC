@@ -1,3 +1,13 @@
+<td style="width: 20%;"><img src="../img/Logo_CEFET-MG.png" width="20%" /></td>
+<p><strong><span style="color: #0000ff;">Criando o primeiro projeto no OpenPLC Editor</span></strong></p>
+<p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
+<a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
+
+# Índice 
+
+* [Criando o primeiro projeto no OpenPLC Editor](#Criando-o-primeiro-projeto-no-OpenPLC-Editor)
+* [Referências](#Referências)
+
 # Criando o primeiro projeto no OpenPLC Editor
 
 Este primeiro projeto é um simples de  botão liga e botão desliga que aciona uma saída de relé. Você vai precisar de:
@@ -18,12 +28,12 @@ Para começar, conecte seu circuito assim:
 <td style="width: 50%;"><img src="../img/diag01.jpg" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 01 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
 
-Para a montagem deste circuito no Kit SBC Linux faça a montagem da figura XXXX.
+Para a montagem deste circuito no Kit SBC Linux faça a montagem da figura 02.
 
 <table border="0">
 <tbody>
@@ -31,7 +41,7 @@ Para a montagem deste circuito no Kit SBC Linux faça a montagem da figura XXXX.
 <td style="width: 50%;"><img src="../img/primeirodiag.jpg" width="60%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXXX - Montagem do  primeiro circuito no Kit SBC Linux.</td>
+<td style="text-align: center;">Figura 02 - Montagem do  primeiro circuito no Kit SBC Linux.</td>
 </tr>
 </tbody>
 </table>
@@ -56,7 +66,7 @@ Depois de selecionar sua localização, o OpenPLC Editor criará o projeto para 
 <td style="width: 50%;"><img src="../img/diag02.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 03 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +79,7 @@ Para o propósito deste tutorial, estamos criando apenas uma POU de Programa. Po
 <td style="width: 50%;"><img src="../img/diag03.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 04 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +92,7 @@ Quando você cria um novo programa, o OpenPLC Editor cria automaticamente uma co
 <td style="width: 50%;"><img src="../img/diag04.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 05 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -99,7 +109,7 @@ Plataformas que possuem um sistema operacional como Windows e Linux são menos r
 <td style="width: 50%;"><img src="../img/diag05.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 06 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -112,7 +122,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="../img/diag06.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 07 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -125,7 +135,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="../img/diag07.jpg" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 08 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -138,7 +148,7 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
 <td style="width: 50%;"><img src="../img/diag08.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 09 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -154,7 +164,7 @@ Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro
 <td style="width: 50%;"><img src="../img/diag09.png" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 10 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -171,7 +181,7 @@ Agora que seu projeto foi criado, é um bom momento para testá-lo antes de carr
 <td style="width: 50%;"><img src="../img/diag10.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
+<td style="text-align: center;">Figura 11 - dsdsdsdsdsdsdjkhsigdigdiuegdiugd.</td>
 </tr>
 </tbody>
 </table>
@@ -184,7 +194,7 @@ Quando você clica nesse botão, seu projeto é compilado usando um processo sem
 <td style="width: 50%;"><img src="../img/diag13.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - linhas verdes e pretas.</td>
+<td style="text-align: center;">Figura 12 - linhas verdes e pretas.</td>
 </tr>
 </tbody>
 </table>
@@ -199,9 +209,11 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 <td style="width: 50%;"><img src="../img/diag14.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Simulação do programa em execução.</td>
+<td style="text-align: center;">Figura 13 - Simulação do programa em execução.</td>
 </tr>
 </tbody>
 </table>
   
 Finalmente, depois de ter criado e testado o programa, o último passo é gerar seu programa em um formato que o OpenPLC Runtime entenda. Para isso, basta clicar em Generate program for OpenPLC Runtime na barra de ferramentas e salvar o arquivo .st em seu computador. Este arquivo é seu programa de lógica ladder escrito em uma linguagem que o OpenPLC Runtime pode entender. Você pode carregar este arquivo posteriormente para o OpenPLC Runtime conforme explicado em no tutorial Carregando Programas para o OpenPLC Runtime. 
+
+# Referências
