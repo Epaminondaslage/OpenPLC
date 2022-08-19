@@ -106,7 +106,7 @@ Por ser uma ferramenta totalmente aberta, o OpenPLC possibilita que qualquer pes
 
 # OpenPLC Editor
 
-O OpenPLC Editor, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na Universidade do Alabama), surgiu através do objetivo de encontrar vulnerabilidade em PLCs (Programmable Logic Controller ou Controlador Lógico Programável - CLP). Entretanto, dificilmente algum fabricante de CLP disponibilizaria seu código fonte para que o estudante pudesse realizar uma análise mais profunda, a fim de validar seus estudos. Devido a isto, ele resolveu criar o seu próprio CLP de hardware e software livres, que pode ser programado nas 5 principais linguagens definidas conforme a norma IEC 61131-3 (https://pt.wikipedia.org/wiki/IEC_61131-3), que estabelece a arquitetura básica de software e as linguagens de programação para CLPs. As linguagens suportadas pelo OpenPLC Editor estão apresentadas na figura 2.
+O OpenPLC Editor, projeto criado por Thiago Rodrigues Alves (estudante de doutorado na Universidade do Alabama), surgiu através do objetivo de encontrar vulnerabilidade em PLCs (Programmable Logic Controller ou Controlador Lógico Programável - CLP). Entretanto, dificilmente algum fabricante de CLP disponibilizaria seu código fonte para que o estudante pudesse realizar uma análise mais profunda, a fim de validar seus estudos. Devido a isto, ele resolveu criar o seu próprio CLP de hardware e software livres, que pode ser programado nas 5 principais linguagens definidas conforme a norma IEC 61131-3 (https://pt.wikipedia.org/wiki/IEC_61131-3), que estabelece a arquitetura básica de software e as linguagens de programação para CLPs. As linguagens suportadas pelo OpenPLC Editor estão apresentadas na figura 02.
 
 <table border="0">
 <tbody>
@@ -114,7 +114,7 @@ O OpenPLC Editor, projeto criado por Thiago Rodrigues Alves (estudante de doutor
 <td style="width: 50%;"><img src="./img/ling_plc.jpg" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Linguagens de programação disponibilizadas no OpenPLC Editor.</td>
+<td style="text-align: center;">Figura 02 - Linguagens de programação disponibilizadas no OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -133,7 +133,7 @@ A figura 3 ilustra a linguagem Ladder sendo aplicada sobre o OpenPLC Editor.
 <td style="width: 50%;"><img src="./img/Figura_1.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.</td>
+<td style="text-align: center;">Figura 03 - Linguagem Ladder sendo aplicada sobre o OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -148,7 +148,7 @@ O servidor web runtime n SBC está disponível em seu endereço IP de destino na
 
 Se você estiver recebendo erros de página, certifique-se de que seu computador possa acessar o OrengePi One em sua rede. Se você não sabe o endereço IP da sua placa, utilize uma ferramenta pas escanear sua rede e descobrir o IP dele.
 
-Depois de acessar o servidor web OpenPLC, você deverá ver na janela do seu navegador uma página de login como a apresentada na figura XXXX.
+Depois de acessar o servidor web OpenPLC, você deverá ver na janela do seu navegador uma página de login como a apresentada na figura 04.
 
 
 <table border="0">
@@ -157,7 +157,7 @@ Depois de acessar o servidor web OpenPLC, você deverá ver na janela do seu nav
 <td style="width: 50%;"><img src="./img/diag11.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Tela inicial da Runtime do OpenPLC Editor.</td>
+<td style="text-align: center;">Figura 04 - Tela inicial da Runtime do OpenPLC Editor.</td>
 </tr>
 </tbody>
 </table>
@@ -179,7 +179,7 @@ Por padrão, o tempo de execução do OpenPLC é instalado com um driver em bran
 <td style="width: 50%;"><img src="./img/diag12.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Escolha do hardware que está instalado o OpenPLC Runtime.</td>
+<td style="text-align: center;">Figura 05 - Escolha do hardware que está instalado o OpenPLC Runtime.</td>
 </tr>
 </tbody>
 </table>
@@ -282,7 +282,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagarduinomegaedue.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Endereçamento físico para Arduino Mega e Due.</td>
+<td style="text-align: center;">Figura 06 - Endereçamento físico para Arduino Mega e Due.</td>
 </tr>
 </tbody>
 </table>
@@ -294,7 +294,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagarduinouno.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Endereçamento físico para Arduino Uno, Leonard, Nano, Micro e Zero.</td>
+<td style="text-align: center;">Figura 07 - Endereçamento físico para Arduino Uno, Leonard, Nano, Micro e Zero.</td>
 </tr>
 </tbody>
 </table>
@@ -306,7 +306,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagesp32.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Endereçamento físico para ESP32.</td>
+<td style="text-align: center;">Figura 08 - Endereçamento físico para ESP32.</td>
 </tr>
 </tbody>
 </table>
@@ -318,7 +318,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagesp8266.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Endereçamento físico para ESP8266.</td>
+<td style="text-align: center;">Figura 09 - Endereçamento físico para ESP8266.</td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +329,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagraspberrypi.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Endereçamento físico para Raspberry Pi.</td>
+<td style="text-align: center;">Figura 10 - Endereçamento físico para Raspberry Pi.</td>
 </tr>
 </tbody>
 </table>
@@ -357,7 +357,7 @@ Os endereços Modbus vinculam-se a endereços PLC com base no valor do endereço
 <td style="width: 50%;"><img src="./img/diagmodbus.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Endereçamento Modbus para Openplc em Windows e Linux.</td>
+<td style="text-align: center;">Figura 11 - Endereçamento Modbus para Openplc em Windows e Linux.</td>
 </tr>
 </tbody>
 </table>
@@ -371,7 +371,7 @@ Devido a limitações de memória, plataformas embarcadas como placas Arduino po
 <td style="width: 50%;"><img src="./img/diagmodbusarduino.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Endereçamento Modbus para Openplc para Arduino.</td>
+<td style="text-align: center;">Figura 12 - Endereçamento Modbus para Openplc para Arduino.</td>
 </tr>
 </tbody>
 </table>
@@ -384,7 +384,7 @@ Plataformas baseadas em ATmega 328P, ATmega 168, ATmega32U4 e ATmega16U4 como o 
 <td style="width: 50%;"><img src="./img/diagmodbusarduinouno.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura XXX - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
+<td style="text-align: center;">Figura 13 - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
 </tr>
 </tbody>
 </table>
