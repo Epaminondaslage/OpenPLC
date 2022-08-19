@@ -229,6 +229,17 @@ Por exemplo, se você deseja ler o estado da primeira entrada digital em uma var
 
 Nota: O mapeamento de PLC para E/S física depende da plataforma. Para mais informações sobre mapeamento de E/S do CLP para cada plataforma suportada.
 
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/endereçamento IEC 61131-3.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 06 - Endereçamento IEC 61131-3.</td>
+</tr>
+</tbody>
+</table>
+
 Como você deve ter notado, os endereços PLC bit (X) possuem um endereço hierárquico de duas partes. A parte menos significativa (mais à direita) pode ser interpretada como uma posição em um byte e deve estar no intervalo de 0 a 7. A parte mais significativa (mais à esquerda) não deve ser maior que 1023. As partes são separadas por um único período. Tamanhos de dados diferentes de X têm um endereço hierárquico de uma parte. Eles não devem conter um ponto (.) e não devem ser maiores que o endereço máximo de localização de memória para sua plataforma.
 
 Os seguintes são exemplos inválidos de endereços PLC no OpenPLC pelo motivo declarado:
@@ -236,6 +247,8 @@ Os seguintes são exemplos inválidos de endereços PLC no OpenPLC pelo motivo d
    * %IX0.8 O índice menos significativo é maior que 7.
    * %QX0.0.1 A hierarquia de três partes não é um endereço permitido.
    * %IB1.1 Hierarquia de duas partes só é permitida para tamanho de dados X
+   
+   
 
 # Endereçamento Físico
 
@@ -282,7 +295,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagarduinomegaedue.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 06 - Endereçamento físico para Arduino Mega e Due.</td>
+<td style="text-align: center;">Figura 07 - Endereçamento físico para Arduino Mega e Due.</td>
 </tr>
 </tbody>
 </table>
@@ -294,7 +307,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagarduinouno.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 07 - Endereçamento físico para Arduino Uno, Leonard, Nano, Micro e Zero.</td>
+<td style="text-align: center;">Figura 08 - Endereçamento físico para Arduino Uno, Leonard, Nano, Micro e Zero.</td>
 </tr>
 </tbody>
 </table>
@@ -306,7 +319,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagesp32.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 08 - Endereçamento físico para ESP32.</td>
+<td style="text-align: center;">Figura 09 - Endereçamento físico para ESP32.</td>
 </tr>
 </tbody>
 </table>
@@ -318,7 +331,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagesp8266.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 09 - Endereçamento físico para ESP8266.</td>
+<td style="text-align: center;">Figura 10 - Endereçamento físico para ESP8266.</td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +342,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagraspberrypi.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 10 - Endereçamento físico para Raspberry Pi.</td>
+<td style="text-align: center;">Figura 11 - Endereçamento físico para Raspberry Pi.</td>
 </tr>
 </tbody>
 </table>
@@ -357,7 +370,7 @@ Os endereços Modbus vinculam-se a endereços PLC com base no valor do endereço
 <td style="width: 50%;"><img src="./img/diagmodbus.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 11 - Endereçamento Modbus para Openplc em Windows e Linux.</td>
+<td style="text-align: center;">Figura 12 - Endereçamento Modbus para Openplc em Windows e Linux.</td>
 </tr>
 </tbody>
 </table>
@@ -371,7 +384,7 @@ Devido a limitações de memória, plataformas embarcadas como placas Arduino po
 <td style="width: 50%;"><img src="./img/diagmodbusarduino.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 12 - Endereçamento Modbus para Openplc para Arduino.</td>
+<td style="text-align: center;">Figura 13 - Endereçamento Modbus para Openplc para Arduino.</td>
 </tr>
 </tbody>
 </table>
@@ -384,7 +397,7 @@ Plataformas baseadas em ATmega 328P, ATmega 168, ATmega32U4 e ATmega16U4 como o 
 <td style="width: 50%;"><img src="./img/diagmodbusarduinouno.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 13 - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
+<td style="text-align: center;">Figura 14 - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
 </tr>
 </tbody>
 </table>
