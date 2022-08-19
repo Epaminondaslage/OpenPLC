@@ -279,12 +279,25 @@ https://github.com/orangepi-xunlong/wiringOP
       |    7 |  19 |     PA07 |  OUT | 0 | 29 || 30 |   |      | GND      |     |      |
       |    8 |  20 |     PA08 |  OUT | 0 | 31 || 32 | 0 | OUT  | RTS.1    | 21  | 200  |
       |    9 |  22 |     PA09 |  OUT | 0 | 33 || 34 |   |      | GND      |     |      |
-      |    10 |  23 |     PA10 |  OUT | 0 | 35 || 36 | 0 | OUT  | CTS.1    | 24  | 201  |
+      |   10 |  23 |     PA10 |  OUT | 0 | 35 || 36 | 0 | OUT  | CTS.1    | 24  | 201  |
       |   20 |  25 |     PA20 |  OUT | 0 | 37 || 38 | 0 | OUT  | TXD.1    | 26  | 198  |
       |      |     |      GND |      |   | 39 || 40 | 0 | OUT  | RXD.1    | 27  | 199  |
       +------+-----+----------+------+---+----++----+---+------+----------+-----+------+
       | GPIO | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi | GPIO |
       +------+-----+----------+------+---+OrangePiH3+---+------+----------+-----+------+
+
+A tabela apresentada na figura 07 apresenta a equivalência dos pinos entre o Raspberry 3B e o OrangePi One e sua equivalência no OpenPLC.   
+
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="./img/pins.jpg" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 07 - Disposição de Pinos entre RaspberryPi 3B e OrangePi One.</td>
+</tr>
+</tbody>
+</table>
 
 
 ## Placas baseadas em microcontroladores
@@ -295,7 +308,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagarduinomegaedue.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 07 - Endereçamento físico para Arduino Mega e Due.</td>
+<td style="text-align: center;">Figura 08 - Endereçamento físico para Arduino Mega e Due.</td>
 </tr>
 </tbody>
 </table>
@@ -307,7 +320,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagarduinouno.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 08 - Endereçamento físico para Arduino Uno, Leonard, Nano, Micro e Zero.</td>
+<td style="text-align: center;">Figura 09 - Endereçamento físico para Arduino Uno, Leonard, Nano, Micro e Zero.</td>
 </tr>
 </tbody>
 </table>
@@ -319,7 +332,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagesp32.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 09 - Endereçamento físico para ESP32.</td>
+<td style="text-align: center;">Figura 10 - Endereçamento físico para ESP32.</td>
 </tr>
 </tbody>
 </table>
@@ -331,7 +344,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagesp8266.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 10 - Endereçamento físico para ESP8266.</td>
+<td style="text-align: center;">Figura 11 - Endereçamento físico para ESP8266.</td>
 </tr>
 </tbody>
 </table>
@@ -342,7 +355,7 @@ https://github.com/orangepi-xunlong/wiringOP
 <td style="width: 50%;"><img src="./img/diagraspberrypi.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 11 - Endereçamento físico para Raspberry Pi.</td>
+<td style="text-align: center;">Figura 12 - Endereçamento físico para Raspberry Pi.</td>
 </tr>
 </tbody>
 </table>
@@ -370,7 +383,7 @@ Os endereços Modbus vinculam-se a endereços PLC com base no valor do endereço
 <td style="width: 50%;"><img src="./img/diagmodbus.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 12 - Endereçamento Modbus para Openplc em Windows e Linux.</td>
+<td style="text-align: center;">Figura 13 - Endereçamento Modbus para Openplc em Windows e Linux.</td>
 </tr>
 </tbody>
 </table>
@@ -384,7 +397,7 @@ Devido a limitações de memória, plataformas embarcadas como placas Arduino po
 <td style="width: 50%;"><img src="./img/diagmodbusarduino.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 13 - Endereçamento Modbus para Openplc para Arduino.</td>
+<td style="text-align: center;">Figura 14 - Endereçamento Modbus para Openplc para Arduino.</td>
 </tr>
 </tbody>
 </table>
@@ -397,7 +410,7 @@ Plataformas baseadas em ATmega 328P, ATmega 168, ATmega32U4 e ATmega16U4 como o 
 <td style="width: 50%;"><img src="./img/diagmodbusarduinouno.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 14 - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
+<td style="text-align: center;">Figura 15 - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
 </tr>
 </tbody>
 </table>
