@@ -232,7 +232,7 @@ Nota: O mapeamento de PLC para E/S física depende da plataforma. Para mais info
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/endereçamento IEC 61131-3.png" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/endereçamento IEC 61131-3.png" width="30%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 06 - Endereçamento IEC 61131-3.</td>
@@ -291,7 +291,7 @@ A tabela apresentada na figura 07 apresenta a equivalência dos pinos entre o Ra
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/pins.jpg" width="50%" /></td>
+<td style="width: 50%;"><img src="./img/pins.jpg" width="80%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 07 - Disposição de Pinos entre RaspberryPi 3B e OrangePi One.</td>
