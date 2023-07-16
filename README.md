@@ -1,9 +1,10 @@
 <img src="/img/Logo_CEFET-MG.png" width="20%">
-** OpenPLC</p>
+Repositório OpenPLC</p>
 Prof Epaminondas Lage</p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
 # Índice 
+
 * [Introdução](#Introdução)
 * [A IEC 6113](#A-IEC-6113)
 * [OpenPLC](#OpenPLC)
