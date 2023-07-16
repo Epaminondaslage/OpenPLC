@@ -16,7 +16,7 @@ O servidor Web OpenPLC pode ser acessado abrindo um navegador da Web em seu comp
 
 Após efetuar login no servidor web, você verá o painel do OpenPLC com algumas informações sobre o programa em execução atual e os logs de tempo de execução.
   
-    http://ip_do_orangePi:8080
+    http://ip_do_raspberry:8080
     User    :openplc
     Password:openplc
   
