@@ -1,6 +1,6 @@
-<td style="width: 20%;"><img src="/img/Logo_CEFET-MG.png" width="20%"></td>
-<p><strong><span style="color: #0000ff;">OpenPLC</span></strong></p>
-<p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
+<img src="/img/Logo_CEFET-MG.png" width="20%">
+** OpenPLC</p>
+Prof Epaminondas Lage</p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
 # Índice 
