@@ -355,7 +355,7 @@ A tabela apresentada na figura 07 apresenta a equivalência dos pinos entre o Ra
 </tbody>
 </table>
 
-# Instalando o Open`PLC em um Raspberry
+# Instalando o OpenPLC em um Raspberry
 
 Instalando OpenPLC Runtime no Linux
 
