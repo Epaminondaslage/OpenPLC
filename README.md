@@ -244,14 +244,12 @@ Os seguintes são exemplos inválidos de endereços PLC no OpenPLC pelo motivo d
    * %IX0.8 O índice menos significativo é maior que 7.
    * %QX0.0.1 A hierarquia de três partes não é um endereço permitido.
    * %IB1.1 Hierarquia de duas partes só é permitida para tamanho de dados X
-   
-   
 
 # Endereçamento Físico
 
 O OpenPLC Runtime é compatível com várias plataformas de hardware diferentes com diferentes configurações de módulos de E/S. Internamente, todas as variáveis de E/S estão associadas a um Endereço do PLC, conforme explicado em Endereçamento de Entradas, Saídas e Memória. A camada de hardware é o componente responsável por traduzir as variáveis de endereço interno do PLC em localizações físicas do hardware. Cada plataforma suportada pelo OpenPLC deve ter uma camada de hardware diferente. Abaixo você encontra a descrição da pinagem de cada plataforma, extraída do arquivo da camada de hardware da plataforma.
 
-https://github.com/orangepi-xunlong/wiringOP
+ https://github.com/orangepi-xunlong/wiringOP
 
 * OrangePi One/Lite/Pc/Plus/PcPlus/Plus2e
 
@@ -357,31 +355,80 @@ A tabela apresentada na figura 07 apresenta a equivalência dos pinos entre o Ra
 </tbody>
 </table>
 
+# Instalando o Open`PLC em um Raspberry
+
+Instalando OpenPLC Runtime no Linux
+
+Instruções passo a passo sobre como instalar o OpenPLC Runtime em seu sistema. O OpenPLC Runtime pode rodar em uma variedade de sistemas Linux, mas funciona melhor em distribuições baseadas em Debian como Ubuntu e Raspbian.
+
+A melhor maneira de obter o OpenPLC Runtime em seu dispositivo é usando git. Normalmente, o git vem pré-instalado na maioria das distribuições Linux. Se por algum motivo você não tiver o git instalado em seu sistema, você pode instalá-lo abrindo o terminal e digitando:
+
+  sudo apt-get install git
+
+Para instalar o OpenPLC, digite estas linhas no terminal:
+
+  git clone https://github.com/thiagoralves/OpenPLC_v3.git
+  CD OpenPLC_v3
+  ./install.sh linux
+
+
+Se você estiver instalando o OpenPLC em um hardware Linux específico, como o Raspberry Pi por exemplo, você deve substituir o parâmetro ‘linux’ pelo argumento específico da sua plataforma:
+
+  ./install.sh rpi
+
+Abaixo estão os argumentos válidos para o instalador:
+
+* win – Instalar OpenPLC no Windows sobre Cygwin
+* linux – Instalar OpenPLC em uma distribuição Linux baseada em Debian
+* docker – Instalar o OpenPLC em um container Docker
+* rpi – Instalar o OpenPLC em um Raspberry Pi
+* neuron – Instalar o OpenPLC em um UniPi Neuron PLC
+* personalizado – Ignora toda a instalação de pacotes específicos e tenta instalar o OpenPLC assumindo que seu sistema já possui todas as dependências atendidas
+ 
+O processo de instalação levará algum tempo (até 1 hora, dependendo do seu sistema). Depois que o OpenPLC estiver instalado, basta reiniciar o dispositivo e ele iniciará automaticamente após a inicialização.
+
+# Biblioteca WiringPi
+
+Você também deve ter a biblioteca WiringPi instalada para poder executar o OpenPLC. WiringPi é responsável por controlar os pinos Raspberry Pi GPIO. Sem ele, você não conseguirá ativar o driver Raspberry Pi e o OpenPLC não conseguirá controlar os pinos da placa. 
+
+A biblioteca WiringPi é uma biblioteca de software escrita em C para controlar os pinos GPIO (General Purpose Input/Output) em placas Raspberry Pi. Ela foi desenvolvida por Gordon Henderson e fornece uma interface fácil de usar para interagir com os pinos GPIO da Raspberry Pi usando a linguagem de programação C.
+
+Com a biblioteca WiringPi, você pode controlar os pinos GPIO de várias maneiras, como definir o modo dos pinos como entrada ou saída, ler o estado dos pinos de entrada e escrever dados em pinos de saída. Ela também suporta temporizadores (delays) e PWM (Pulse Width Modulation) para controlar a intensidade de dispositivos como LEDs e motores.
+
+Além de C, a biblioteca WiringPi também possui interfaces para outras linguagens de programação, incluindo Python, Perl, Ruby e Java. Isso permite que desenvolvedores de diferentes backgrounds utilizem a biblioteca em seus projetos, independentemente da linguagem escolhida.
+
+Para utilizar a biblioteca WiringPi, você precisa instalá-la no seu Raspberry Pi. Ela geralmente vem pré-instalada em distribuições Raspberry Pi OS mais recentes, mas você pode instalá-la manualmente caso necessário.
+
+Para instalar o WiringPi, obtenha a versão .deb mais recente em:
+
+https://github.com/WiringPi/WiringPi/releases/
+
+O arquivo -armhf.deb deve ser usado em sistemas operacionais de 32 bits (Raspberry Pi 3 e inferior) e o arquivo -arm64.deb é destinado a sistemas operacionais de 64 bits (Raspberry Pi 4 e superior). Baixe o arquivo apropriado para sua arquitetura em seu Raspberry Pi e instale-o com o comando dpkg:
+
+  dpkg -i wirepi-[versão]-armhf.deb
+ou
+  dpkg -i wirepi-[versão]-arm64.deb
+
+Teste se a instalação do WiringPi foi concluída com sucesso com o comando:
+
+  gpio -v
+
 
 # Referências
 
 * FREITAS, C. M. Conheça o OpenPLC - O primeiro CLP de Código Aberto Padronizado Disponível em:https://www.embarcados.com.br/openplc-o-primeiro-clp-de-codigo-aberto/ Acesso em Março de 2019.
-
 * ALVES, T.R. What is OpenPLC?. OpenPLC Project, 2017. Disponível em: http://www.openplcproject.com/. Acesso em novembro de 2017.
-
 * ALVES, T.R.; BURATTO, M.; SOUZA, F.M.; RODRIGUES, T, V. OpenPLC: An Open Source Alternative to Automation. In IEEE 2014 Global Humanitarian Technology Conference (GHTC 2014), San Jose, CA, 2014, pp. 585-589.
-
 * JOHN, K.H.; TIEGELKAMP, M. IEC 61131-3: Programming Industrial Automation Systems,” 2nd ed. Springer, 2010 pp.147-168.
-  
 * https://crushtymks.com/pt/industrial-automation/1102-goals-and-benefits-of-the-iec-61131-standard-plcs-8211-programmable-logic-controllers.html
-
 * https://beremiz.org/usecases 
-  
 * NORMA IEC 61131-3 PARA PROGRAMAÇÃO DE CONTROLADORES PROGRAMÁVEIS: ESTUDO E APLICAÇÃO HUGO CASATI FERREIRA GUIMARÃES , VITÓRIA ES SETEMBRO/2005 UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO CENTRO TECNOLÓGICO DEPARTAMENTO DE ENGENHARIA ELÉTRICA PROJETO DE GRADUAÇÃO 
-  
  * E. V. Easwaran et al., "Programmable Logic Controller: Open Source Hardware and Software for Massive Training," IECON 2018 - 44th Annual Conference of the IEEE Industrial Electronics Society, 2018, pp. 2422-2427, doi: 10.1109/IECON.2018.8592772.
-  
 * https://inductiveautomation.com/scada-software/?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCbenQ37JpOXbF0VmaAw2WL0hdSYVrTHSdwi_yRkBgwWPkQzpkb-aH0aAhIREALw_wcB
-   
 * <p><a href="https://openplcproject.com/">Site do Projeto openplc</a></p>
 * <p><a href="https://github.com/thiagoralves/OpenPLC_v3">Projeto Openplc Runtime no Github</a></p> 
 * <p><a href="https://github.com/thiagoralves/OpenPLC_Editor">Projeto Openplc Editor no Github</a></p>  
 * <p><a href="https://plcopen.org/">Site do PLC Open</a></p>
 * <p><a href="https://beremiz.org/">Site do Editor Beremiz</a></p> 
 * <p><a href="[https://beremiz.org/](https://openplcproject.com/docs/2-1-openplc-runtime-overview/)">Site do OpenPLC Runtime</a></p>
-
+* <p><a href="https://openplcproject.com/docs/installing-openplc-runtime-on-linux-systems/">Site do OpenPLC</a></p> 
