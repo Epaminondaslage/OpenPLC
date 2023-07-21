@@ -13,6 +13,8 @@ Prof Epaminondas Lage</p>
 * [Plataformas de Hardware para o OpenPLC](#Plataformas-de-Hardware-para-o-OpenPLC)
 * [Endereçamento de Entrada, Saída e Memória](#Endereçamento-de-Entrada-Saída-e-Memória)
 * [Endereçamento Físico](#Endereçamento-Físico)
+* [Instalando o OpenPLC em um Raspberry](#Instalando-o-OpenPLC-em-um-Raspberry)
+* [Biblioteca WiringPi](#Biblioteca-WiringPi)
 * [Criando o primeiro projeto no OpenPLC Editor](https://github.com/Epaminondaslage/OpenPLC/tree/master/primeirodiagrama)
 * [Carregando programas para o OpenPLC Runtime](https://github.com/Epaminondaslage/OpenPLC/blob/master/primeirodiagrama/README.md)
 * [Status do Projeto](#Status-do-Projeto)
