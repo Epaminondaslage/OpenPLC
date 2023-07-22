@@ -400,3 +400,7 @@ Teste se a instalação do WiringPi foi concluída com sucesso com o comando:
 * Site do Editor Beremiz. Beremiz. Disponível em: https://beremiz.org/. Acesso em Abril de 2021.
 * Site do OpenPLC Runtime. OpenPLC Project. Disponível em: https://openplcproject.com/docs/2-1-openplc-runtime-overview. Acesso em Abril de 2021.
 * Instalação do runtime do OpenPLC. OpenPLC Project. Disponível em: https://openplcproject.com/docs/installing-openplc-runtime-on-linux-systems/. Acesso em Abril de 2021.
+
+# Status do Projeto
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
