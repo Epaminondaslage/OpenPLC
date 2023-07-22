@@ -432,5 +432,5 @@ Teste se a instalação do WiringPi foi concluída com sucesso com o comando:
 * <p><a href="https://github.com/thiagoralves/OpenPLC_Editor">Projeto Openplc Editor no Github</a></p>  
 * <p><a href="https://plcopen.org/">Site do PLC Open</a></p>
 * <p><a href="https://beremiz.org/">Site do Editor Beremiz</a></p> 
-* <p><a href="[https://beremiz.org/](https://openplcproject.com/docs/2-1-openplc-runtime-overview/">Site do OpenPLC Runtime</a></p>
-* <p><a href="https://openplcproject.com/docs/installing-openplc-runtime-on-linux-systems/">Site do OpenPLC</a></p> 
+* <p><a href="https://openplcproject.com/docs/2-1-openplc-runtime-overview/">)">Site do OpenPLC Runtime</a></p>
+* <p><a href="https://openplcproject.com/docs/installing-openplc-runtime-on-linux-systems/">Instalação do runtime do OpenPLC</a></p> 
