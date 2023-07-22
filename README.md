@@ -418,17 +418,17 @@ Teste se a instalação do WiringPi foi concluída com sucesso com o comando:
 
 # Referências
 
-* FREITAS, C. M. Conheça o OpenPLC - O primeiro CLP de Código Aberto Padronizado Disponível em:https://www.embarcados.com.br/openplc-o-primeiro-clp-de-codigo-aberto/ Acesso em Março de 2019.
+* FREITAS, C. M. Conheça o OpenPLC - O primeiro CLP de Código Aberto Padronizado. Disponível em: https://www.embarcados.com.br/openplc-o-primeiro-clp-de-codigo-aberto/. Acesso em: Março de 2019.
 * ALVES, T.R. What is OpenPLC?. OpenPLC Project, 2017. Disponível em: http://www.openplcproject.com/. Acesso em novembro de 2017.
 * ALVES, T.R.; BURATTO, M.; SOUZA, F.M.; RODRIGUES, T, V. OpenPLC: An Open Source Alternative to Automation. In IEEE 2014 Global Humanitarian Technology Conference (GHTC 2014), San Jose, CA, 2014, pp. 585-589.
 * JOHN, K.H.; TIEGELKAMP, M. IEC 61131-3: Programming Industrial Automation Systems,” 2nd ed. Springer, 2010 pp.147-168.
-* https://crushtymks.com/pt/industrial-automation/1102-goals-and-benefits-of-the-iec-61131-standard-plcs-8211-programmable-logic-controllers.html
-* https://beremiz.org/usecases 
-* NORMA IEC 61131-3 PARA PROGRAMAÇÃO DE CONTROLADORES PROGRAMÁVEIS: ESTUDO E APLICAÇÃO HUGO CASATI FERREIRA GUIMARÃES , VITÓRIA ES SETEMBRO/2005 UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO CENTRO TECNOLÓGICO DEPARTAMENTO DE ENGENHARIA ELÉTRICA PROJETO DE GRADUAÇÃO 
- * E. V. Easwaran et al., "Programmable Logic Controller: Open Source Hardware and Software for Massive Training," IECON 2018 - 44th Annual Conference of the IEEE Industrial Electronics Society, 2018, pp. 2422-2427, doi: 10.1109/IECON.2018.8592772.
-* https://inductiveautomation.com/scada-software/?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCbenQ37JpOXbF0VmaAw2WL0hdSYVrTHSdwi_yRkBgwWPkQzpkb-aH0aAhIREALw_wcB
-* <p><a href="https://openplcproject.com/">Site do Projeto openplc</a></p>
-* <p><a href="https://github.com/thiagoralves/OpenPLC_v3">Projeto Openplc Runtime no Github</a></p> 
+* "Goals and Benefits of the IEC 61131 Standard (PLCs – Programmable Logic Controllers)." crushtymks.com, [ano de publicação]. Disponível em: https://crushtymks.com/pt/industrial-automation/1102-goals-and-benefits-of-the-iec-61131-standard-plcs-8211-programmable-logic-controllers.html. Acesso em: [março/2023].
+* "Use Cases." beremiz.org, [2021]. Disponível em: https://beremiz.org/usecases. Acesso em: [março 2021].
+* GUIMARÃES, Hugo Casati Ferreira. Norma IEC 61131-3 para Programação de Controladores Programáveis: Estudo e Aplicação. Projeto de Graduação - Universidade Federal do Espírito Santo, Vitória ES, Setembro de 2005.
+ * EASWARAN, E. V. et al. Programmable Logic Controller: Open Source Hardware and Software for Massive Training. In: IECON 2018 - 44th Annual Conference of the IEEE Industrial Electronics Society, 2018, pp. 2422-2427, doi: 10.1109/IECON.2018.8592772.
+* SCADA Software. Inductive Automation, [ano de publicação]. Disponível em: https://inductiveautomation.com/scada-software/?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCbenQ37JpOXbF0VmaAw2WL0hdSYVrTHSdwi_yRkBgwWPkQzpkb-aH0aAhIREALw_wcB. Acesso em: [Fevereiro 2022].
+* Site do Projeto openplc. OpenPLC Project, [2021]. Disponível em: https://openplcproject.com/. Acesso em: [Dezembro 2020].
+* Projeto OpenPLC Runtime no Github. Thiago R. Alves, [2021]. Disponível em: https://github.com/thiagoralves/OpenPLC_v3. Acesso em: [Dezembro 2020]. 
 * <p><a href="https://github.com/thiagoralves/OpenPLC_Editor">Projeto Openplc Editor no Github</a></p>  
 * <p><a href="https://plcopen.org/">Site do PLC Open</a></p>
 * <p><a href="https://beremiz.org/">Site do Editor Beremiz</a></p> 
