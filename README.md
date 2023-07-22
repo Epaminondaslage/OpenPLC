@@ -163,8 +163,8 @@ Depois de acessar o servidor web OpenPLC, você deverá ver na janela do seu nav
 
 O nome de usuário e senha padrão é openplc (login) e openplc (senha). Isso significa que a primeira coisa que você deve fazer após o login pela primeira vez é alterar o nome de usuário e a senha padrão! É muito fácil fazer isso. Basta ir ao menu Users à esquerda e clicar no OpenPLC User para alterar as informações do usuário como desejar.
   
-  * Endereço IP do OrangePi que contém a runtime
-  * http://172.16.10.143:8080
+  * Endereço IP do Rasperry Pi que contém a runtime
+  * http://172.16.10.143:8080 (por exemplo)
   * user=openplc
   * passwd=openplc
 
