@@ -64,6 +64,7 @@ A International Electrotechnical Commission (Comissão Eletrotécnica Internacio
 Foco de nosso objeto de trabalho, a norma IEC 61131 em sua parte 3, tem por objetivo:
   
 Fornecer metodologias de construção de lógicas de programação de forma estruturada e modular, permitindo a quebra dos programas em partes gerenciáveis;
+
 Definir 5 linguagens de programação, cada uma com suas características, de forma a cobrir a maioria das necessidades de controle atuais;
 Permite o uso de outras linguagens de programação, desde que obedecidas as mesmas formas de chamadas e trocas de dados (Visual Basic, Flow Chart, C++, etc) e possui uma abordagem e estruturação top-down e bottom-up, fundamentada em 3 princípios:
 
