@@ -1,4 +1,4 @@
-<img src="/img/top_openplc.png" width="100%">
+<img src="/img/....top_openplc.png" width="100%">
 
 # Índice 
 
