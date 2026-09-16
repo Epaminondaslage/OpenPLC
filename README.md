@@ -3,7 +3,7 @@
 # Índice 
  
 * [Introdução](#Introdução)
-* [A IEC 6113](#A-IEC-6113)
+* [A IEC 61131](#A-IEC-61131)
 * [OpenPLC](#OpenPLC)
 * [OpenPLC Editor](#OpenPLC-Editor)
 * [OpenPLC Runtime](#OpenPLC-Runtime)
@@ -44,7 +44,7 @@ Os PLC's são um dos componentes mais críticos da indústria atual. Com a utili
 
 Por décadas o mercado tem sido dominado por poucos fabricantes que oferecem soluções muito parecidas, porém com particularidades nos dialetos de programação. Muitos usuários têm decidido eleger no mínimo três fornecedores, com o objetivo principal de minimizar o risco. Em aplicações reais, isto implica em um maior custo devido ao retrabalho e problemas de comunicação entre produtos de diferentes fabricantes.
 
-# A IEC 6113
+# A IEC 61131
   
 A International Electrotechnical Commission (Comissão Eletrotécnica Internacional), normalmente conhecida como IEC, é o organismo de normalização internacional não lucrativo independente líder mundial para as tecnologias elétrica, eletrónica e relacionadas. A IEC 61131 traz requisitos de hardware e software para sistemas que envolvam CLPs é dividida em cinco partes:
   
@@ -334,7 +334,7 @@ A melhor maneira de obter o OpenPLC Runtime em seu dispositivo é usando git. No
 Para instalar o OpenPLC, digite estas linhas no terminal:
 
   git clone https://github.com/thiagoralves/OpenPLC_v3.git
-  CD OpenPLC_v3
+  cd OpenPLC_v3
   ./install.sh linux
 
 
@@ -371,9 +371,9 @@ https://github.com/WiringPi/WiringPi/releases/
 
 O arquivo -armhf.deb deve ser usado em sistemas operacionais de 32 bits (Raspberry Pi 3 e inferior) e o arquivo -arm64.deb é destinado a sistemas operacionais de 64 bits (Raspberry Pi 4 e superior). Baixe o arquivo apropriado para sua arquitetura em seu Raspberry Pi e instale-o com o comando dpkg:
 
-  dpkg -i wirepi-[versão]-armhf.deb
+  dpkg -i wiringpi-[versão]-armhf.deb
 ou
-  dpkg -i wirepi-[versão]-arm64.deb
+  dpkg -i wiringpi-[versão]-arm64.deb
 
 Teste se a instalação do WiringPi foi concluída com sucesso com o comando:
 
