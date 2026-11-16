@@ -1,9 +1,11 @@
 <td style="width: 20%;"><img src="../img/top_openplc.png" width="100%" /></td>
 
+> Revisão de novembro de 2026. As figuras deste tutorial foram feitas no OpenPLC Editor legado (baseado no Beremiz), cujo repositório foi arquivado em agosto de 2026. A versão atual é o **OpenPLC Editor v4** (https://autonomylogic.com/download): a aparência e a posição dos menus mudaram, mas o diagrama, as variáveis e os endereços deste exemplo continuam os mesmos. Como o exemplo usa os pinos GPIO do SBC, ele deve ser executado no **Runtime v3** (o Runtime v4 não possui driver de GPIO para Raspberry Pi). Veja [Versões e Compatibilidade](https://github.com/Epaminondaslage/OpenPLC#versões-e-compatibilidade).
+
 Este primeiro projeto é um simples de  botão liga e botão desliga que aciona uma saída de relé. Você vai precisar de:
 
-    * Um microcontrolador com o OpenPLC Runtime instalado, no nosso caso o OrangePi One.
-    * Um microcomputador com o OpenPLC Editor instalado e acesso a rede local.
+    * Um microcontrolador com o OpenPLC Runtime v3 instalado, no nosso caso o OrangePi One.
+    * Um microcomputador com o OpenPLC Editor instalado (v4 ou legado) e acesso a rede local.
     * Dois botões de pressão
     * Um Rele
     * Um Protoboard
@@ -145,8 +147,8 @@ Agora que seu projeto foi finalmente criado, você pode começar a desenhar o di
   
 Ajuste a contagem de pinos do trilho de alimentação esquerdo. Adicione outro barramento de alimentação, mas desta vez selecione “trilho de alimentação direito” nas propriedades. Coloque-o no lado direito da tela. Isso é suficiente para você configurar os degraus do seu Diagrama Ladder.
 
-Agora você pode começar a adicionar seus elementos de escada. Adicione um contato clicando no botão de contato na barra de ferramentas ou clicando com o botão direito do mouse na janela do editor em branco e selecionando Adicionar->Contato. Na janela que aparece, no parâmetro “Variável”, selecione B0 para associar seu novo contato à variável B00.
-Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro associado ao Q0. Para o contato Q0, selecione Negado como modificador. Finalmente, adicione uma bobina clicando no botão bobina na barra de ferramentas ou clicando com o botão direito do mouse na janela do editor em branco e selecionando Adicionar-> bobina. Associe sua nova bobina à variável Q0 e adicione um barramento de alimentação direito para fechar o circuito. Posicione os componentes no lugar para que eles se pareçam com esta imagem:  
+Agora você pode começar a adicionar seus elementos de escada. Adicione um contato clicando no botão de contato na barra de ferramentas ou clicando com o botão direito do mouse na janela do editor em branco e selecionando Adicionar->Contato. Na janela que aparece, no parâmetro “Variável”, selecione B00 para associar seu novo contato à variável B00.
+Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro associado ao Q0. Para o contato B01, selecione Negado como modificador. Finalmente, adicione uma bobina clicando no botão bobina na barra de ferramentas ou clicando com o botão direito do mouse na janela do editor em branco e selecionando Adicionar-> bobina. Associe sua nova bobina à variável Q0 e adicione um barramento de alimentação direito para fechar o circuito. Posicione os componentes no lugar para que eles se pareçam com esta imagem:  
 
 <table border="0">
 <tbody>
@@ -159,7 +161,7 @@ Repita o processo para adicionar mais dois contatos, um associado ao B01 e outro
 </tbody>
 </table>
   
-O passo final é conectar todos os componentes arrastando suas extremidades para formar uma linha. Conecte o lado esquerdo dos contatos B0 e Q0 ao barramento de alimentação esquerdo. Conecte o lado direito do B00 com o B01, o lado direito do B01 com a bobina Q0 e o lado direito da bobina Q0 com o barramento de alimentação direito. Desenhe o circuito de contato Q0 paralelo conectando o lado direito do contato Q0 com o lado esquerdo do B01. Seu projeto final deve se parecer com a figura 10 neste tutorial.
+O passo final é conectar todos os componentes arrastando suas extremidades para formar uma linha. Conecte o lado esquerdo dos contatos B00 e Q0 ao barramento de alimentação esquerdo. Conecte o lado direito do B00 com o B01, o lado direito do B01 com a bobina Q0 e o lado direito da bobina Q0 com o barramento de alimentação direito. Desenhe o circuito de contato Q0 paralelo conectando o lado direito do contato Q0 com o lado esquerdo do B01. Seu projeto final deve se parecer com a figura 10 neste tutorial.
 
 Este circuito inicialmente tem a Q0 desligada. Quando você pressiona B00 mesmo que por um pequeno instante, o circuito aciona a Q0 (dado que B01 também não é pressionado). Uma vez que a Q0 liga, ela ignora o botão B01 no circuito para se ligar continuamente mesmo após liberar B00. Este é um bom truque na lógica ladder, você pode realmente usar as saídas como contatos! Agora, a única maneira de desligar a Q0 é pressionando B01. Como o B01 é um contato negado, ele abrirá o circuito assim que for pressionado, desligando a Q0.
 
@@ -189,7 +191,7 @@ Quando você clica nesse botão, seu projeto é compilado usando um processo sem
 </tbody>
 </table>
 
-Isso abrirá uma nova janela onde você poderá ver o fluxo elétrico do seu programa. As linhas em verde são ativadas, onde as linhas em preto não são. Você pode forçar um contato ou bobina a ser ativado ou desativado clicando com o botão direito nele e selecionando Forçar Verdadeiro ou Forçar Falso. Tente forçar B01 a ser verdadeiro e observe o caminho do fluxo para a bobina Q0. Em seguida, force B01 de volta para falso e verifique se Q0 ainda está ativado devido ao circuito de trava.
+Isso abrirá uma nova janela onde você poderá ver o fluxo elétrico do seu programa. As linhas em verde são ativadas, onde as linhas em preto não são. Você pode forçar um contato ou bobina a ser ativado ou desativado clicando com o botão direito nele e selecionando Forçar Verdadeiro ou Forçar Falso. Tente forçar B00 a ser verdadeiro e observe o caminho do fluxo para a bobina Q0. Em seguida, force B00 de volta para falso e verifique se Q0 ainda está ativado devido ao circuito de trava.
 
 Além de visualizar graficamente o fluxo elétrico no diagrama, você também pode acompanhar os dados em cada variável do seu programa no painel Debugger no lado direito da tela. Você pode adicionar variáveis no painel Debugger clicando no ícone de óculos na frente de cada variável do painel à esquerda. Além disso, clicando duas vezes em uma variável no painel Debugger, você pode ver um gráfico em tempo real mostrando os valores atuais da variável. Isso pode ser muito útil quando seu programa está contando etapas ou manipulando dados.
 
@@ -204,5 +206,42 @@ Além de visualizar graficamente o fluxo elétrico no diagrama, você também po
 </tbody>
 </table>
   
-Finalmente, depois de ter criado e testado o programa, o último passo é gerar seu programa em um formato que o OpenPLC Runtime entenda. Para isso, basta clicar em Generate program for OpenPLC Runtime na barra de ferramentas e salvar o arquivo .st em seu computador. Este arquivo é seu programa de lógica ladder escrito em uma linguagem que o OpenPLC Runtime pode entender. Você pode carregar este arquivo posteriormente para o OpenPLC Runtime conforme explicado em no tutorial Carregando Programas para o OpenPLC Runtime. 
+Finalmente, depois de ter criado e testado o programa, o último passo é gerar seu programa em um formato que o OpenPLC Runtime entenda. Para isso, basta clicar em Generate program for OpenPLC Runtime na barra de ferramentas e salvar o arquivo .st em seu computador. Este arquivo é seu programa de lógica ladder escrito em uma linguagem que o OpenPLC Runtime pode entender. Você pode carregar este arquivo posteriormente para o OpenPLC Runtime conforme explicado no tutorial [Carregando Programas para o OpenPLC Runtime](https://github.com/Epaminondaslage/OpenPLC/blob/master/cargaruntime/README.md). 
+
+## Fazendo este projeto no OpenPLC Editor v4
+
+O mesmo projeto pode ser feito no Editor v4 com estas diferenças:
+
+* O projeto é criado pela tela inicial do Editor, que já pede o nome, a linguagem (LD) e o intervalo da tarefa. Mantenha 20 ms.
+* As variáveis são as mesmas: B00 em `%IX0.0`, B01 em `%IX0.1` e Q0 em `%QX0.0`, todas do tipo BOOL. Em placas Raspberry Pi, lembre-se da observação acima sobre `%IX0.0` e `%IX0.1` e, se preferir, use `%IX0.2` e `%IX0.3`.
+* O editor Ladder do v4 organiza o diagrama em degraus: os barramentos de alimentação já fazem parte de cada degrau e os elementos são inseridos sobre a linha, sem a necessidade de desenhar as conexões manualmente.
+* A simulação e a depuração são integradas ao Editor.
+* Em vez de gerar o arquivo .st e carregá-lo pelo navegador, selecione o OpenPLC Runtime v3 como dispositivo de destino na configuração de dispositivo, informe o IP do SBC e envie o programa pelo próprio Editor.
+* Um projeto feito no Editor legado pode ser aproveitado importando o arquivo `plc.xml` (formato PLCopen XML) da pasta do projeto, recurso disponível a partir da versão 4.2.9 do Editor. Há um projeto de exemplo em [DiagramasLadder/primeiroprograma](https://github.com/Epaminondaslage/OpenPLC/tree/master/DiagramasLadder/primeiroprograma).
+
+O programa em Texto Estruturado equivalente ao circuito de trava deste tutorial, útil para conferir o resultado em qualquer versão do Editor, é:
+
+    (*
+      Programa   : primeiroprograma
+      Finalidade : circuito de trava (liga/desliga) para acionar um relé
+      Recursos   : B00 liga, B01 desliga, Q0 mantém-se ligado pelo próprio contato (selo)
+      Compatível : OpenPLC Editor legado e v4; Runtime v3 (E/S nos pinos GPIO do SBC)
+    *)
+    PROGRAM primeiroprograma
+      VAR
+        B00 AT %IX0.0 : BOOL;  (* botão liga, entrada digital 0 *)
+        B01 AT %IX0.1 : BOOL;  (* botão desliga, entrada digital 1 *)
+        Q0  AT %QX0.0 : BOOL;  (* relé, saída digital 0 *)
+      END_VAR
+
+      (* Q0 liga com B00 ou se mantém pelo selo, e desliga quando B01 é pressionado *)
+      Q0 := (B00 OR Q0) AND NOT B01;
+    END_PROGRAM
+
+    CONFIGURATION Config0
+      RESOURCE Res0 ON PLC
+        TASK task0(INTERVAL := T#20ms, PRIORITY := 0);  (* ciclo de 20 ms *)
+        PROGRAM instance0 WITH task0 : primeiroprograma;
+      END_RESOURCE
+    END_CONFIGURATION
 

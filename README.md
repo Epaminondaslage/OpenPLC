@@ -2,6 +2,7 @@
 
 # Índice 
  
+* [Versões e Compatibilidade](#Versões-e-Compatibilidade)
 * [Introdução](#Introdução)
 * [A IEC 61131](#A-IEC-61131)
 * [OpenPLC](#OpenPLC)
@@ -11,11 +12,37 @@
 * [Endereçamento de Entrada, Saída e Memória](#Endereçamento-de-Entrada-Saída-e-Memória)
 * [Endereçamento Físico](#Endereçamento-Físico)
 * [Instalando o OpenPLC em um Raspberry](#Instalando-o-OpenPLC-em-um-Raspberry)
+* [OpenPLC Runtime v4](#OpenPLC-Runtime-v4)
 * [Biblioteca WiringPi](#Biblioteca-WiringPi)
 * [Criando o primeiro projeto no OpenPLC Editor](https://github.com/Epaminondaslage/OpenPLC/tree/master/primeirodiagrama)
-* [Carregando programas para o OpenPLC Runtime](https://github.com/Epaminondaslage/OpenPLC/blob/master/primeirodiagrama/README.md)
+* [Carregando programas para o OpenPLC Runtime](https://github.com/Epaminondaslage/OpenPLC/blob/master/cargaruntime/README.md)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
+
+# Versões e Compatibilidade
+
+> Revisão de novembro de 2026. Os números de versão mudam com frequência: confira sempre as páginas de *releases* indicadas na tabela.
+
+O projeto OpenPLC passou por uma mudança de geração entre 2025 e 2026. Os softwares citados originalmente neste material (Editor baseado no Beremiz e Runtime v3) foram descontinuados e substituídos pela linha v4, mantida pela Autonomy Logic. A tabela resume a situação de cada software citado:
+
+| Software | Versão usada originalmente neste material | Situação em nov/2026 | Onde obter |
+|---|---|---|---|
+| OpenPLC Editor | Editor legado (Beremiz/Python), repositório `thiagoralves/OpenPLC_Editor` | Repositório arquivado em 03/08/2026. Substituído pelo **OpenPLC Editor v4** (série 4.3.x), aplicativo independente para Windows, macOS e Linux | https://autonomylogic.com/download e https://github.com/Autonomy-Logic/openplc-editor/releases |
+| OpenPLC Runtime | **Runtime v3**, repositório `thiagoralves/OpenPLC_v3` (servidor web na porta 8080) | Fim de vida: repositório arquivado em 04/04/2026, sem correções (inclusive de segurança). Substituído pelo **OpenPLC Runtime v4** (série 4.3.x), sem interface web, porta 8443 | https://github.com/Autonomy-Logic/openplc-runtime |
+| WiringPi | 2.x | **3.x**, mantida pela comunidade, com suporte ao Raspberry Pi 5 | https://github.com/WiringPi/WiringPi/releases |
+| Sistema operacional do Raspberry | Raspbian | **Raspberry Pi OS** (32 e 64 bits) | https://www.raspberrypi.com/software/ |
+| IEC 61131-3 | Edição 3.0 (2013) | **Edição 4.0 (maio de 2025)** | https://webstore.iec.ch/ |
+
+## Qual versão usar com os exemplos deste repositório
+
+Os exemplos deste material (botão liga/desliga acionando um relé, com E/S nos pinos GPIO de um SBC como Raspberry Pi ou Orange Pi One) dependem da **camada de hardware do Runtime v3**, que traduz `%IX0.0`, `%QX0.0` etc. para os pinos físicos da placa. Por isso:
+
+* **Programação (Editor):** use o **OpenPLC Editor v4**. O diagrama Ladder, as variáveis e os endereços IEC dos exemplos continuam válidos. O projeto de exemplo em `DiagramasLadder/primeiroprograma/plc.xml` está no formato PLCopen XML, que o Editor v4 importa (recurso de importação/exportação PLCopen XML disponível a partir da versão 4.2.9).
+* **Execução com GPIO do SBC (exemplos deste repositório):** continue usando o **Runtime v3**. O Editor v4 permite escolher o Runtime v3 como dispositivo de destino. Lembre-se de que o v3 não recebe mais atualizações: use-o em bancada e em rede didática isolada, nunca exposto à internet, e troque a senha padrão.
+* **Projetos novos sem dependência de GPIO local** (E/S via Modbus, OPC UA, EtherCAT, S7comm, ou PLC virtual): use o **Runtime v4**. Segundo os desenvolvedores no fórum do projeto, o Runtime v4 não possui driver para os pinos GPIO do Raspberry Pi; as alternativas são escrever um bloco de função em Python que acesse os pinos ou permanecer no Runtime v3. Verifique se isso mudou em versões mais recentes antes de migrar.
+* **Placas microcontroladas (Arduino, ESP32, ESP8266):** o envio continua sendo feito diretamente pelo Editor, agora o v4, sem Runtime com servidor web.
+
+As capturas de tela deste material foram feitas no Editor legado e na interface web do Runtime v3. No Editor v4 a aparência e a posição dos menus são diferentes, mas os conceitos (POU, variáveis, tarefas, barramentos, contatos e bobinas) são os mesmos.
 
 # Introdução 
 
@@ -50,13 +77,13 @@ A International Electrotechnical Commission (Comissão Eletrotécnica Internacio
   
 * Parte 1: IEC 61131-1 Informações gerais. Definição da informação geral, da terminologia básica e dos conceitos; Publicado em 1992 está na Versão 2.0 desde 2003.;
 * Parte 2: IEC 61131-2 Requisitos de hardware . Exigências de equipamento e testes eletrônicos e testes mecânicos de construção e verificação; Publicado em 1992 encontra-se na Versão 4.0 desde 2017.;
-* Parte 3: IEC 61131-3 Linguagens de programação. Estrutura do Software do CLP, execução do programa e linguagens de programação; Publicado em 1993 está na Versão 3.0 desde 2013.;
+* Parte 3: IEC 61131-3 Linguagens de programação. Estrutura do Software do CLP, execução do programa e linguagens de programação; Publicado em 1993, está na Edição 4.0 desde maio de 2025 (substitui a Edição 3.0, de 2013).;
 * Parte 4: IEC 61131-4 Guia de orientação ao usuário. Guia de orientação ao usuário na seleção, instalação e manutenção de CLP's. Publicado em 1995 está na Versão 2.0 from 2004.;
 * Parte 5: IEC 61131-5 Comunicação.Facilidade do Software em especificação de mensagens de serviços a comunicar-se com outros dispositivos usando as comunicações baseadas em MAP (Manufacturing Messaging Services). Publicado em 1998 apresenta-se naVersão 1.0 desde 2000.;
 * Parte 6: IEC 61131-6 Segurança Funcional.Comunicação via facilidade do Software fieldbus para comunicação de PLC s utilizando IEC fieldbus. Edição 1.0 - 2012.;
 * Parte 7: IEC 61131-7 Programação de Controle Fuzzy  Programação utilizando Lógica Nebulosa (Fuzzy).Edição 1.0 - 2000;
 * Parte 8: IEC 61131-8 Guia para implementação das linguagens: Diretrizes para aplicação e implementação de linguagens de programação. Edição 3.0 - 2017.
-* Parte 9: IEC 61131-9: Interface de comunicação digital single-drop para pequenos sensores e atuadores (SDCI).Especifica uma tecnologia de interface de comunicação digital single-drop para pequenos sensores e atuadores SDCI.A edição atual é 1.0 de 2013.
+* Parte 9: IEC 61131-9: Interface de comunicação digital single-drop para pequenos sensores e atuadores (SDCI).Especifica uma tecnologia de interface de comunicação digital single-drop para pequenos sensores e atuadores SDCI.A edição atual é a 2.0, de 2022 (a primeira edição é de 2013).
 * Parte 10: IEC 61131-10: PLC aberto XML Exchange Format.Este novo padrão IEC é baseado na especificação original PLCopen XML. Com o lançamento da 3ª edição da IEC 61131-3 em 2013, uma grande reformulação foi necessária para incluir as mudanças e extensões como recursos orientados a objetos. Lançado em abril de 2019.
   
 ## IEC 61131-3 – Linguagens de Programação
@@ -78,7 +105,9 @@ Dentro destes aspectos, a IEC 61131-3 define cinco linguagens de programação:
 * IL (Instruction List) Lista de Instruções
 * LD (Ladder) Linguagem ladder
 * FBD (Function Block Diagram) Diagrama de bloco
-* SFC (Sequential Flow Chart) Diagrama de Fluxo
+* SFC (Sequential Function Chart) Diagrama de Funções Sequenciais
+
+Nota sobre a Edição 4.0 (2025): a linguagem IL (Lista de Instruções), já marcada como obsoleta na edição de 2013, foi removida da norma, que passa a definir ST, LD, FBD e SFC. A edição de 2025 também incluiu strings UTF-8 e traz, no Anexo B, a lista do que foi acrescentado, removido ou descontinuado em relação à edição de 2013. O OpenPLC continua aceitando as cinco linguagens, de modo que os exemplos deste material não são afetados.
 
 As duas primeiras linguagens acima (ST e IL) são ditas textuais por conterem instruções na forma de texto. As duas seguintes (LD e FBD) são ditas gráficas por possuírem representação na forma de símbolos. A linguagem SFC é normalmente tida como linguagem gráfica, porém também permite programações textuais.
 
@@ -95,7 +124,11 @@ O projeto do OpenPLC  é um ambiente de desenvolvimento de programas, é compat�
 
 O Projeto OpenPLC consiste em duas partes: Runtime e Editor. O Runtime é um software portátil projetado para rodar desde o menor de todos os microcontroladores (compatível com Arduino) até poderosos servidores nas nuvens. Ele é responsável por executar os programas PLC que você cria usando o Editor.
 
- A programação do hardware é realizada por meio do Editor, onde são gerados arquivos ST. O aplicativo OpenPLC possui um servidor Web baseado em NodeJs (https://nodejs.org/en/) que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
+ A programação do hardware é realizada por meio do Editor, onde são gerados arquivos ST. No Runtime v3, usado nos exemplos deste material, há um servidor Web embutido, escrito em Python (Flask), que controla se o OpenPLC está de fato sendo executado ou não, e permite que o usuário faça upload do arquivo ST. Durante a execução do servidor, basta abrir o navegador, que haverá uma interface Web, possibilitando o envio de novos programas ao OpenPLC.
+
+No Runtime v4 esse servidor Web deixou de existir: o runtime expõe apenas uma API HTTPS na porta 8443 e todo o envio de programas, partida, parada e depuração são feitos a partir do OpenPLC Editor v4. Veja [Versões e Compatibilidade](#Versões-e-Compatibilidade) e [OpenPLC Runtime v4](#OpenPLC-Runtime-v4).
+
+O projeto é mantido pela Autonomy Logic, empresa fundada pelo criador do OpenPLC, e a documentação oficial passou de openplcproject.com para autonomylogic.com.
  
  ## Porque usar este software? 
   
@@ -137,13 +170,30 @@ A figura 3 ilustra a linguagem Ladder sendo aplicada sobre o OpenPLC Editor.
 
 Em resumo, o Editor OpenPLC é um editor PLC compatível com IEC 61131-3 totalmente gratuito e de código aberto. Você pode usá-lo para fazer upload de código PLC diretamente para qualquer placa ou sistema executando OpenPLC Runtime.
 
+## OpenPLC Editor v4
+
+A versão atual é o **OpenPLC Editor v4** (série 4.3.x em novembro de 2026), reescrito como aplicativo independente para Windows, macOS e Linux (x64 e ARM64). Não é mais necessário instalar Python nem wxPython, como no Editor legado.
+
+* Download: https://autonomylogic.com/download
+* Versões e notas de lançamento: https://github.com/Autonomy-Logic/openplc-editor/releases
+* Documentação: https://edge.autonomylogic.com/docs/openplc-editor/overview
+
+O que muda em relação ao Editor legado mostrado nas figuras deste material:
+
+* O dispositivo de destino (placa Arduino/ESP, Runtime v3 ou Runtime v4) é escolhido na configuração de dispositivo do projeto, e o envio do programa é feito pelo próprio Editor.
+* Há simulador e depurador integrados.
+* Projetos do Editor legado podem ser trazidos pela importação de PLCopen XML (arquivo `plc.xml` da pasta do projeto), disponível a partir da versão 4.2.9.
+* O repositório do Editor legado (`thiagoralves/OpenPLC_Editor`) foi arquivado em 03/08/2026 e não recebe mais atualizações.
+
 # OpenPLC Runtime
+
+> Esta seção descreve o **Runtime v3**, usado nos exemplos deste material por ser a versão que possui camada de hardware para os pinos GPIO do SBC. O v3 chegou ao fim de vida em abril de 2026. Para a versão atual, veja [OpenPLC Runtime v4](#OpenPLC-Runtime-v4).
 
 O OpenPLC Runtime permite executar programas PLC criados no Editor OpenPLC. Esta runtime, instalada em um SBC possui um servidor web integrado que permite configurar vários parâmetros da runtime. Microimplementações do OpenPLC Runtime (ou seja, versões da runtime que vão em microcontroladores e placas Arduino) não possuem o servidor web embutido. Em vez disso, todas as configurações de tempo de execução para o micro runtime são feitas diretamente da caixa de diálogo de upload do OpenPLC Editor.
 
-O servidor web runtime n SBC está disponível em seu endereço IP de destino na porta 8080. Por exemplo, se você instalou o OpenPLC Runtime em Raspberry Pi e seu endereço IP é 172.16.10.143, então você pode acessar o OpenPLC Runtime abrindo seu navegador web e apontando para http://172.16.10.143:8080.
+O servidor web runtime no SBC está disponível em seu endereço IP de destino na porta 8080. Por exemplo, se você instalou o OpenPLC Runtime em Raspberry Pi e seu endereço IP é 172.16.10.143, então você pode acessar o OpenPLC Runtime abrindo seu navegador web e apontando para http://172.16.10.143:8080.
 
-Se você estiver recebendo erros de página, certifique-se de que seu computador possa acessar o Raspberry Pi em sua rede. Se você não sabe o endereço IP da sua placa, utilize uma ferramenta pas escanear sua rede e descobrir o IP dele.
+Se você estiver recebendo erros de página, certifique-se de que seu computador possa acessar o Raspberry Pi em sua rede. Se você não sabe o endereço IP da sua placa, utilize uma ferramenta para escanear sua rede e descobrir o IP dele.
 
 Depois de acessar o servidor web OpenPLC, você deverá ver na janela do seu navegador uma página de login como a apresentada na figura 04.
 
@@ -183,7 +233,7 @@ Por padrão, o tempo de execução do OpenPLC é instalado com um driver em bran
 
 # Plataformas de Hardware para o OpenPLC
 
-O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, Raspberry Pi e ESP8266. É oficialmente suportada nas seguintes plataformas:
+O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, Raspberry Pi e ESP8266. A lista abaixo corresponde à geração v3 (Runtime v3 e Editor legado), usada nos exemplos deste material:
   
 * Arduino Uno / Nano / Leonardo / Micro
 * Arduino Mega / Due
@@ -195,7 +245,7 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
 * Productivity Open P1AM
 * ESP8266 (nodemcu)
 * ESP32
-* Raspberry Pi 2 / 3 / 4
+* Raspberry Pi 2 / 3 / 4 (o Raspberry Pi 5 funciona no Runtime v3 com a WiringPi 3.x, conforme relatos no fórum do projeto)
 * PiXtend
 * UniPi Industrial Platform
 * Neuron PLC
@@ -203,6 +253,8 @@ O OpenPLC run time é compativel com algumas plataformas livres, como Arduino, R
 * FreeWave ZumIQ
 * Windows (generic target as a soft-PLC)
 * Linux (generic target as a soft-PLC)
+
+Na geração v4, a seleção de placas é feita no OpenPLC Editor v4, que traz dezenas de perfis de placas (as placas compatíveis com Arduino são compiladas pelo `arduino-cli` embutido no Editor). O Runtime v4 roda em Linux nas arquiteturas x86_64, ARM64 e ARM de 32 bits (armv7), além de Docker e Windows. Consulte a lista atualizada em https://edge.autonomylogic.com/docs/openplc-editor/hardware-configuration/board-selection, pois o nome de uma família de placas não garante suporte a todos os modelos.
 
 # Endereçamento de Entrada, Saída e Memória
 
@@ -323,67 +375,117 @@ O OpenPLC Runtime é compatível com várias plataformas de hardware diferentes 
 
 # Instalando o OpenPLC em um Raspberry
 
-Instalando OpenPLC Runtime no Linux
+> Os passos abaixo instalam o **Runtime v3**, necessário para os exemplos deste repositório que usam os pinos GPIO do SBC. O repositório `OpenPLC_v3` está arquivado (somente leitura) desde 04/04/2026: o `git clone` continua funcionando, mas não há mais correções. Em sistemas operacionais muito recentes a instalação pode falhar por incompatibilidade de pacotes; nesse caso, use uma imagem do Raspberry Pi OS da época em que o v3 ainda era mantido (por exemplo, Bookworm). Para a versão atual, veja [OpenPLC Runtime v4](#OpenPLC-Runtime-v4).
 
-Instruções passo a passo sobre como instalar o OpenPLC Runtime em seu sistema. O OpenPLC Runtime pode rodar em uma variedade de sistemas Linux, mas funciona melhor em distribuições baseadas em Debian como Ubuntu e Raspbian.
+Instalando OpenPLC Runtime v3 no Linux
+
+Instruções passo a passo sobre como instalar o OpenPLC Runtime em seu sistema. O OpenPLC Runtime pode rodar em uma variedade de sistemas Linux, mas funciona melhor em distribuições baseadas em Debian como Ubuntu e Raspberry Pi OS (antigo Raspbian).
 
 A melhor maneira de obter o OpenPLC Runtime em seu dispositivo é usando git. Normalmente, o git vem pré-instalado na maioria das distribuições Linux. Se por algum motivo você não tiver o git instalado em seu sistema, você pode instalá-lo abrindo o terminal e digitando:
 
-  sudo apt-get install git
+    sudo apt install git
 
 Para instalar o OpenPLC, digite estas linhas no terminal:
 
-  git clone https://github.com/thiagoralves/OpenPLC_v3.git
-  cd OpenPLC_v3
-  ./install.sh linux
+    git clone https://github.com/thiagoralves/OpenPLC_v3.git
+    cd OpenPLC_v3
+    ./install.sh linux
 
 
 Se você estiver instalando o OpenPLC em um hardware Linux específico, como o Raspberry Pi por exemplo, você deve substituir o parâmetro ‘linux’ pelo argumento específico da sua plataforma:
 
-  ./install.sh rpi
+    ./install.sh rpi
 
 Abaixo estão os argumentos válidos para o instalador:
 
 * win – Instalar OpenPLC no Windows sobre Cygwin
-* linux – Instalar OpenPLC em uma distribuição Linux baseada em Debian
-* docker – Instalar o OpenPLC em um container Docker
+* linux – Instalar OpenPLC em uma distribuição Linux suportada (baseadas em Debian, Fedora, openSUSE e Alpine)
+* docker – Usado pelo Dockerfile do projeto (não invoca `sudo`)
 * rpi – Instalar o OpenPLC em um Raspberry Pi
-* neuron – Instalar o OpenPLC em um UniPi Neuron PLC
-* personalizado – Ignora toda a instalação de pacotes específicos e tenta instalar o OpenPLC assumindo que seu sistema já possui todas as dependências atendidas
+* custom – Ignora toda a instalação de pacotes específicos e tenta instalar o OpenPLC assumindo que seu sistema já possui todas as dependências atendidas
+
+Observações: o argumento deve ser digitado em inglês (`custom`, e não "personalizado"). O argumento `neuron` (UniPi Neuron), citado em versões anteriores deste material, não consta mais na lista do README final do projeto.
  
 O processo de instalação levará algum tempo (até 1 hora, dependendo do seu sistema). Depois que o OpenPLC estiver instalado, basta reiniciar o dispositivo e ele iniciará automaticamente após a inicialização.
 
 # Biblioteca WiringPi
 
-Você também deve ter a biblioteca WiringPi instalada para poder executar o OpenPLC. WiringPi é responsável por controlar os pinos Raspberry Pi GPIO. Sem ele, você não conseguirá ativar o driver Raspberry Pi e o OpenPLC não conseguirá controlar os pinos da placa. 
+Você também deve ter a biblioteca WiringPi instalada para poder executar o OpenPLC Runtime v3 em um Raspberry Pi (o Runtime v4 não usa a WiringPi). WiringPi é responsável por controlar os pinos Raspberry Pi GPIO. Sem ele, você não conseguirá ativar o driver Raspberry Pi e o OpenPLC não conseguirá controlar os pinos da placa. 
 
-A biblioteca WiringPi é uma biblioteca de software escrita em C para controlar os pinos GPIO (General Purpose Input/Output) em placas Raspberry Pi. Ela foi desenvolvida por Gordon Henderson e fornece uma interface fácil de usar para interagir com os pinos GPIO da Raspberry Pi usando a linguagem de programação C.
+A biblioteca WiringPi é uma biblioteca de software escrita em C para controlar os pinos GPIO (General Purpose Input/Output) em placas Raspberry Pi. Ela foi desenvolvida por Gordon Henderson, que encerrou o projeto original em 2019 (última versão oficial: 2.50), e hoje é mantida pela comunidade em https://github.com/WiringPi/WiringPi, na série 3.x, com suporte a todas as placas Raspberry Pi, inclusive o Raspberry Pi 5. Ela fornece uma interface fácil de usar para interagir com os pinos GPIO da Raspberry Pi usando a linguagem de programação C.
 
 Com a biblioteca WiringPi, você pode controlar os pinos GPIO de várias maneiras, como definir o modo dos pinos como entrada ou saída, ler o estado dos pinos de entrada e escrever dados em pinos de saída. Ela também suporta temporizadores (delays) e PWM (Pulse Width Modulation) para controlar a intensidade de dispositivos como LEDs e motores.
 
 Além de C, a biblioteca WiringPi também possui interfaces para outras linguagens de programação, incluindo Python, Perl, Ruby e Java. Isso permite que desenvolvedores de diferentes backgrounds utilizem a biblioteca em seus projetos, independentemente da linguagem escolhida.
 
-Para utilizar a biblioteca WiringPi, você precisa instalá-la no seu Raspberry Pi. Ela geralmente vem pré-instalada em distribuições Raspberry Pi OS mais recentes, mas você pode instalá-la manualmente caso necessário.
+Para utilizar a biblioteca WiringPi, você precisa instalá-la no seu Raspberry Pi. Ela não vem mais pré-instalada nas versões atuais do Raspberry Pi OS, portanto a instalação manual é necessária.
 
 Para instalar o WiringPi, obtenha a versão .deb mais recente em:
 
 https://github.com/WiringPi/WiringPi/releases/
 
-O arquivo -armhf.deb deve ser usado em sistemas operacionais de 32 bits (Raspberry Pi 3 e inferior) e o arquivo -arm64.deb é destinado a sistemas operacionais de 64 bits (Raspberry Pi 4 e superior). Baixe o arquivo apropriado para sua arquitetura em seu Raspberry Pi e instale-o com o comando dpkg:
+O arquivo `_armhf.deb` deve ser usado em sistemas operacionais de 32 bits e o arquivo `_arm64.deb` em sistemas operacionais de 64 bits. O que define a escolha é o sistema operacional instalado, e não o modelo da placa (um Raspberry Pi 3 ou 4 pode rodar tanto o Raspberry Pi OS de 32 bits quanto o de 64 bits). Para descobrir a arquitetura do seu sistema:
 
-  dpkg -i wiringpi-[versão]-armhf.deb
+    dpkg --print-architecture
+
+Baixe o arquivo apropriado em seu Raspberry Pi e instale-o com o apt, que também resolve as dependências (na série 3.x os arquivos seguem o padrão `wiringpi_[versão]_[arquitetura].deb`):
+
+    sudo apt install ./wiringpi_[versão]_armhf.deb
+
 ou
-  dpkg -i wiringpi-[versão]-arm64.deb
+
+    sudo apt install ./wiringpi_[versão]_arm64.deb
+
+O comando antigo `sudo dpkg -i arquivo.deb` continua funcionando.
 
 Teste se a instalação do WiringPi foi concluída com sucesso com o comando:
 
-  gpio -v
+    gpio -v
+
+O comando `gpio readall` mostra o estado e a numeração de todos os pinos.
+
+Nota para o Orange Pi One: a WiringPi oficial atende apenas placas Raspberry Pi. Em placas Orange Pi usa-se a WiringOP, adaptação mantida pelo fabricante (https://github.com/orangepi-xunlong/wiringOP).
+
+# OpenPLC Runtime v4
+
+O Runtime v4 (série 4.3.x em novembro de 2026) é o sucessor do v3 e foi projetado para executar programas criados no OpenPLC Editor v4. Principais diferenças:
+
+| Tema | Runtime v3 (exemplos deste material) | Runtime v4 |
+|---|---|---|
+| Repositório | `thiagoralves/OpenPLC_v3`, arquivado | `Autonomy-Logic/openplc-runtime`, ativo |
+| Gerenciamento | Interface web no navegador, porta 8080 | Sem interface web; API HTTPS na porta 8443, usada pelo Editor v4 |
+| Envio do programa | Upload do arquivo `.st` pelo navegador | O Editor compila, envia e acompanha a compilação |
+| Usuário e senha | Padrão `openplc` / `openplc` | Não há padrão: o primeiro usuário é criado na primeira conexão |
+| E/S | Camadas de hardware (Raspberry Pi, etc.) | Plugins (Modbus mestre/escravo, OPC UA, S7comm, EtherCAT); sem driver de GPIO do Raspberry Pi |
+
+## Instalando o Runtime v4
+
+Instalação gerenciada em contêiner (recomendada pelo projeto):
+
+    curl -fsSL https://runtime.getedge.me | sudo bash
+
+Instalação nativa a partir do código-fonte, em Linux:
+
+    git clone https://github.com/Autonomy-Logic/openplc-runtime.git
+    cd openplc-runtime
+    sudo ./install.sh --native
+
+O parâmetro `--native` é necessário: sem ele o instalador segue o caminho por contêiner. Quando o sistema usa systemd, o instalador cria e inicia o serviço `openplc-runtime`. Para iniciar manualmente:
+
+    sudo ./start_openplc.sh
+
+Com Docker:
+
+    docker pull ghcr.io/autonomy-logic/openplc-runtime:latest
+    docker run -d --name openplc-runtime -p 8443:8443 --cap-add=SYS_NICE --cap-add=SYS_RESOURCE -v openplc-runtime-data:/var/run/runtime ghcr.io/autonomy-logic/openplc-runtime:latest
+
+Depois de instalado, não abra `https://ip_do_dispositivo:8443` no navegador, pois não há página web. No OpenPLC Editor v4, selecione o Runtime v4 como dispositivo, informe o endereço IP e a porta 8443, crie o primeiro usuário e faça o envio pelo próprio Editor. O passo a passo está em [Carregando programas para o OpenPLC Runtime](https://github.com/Epaminondaslage/OpenPLC/blob/master/cargaruntime/README.md).
 
 
 # Referências
 
 * FREITAS, C. M. Conheça o OpenPLC - O primeiro CLP de Código Aberto Padronizado. Disponível em: https://www.embarcados.com.br/openplc-o-primeiro-clp-de-codigo-aberto/. Acesso em Março de 2019.
-* ALVES, T.R. What is OpenPLC?. OpenPLC Project, 2017. Disponível em: http://www.openplcproject.com/. Acesso em novembro de 2017.
+* ALVES, T.R. What is OpenPLC?. OpenPLC Project, 2017. Disponível originalmente em: http://www.openplcproject.com/ (conteúdo migrado para https://autonomylogic.com/). Acesso em novembro de 2017.
 * ALVES, T.R.; BURATTO, M.; SOUZA, F.M.; RODRIGUES, T, V. OpenPLC: An Open Source Alternative to Automation. In IEEE 2014 Global Humanitarian Technology Conference (GHTC 2014), San Jose, CA, 2014, pp. 585-589.
 * JOHN, K.H.; TIEGELKAMP, M. IEC 61131-3: Programming Industrial Automation Systems,” 2nd ed. Springer, 2010 pp.147-168.
 * "Goals and Benefits of the IEC 61131 Standard (PLCs – Programmable Logic Controllers)." crushtymks.com, 2010. Disponível em: https://crushtymks.com/pt/industrial-automation/1102-goals-and-benefits-of-the-iec-61131-standard-plcs-8211-programmable-logic-controllers.html. Acesso em Março/2022.
@@ -391,13 +493,20 @@ Teste se a instalação do WiringPi foi concluída com sucesso com o comando:
 * GUIMARÃES, Hugo Casati Ferreira. Norma IEC 61131-3 para Programação de Controladores Programáveis: Estudo e Aplicação. Projeto de Graduação - Universidade Federal do Espírito Santo, Vitória ES, Setembro de 2005.
  * EASWARAN, E. V. et al. Programmable Logic Controller: Open Source Hardware and Software for Massive Training. In: IECON 2018 - 44th Annual Conference of the IEEE Industrial Electronics Society, 2018, pp. 2422-2427, doi: 10.1109/IECON.2018.8592772.
 * SCADA Software. Inductive Automation, [ano de publicação]. Disponível em: https://inductiveautomation.com/scada-software/?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCbenQ37JpOXbF0VmaAw2WL0hdSYVrTHSdwi_yRkBgwWPkQzpkb-aH0aAhIREALw_wcB. Acesso em Fevereiro 2022.
-* Site do Projeto openplc. OpenPLC Project, [2021]. Disponível em: https://openplcproject.com/. Acesso em: Dezembro 2020.
-* Projeto OpenPLC Runtime no Github. Thiago R. Alves, [2021]. Disponível em: https://github.com/thiagoralves/OpenPLC_v3. Acesso em Dezembro 2020. 
-* Projeto OpenPLC Editor no Github. Thiago R. Alves, [ano de publicação]. Disponível em: https://github.com/thiagoralves/OpenPLC_Editor. Acesso em Abril 2022  
-* Site do PLC Open. PLC Open. Disponível em: https://plcopen.org/. Acesso em Abril 2021.
+* Site do Projeto OpenPLC. Autonomy Logic. Disponível em: https://autonomylogic.com/ (antigo https://openplcproject.com/). Acesso em novembro de 2026.
+* Download do OpenPLC Editor v4. Autonomy Logic. Disponível em: https://autonomylogic.com/download. Acesso em novembro de 2026.
+* Projeto OpenPLC Editor v4 no Github. Autonomy Logic. Disponível em: https://github.com/Autonomy-Logic/openplc-editor (versões em https://github.com/Autonomy-Logic/openplc-editor/releases). Acesso em novembro de 2026.
+* Documentação do OpenPLC Editor v4. Autonomy Logic. Disponível em: https://edge.autonomylogic.com/docs/openplc-editor/overview. Acesso em novembro de 2026.
+* Projeto OpenPLC Runtime v4 no Github. Autonomy Logic. Disponível em: https://github.com/Autonomy-Logic/openplc-runtime. Acesso em novembro de 2026.
+* Página do OpenPLC Runtime v4. Autonomy Logic. Disponível em: https://autonomylogic.com/runtime. Acesso em novembro de 2026.
+* Projeto OpenPLC Runtime v3 no Github (arquivado em 04/04/2026, fim de vida). Thiago R. Alves. Disponível em: https://github.com/thiagoralves/OpenPLC_v3. Acesso em novembro de 2026.
+* Projeto OpenPLC Editor legado no Github (arquivado em 03/08/2026). Thiago R. Alves. Disponível em: https://github.com/thiagoralves/OpenPLC_Editor. Acesso em novembro de 2026.
+* Documentação da geração v3 (endereçamento físico por plataforma). Autonomy Logic. Disponível em: https://old.autonomylogic.com/docs/2-4-physical-addressing/. Acesso em novembro de 2026.
+* Fórum do OpenPLC: OpenPLC V4 and Raspberry Pi (GPIO no Runtime v4). Disponível em: https://openplc.discussion.community/post/openplc-v4-and-raspberry-pi-13755921. Acesso em novembro de 2026.
+* Biblioteca WiringPi (série 3.x, mantida pela comunidade). Disponível em: https://github.com/WiringPi/WiringPi. Acesso em novembro de 2026.
+* IEC 61131-3:2025, Programmable controllers – Part 3: Programming languages. Edição 4.0. International Electrotechnical Commission, maio de 2025. Disponível em: https://webstore.iec.ch/.
+* Site do PLC Open. PLC Open. Disponível em: https://plcopen.org/. Acesso em novembro de 2026.
 * Site do Editor Beremiz. Beremiz. Disponível em: https://beremiz.org/. Acesso em Abril de 2021.
-* Site do OpenPLC Runtime. OpenPLC Project. Disponível em: https://openplcproject.com/docs/2-1-openplc-runtime-overview. Acesso em Abril de 2021.
-* Instalação do runtime do OpenPLC. OpenPLC Project. Disponível em: https://openplcproject.com/docs/installing-openplc-runtime-on-linux-systems/. Acesso em Abril de 2021.
 
 # Status do Projeto
 
