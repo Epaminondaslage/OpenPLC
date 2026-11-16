@@ -501,7 +501,7 @@ Depois de instalado, não abra `https://ip_do_dispositivo:8443` no navegador, po
 * Página do OpenPLC Runtime v4. Autonomy Logic. Disponível em: https://autonomylogic.com/runtime. Acesso em novembro de 2026.
 * Projeto OpenPLC Runtime v3 no Github (arquivado em 04/04/2026, fim de vida). Thiago R. Alves. Disponível em: https://github.com/thiagoralves/OpenPLC_v3. Acesso em novembro de 2026.
 * Projeto OpenPLC Editor legado no Github (arquivado em 03/08/2026). Thiago R. Alves. Disponível em: https://github.com/thiagoralves/OpenPLC_Editor. Acesso em novembro de 2026.
-* Documentação da geração v3 (endereçamento físico por plataforma). Autonomy Logic. Disponível em: https://old.autonomylogic.com/docs/2-4-physical-addressing/. Acesso em novembro de 2026.
+* Documentação da geração v3 (endereçamento físico por plataforma). As páginas originais em openplcproject.com/docs não estão mais no ar (em novembro de 2026 redirecionam para https://autonomylogic.com/); o conteúdo equivalente está reproduzido neste material e no repositório arquivado do Runtime v3.
 * Fórum do OpenPLC: OpenPLC V4 and Raspberry Pi (GPIO no Runtime v4). Disponível em: https://openplc.discussion.community/post/openplc-v4-and-raspberry-pi-13755921. Acesso em novembro de 2026.
 * Biblioteca WiringPi (série 3.x, mantida pela comunidade). Disponível em: https://github.com/WiringPi/WiringPi. Acesso em novembro de 2026.
 * IEC 61131-3:2025, Programmable controllers – Part 3: Programming languages. Edição 4.0. International Electrotechnical Commission, maio de 2025. Disponível em: https://webstore.iec.ch/.

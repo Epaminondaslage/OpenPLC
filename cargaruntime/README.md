@@ -91,7 +91,7 @@ Atenção: segundo os desenvolvedores no fórum do projeto, o Runtime v4 não po
 
 # Referências
 
-* Uploading programs to OpenPLC Runtime (geração v3). Disponível originalmente em: https://openplcproject.com/docs/2-2-uploading-programs-to-openplc-runtime/ (documentação migrada para https://old.autonomylogic.com/docs/).
+* Uploading programs to OpenPLC Runtime (geração v3). Disponível originalmente em: https://openplcproject.com/docs/2-2-uploading-programs-to-openplc-runtime/ (página fora do ar em novembro de 2026; redireciona para https://autonomylogic.com/).
 * OpenPLC Runtime v4. Autonomy Logic. Disponível em: https://github.com/Autonomy-Logic/openplc-runtime. Acesso em novembro de 2026.
 * Documentação do OpenPLC Editor v4. Autonomy Logic. Disponível em: https://edge.autonomylogic.com/docs/openplc-editor/overview. Acesso em novembro de 2026.
 * Fórum do OpenPLC: OpenPLC V4 and Raspberry Pi. Disponível em: https://openplc.discussion.community/post/openplc-v4-and-raspberry-pi-13755921. Acesso em novembro de 2026.
